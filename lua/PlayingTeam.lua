@@ -75,6 +75,7 @@ function PlayingTeam:Initialize(teamName, teamNumber)
     self.eventListeners = {}
     
     self.commandStructure = nil
+    self.numFlagsCaptured = 0
 end
 
 function PlayingTeam:AddListener( event, func )
@@ -1347,4 +1348,26 @@ function PlayingTeam:UpdateSpawnWave(deltaTime)
         end
     end
 
+end
+
+function PlayingTeam:AddFlagCapture()
+    self.numFlagsCaptured = self.numFlagsCaptured + 1
+    Print("Team %d, has captured a flag. They now have %d flags captured", self:GetTeamNumber(), self.numFlagsCaptured)
+end
+
+function PlayingTeam:GetNumFlagsCaptured()
+    return self.numFlagsCaptured
+end
+
+function PlayingTeam:GetHasTeamWon()
+
+    PROFILE("PlayingTeam:GetHasTeamWon")
+
+    if GetGamerules():GetGameStarted() /*and not Shared.GetCheatsEnabled()*/ then
+        local numFlags = self:GetNumFlagsCaptured()
+        if numFlags == kCaptureWinTotal then            
+            return true 
+        end
+    end    
+    return false
 end
