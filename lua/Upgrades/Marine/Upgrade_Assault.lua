@@ -23,7 +23,7 @@ AssaultUpgrade.mustBeNearTechPoint = true
 AssaultUpgrade.isClassUpgrade = true	
 AssaultUpgrade.uniqueSlot 			= kUpgradeUniqueSlot.Class
 AssaultUpgrade.vidDesc				= "videos/Marines_MinigunExo.webm"
-AssaultUpgrade.requirements			= {}
+AssaultUpgrade.requirements			= { "engineer","medic","scout","assault"}
 
 function AssaultUpgrade:Initialize()
 

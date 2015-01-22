@@ -20,6 +20,7 @@ MedicUpgrade.minPlayerLevel 	= 0											// Controls whether this upgrade requ
 MedicUpgrade.rowOrder 			= 0											// Controls the horizontal position on the menu
 MedicUpgrade.texture  			= PrecacheAsset("ui/buymenu/Icons/Icon_Marine_Active.dds")
 MedicUpgrade.mustBeNearTechPoint = true
+MedicUpgrade.isClassUpgrade = true						--Lifeforms, Marine and Exo are all classes
 MedicUpgrade.uniqueSlot 		= kUpgradeUniqueSlot.Class
 MedicUpgrade.vidDesc			= "videos/Marines_MinigunExo.webm"
 MedicUpgrade.requirements		= {}
@@ -43,7 +44,8 @@ function MedicUpgrade:Initialize()
 	self.vidDesc = MedicUpgrade.vidDesc
 	self.vidDesc = MedicUpgrade.vidDesc
 	self.requirements = MedicUpgrade.requirements
-	
+	self.isClassUpgrade = MedicUpgrade.isClassUpgrade
+
 end
 
 function MedicUpgrade:GetClassName()

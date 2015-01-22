@@ -1709,6 +1709,11 @@ Event.Hook("Console_dualminigun", OnCommandChangeClass("exo", kTeam1Index, { lay
 Event.Hook("Console_clawrailgun", OnCommandChangeClass("exo", kTeam1Index, { layout = "ClawRailgun" }))
 Event.Hook("Console_dualrailgun", OnCommandChangeClass("exo", kTeam1Index, { layout = "RailgunRailgun" }))
 
+Event.Hook("Console_medic", OnCommandChangeClass("medic", kTeam1Index))
+Event.Hook("Console_assault", OnCommandChangeClass("assault", kTeam1Index))
+Event.Hook("Console_engineer", OnCommandChangeClass("engineer", kTeam1Index))
+Event.Hook("Console_scout", OnCommandChangeClass("scout", kTeam1Index))
+
 Event.Hook("Console_respawn", OnCommandRespawn)
 Event.Hook("Console_respawn_clear", OnCommandRespawnClear)
 

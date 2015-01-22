@@ -10,7 +10,7 @@ class 'ScoutUpgrade' (CombatUpgrade)
 
 // Define these statically so we can easily access them without instantiating too.
 ScoutUpgrade.upgradeType 		= kCombatUpgradeTypes.Lifeform     			// The type of the upgrade
-ScoutUpgrade.cost 				= { 0 }                              		// cost of the upgrade in points
+ScoutUpgrade.cost 				= { 1 }                              		// cost of the upgrade in points
 ScoutUpgrade.upgradeName 		= "scout"                     				// Text code of the upgrade if using it via console
 ScoutUpgrade.upgradeTitle 		= "SCOUT"               					// Title of the upgrade, e.g. Submachine Gun
 ScoutUpgrade.upgradeDesc 		= "COMBAT_UPGRADE_MARINE_TOOLTIP"				// Description of the upgrade

@@ -49,6 +49,7 @@ Script.Load("lua/ArmorUpgradeMixin.lua")
 Script.Load("lua/SpawnProtectMixin.lua")
 Script.Load("lua/MarineStructureUpgradeMixin.lua")
 Script.Load("lua/EMPMixin.lua")
+Script.Load("lua/Flags/FlagBearerMixin.lua")
 
 if Client then
     Script.Load("lua/TeamMessageMixin.lua")
@@ -190,6 +191,7 @@ AddMixinNetworkVars(ArmorUpgradeMixin, networkVars)
 AddMixinNetworkVars(SpawnProtectMixin, networkVars)
 AddMixinNetworkVars(MarineStructureUpgradeMixin, networkVars)
 AddMixinNetworkVars(EMPMixin, networkVars)
+AddMixinNetworkVars(FlagBearerMixin, networkVars)
 
 function Marine:OnCreate()
 
@@ -226,7 +228,8 @@ function Marine:OnCreate()
 	InitMixin(self, CloakableMixin)
 	InitMixin(self, SpawnProtectMixin)
 	InitMixin(self, MarineStructureUpgradeMixin)
-    
+	InitMixin(self, FlagBearerMixin)
+
     if Server then
     
     	// Server-only mixins
@@ -643,22 +646,15 @@ function Marine:GetPlayerStatusDesc()
     
     if (self:GetIsAlive() == false) then
         return kPlayerStatus.Dead
-    end
-    
-    local weapon = self:GetWeaponInHUDSlot(1)
-    if (weapon) then
-        if (weapon:isa("GrenadeLauncher")) then
-            return kPlayerStatus.GrenadeLauncher
-        elseif (weapon:isa("Rifle")) then
-            return kPlayerStatus.Rifle
-		elseif (weapon:isa("LightMachineGun")) then
-            return kPlayerStatus.LMG
-        elseif (weapon:isa("Shotgun")) then
-            return kPlayerStatus.Shotgun
-        elseif (weapon:isa("Flamethrower")) then
-            return kPlayerStatus.Flamethrower
-        elseif (weapon:isa("Cannon")) then
-            return kPlayerStatus.Cannon
+    else
+    	if (self:isa("Medic")) then
+            return kPlayerStatus.Medic
+        elseif (self:isa("Assault")) then
+            return kPlayerStatus.Assault
+		elseif (self:isa("Engineer")) then
+            return kPlayerStatus.Engineer
+        elseif (self:isa("Scout")) then
+            return kPlayerStatus.Scout
         end
     end
     

@@ -306,6 +306,14 @@ function MarineTeam:InitTechTree()
     self.techTree:AddBuildNode(kTechId.ArmsLab,                   kTechId.CommandStation,                kTechId.None)  
     self.techTree:AddManufactureNode(kTechId.MAC,                 kTechId.RoboticsFactory,                kTechId.None,  true) 
 
+	self.techTree:AddAction(kTechId.Medic,                     kTechId.None,                kTechId.None)
+    self.techTree:AddAction(kTechId.Assault,                     kTechId.None,                kTechId.None)
+    self.techTree:AddAction(kTechId.Engineer,                      kTechId.None,                kTechId.None)
+    self.techTree:AddAction(kTechId.Scout,                      kTechId.None,                kTechId.None)
+	
+	
+	
+	
     self.techTree:AddBuyNode(kTechId.Axe,                         kTechId.None,              kTechId.None)
     self.techTree:AddBuyNode(kTechId.Pistol,                      kTechId.None,                kTechId.None)
     self.techTree:AddBuyNode(kTechId.Rifle,                       kTechId.None,                kTechId.None)
@@ -625,7 +633,7 @@ function MarineTeam:SpawnInitialStructures(techPoint)
 		
 	// Combat: Change initial structures 
 	if GetGamerulesInfo():GetStartWithArmory() then
-		SpawnMarineStructure(self, techPoint, kTechId.Armory, Armory.kMapName, Server.armorySpawnPoints, kSpawnMaxDistance)
+		SpawnMarineStructure(self, techPoint, kTechId.SentryBattery, SentryBattery.kMapName, Server.armorySpawnPoints, kSpawnMaxDistance)
 	end
 	
 	if GetGamerulesInfo():GetStartWithPhaseGate() then
@@ -633,7 +641,7 @@ function MarineTeam:SpawnInitialStructures(techPoint)
 	end
 
 	if GetGamerulesInfo():GetStartWithFlag() then
-		SpawnMarineStructure(self, techPoint, kTechId.Hydra, Hydra.kMapName, Server.flagSpawnPoints, kSpawnMaxDistance)
+		SpawnMarineStructure(self, techPoint, kTechId.Armory, Armory.kMapName, Server.flagSpawnPoints, kSpawnMaxDistance)
 	end
 	
 	// COMBAT MODE: NO!

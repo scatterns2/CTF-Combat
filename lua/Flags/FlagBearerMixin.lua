@@ -39,7 +39,7 @@ if Server then
         if team == kTeam1Index then
             return "JetPack"
         elseif team == kTeam2Index then
-            return "babbler_attach1"
+			return "babbler_attach1"
         else
             Print("GetTeamAttachPoint(team = %d) is an invalid team.", team)
             return nil

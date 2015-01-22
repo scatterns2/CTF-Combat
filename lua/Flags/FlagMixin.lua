@@ -3,7 +3,7 @@
 Script.Load("lua/EquipmentOutline.lua")
 
 FlagMixin = CreateMixin(FlagMixin)
-FlagMixin.type = "Flag"
+FlagMixin.type = "SentryBattery"
 
 FlagMixin.expectedMixins =
 {
