@@ -33,6 +33,13 @@ PlayingTeam.kResearchDisplayTime = 40
  * spawnEntity is the name of the map entity that will be created by default
  * when a player is spawned.
  */
+ 
+ local networkVars = {
+
+	numFlagsCaptured = "integer (0 to 99)",
+
+}
+ 
 function PlayingTeam:Initialize(teamName, teamNumber)
 
     InitMixin(self, TeamDeathMessageMixin)
@@ -695,6 +702,42 @@ local function SpawnResourceTower(self, techPoint)
     
 end
 
+function PlayingTeam:SpawnBaseFlag(self, techPoint)
+
+    local techPointOrigin = Vector(techPoint:GetOrigin())
+    
+    local closestPoint = nil
+    local closestPointDistance = 0
+    
+    for index, current in ientitylist(Shared.GetEntitiesWithClassname("ResourcePoint")) do
+    
+        // The resource point and tech point must be in locations that share the same name.
+        local sameLocation = techPoint:GetLocationName() == current:GetLocationName()
+        if sameLocation then
+        
+            local pointOrigin = Vector(current:GetOrigin())
+            local distance = (pointOrigin - techPointOrigin):GetLength()
+            
+            if current:GetAttached() == nil and closestPoint == nil or distance < closestPointDistance then
+            
+                closestPoint = current
+                closestPointDistance = distance
+                
+            end
+            
+        end
+        
+    end
+    
+    // Now spawn appropriate resource tower there
+    if closestPoint ~= nil then
+        return closestPoint:SpawnFlagForTeam(self) 
+    end
+    
+    return nil
+    
+end
+
 /**
  * Spawn hive or command station at nearest empty tech point to specified team location.
  * Does nothing if can't find any.
@@ -726,7 +769,11 @@ function PlayingTeam:SpawnInitialStructures(techPoint)
     // Spawn tower at nearest unoccupied resource point.
 	// COMBAT: No resource towers.
 
-    
+	local flag = self:SpawnBaseFlag(self, techPoint)
+    if not flag then
+        Print("Warning: Failed to spawn a Base Flag for tech point in location: " .. techPoint:GetLocationName())
+    end
+	
 	local commandStructure = nil
 	
     // Spawn hive/command station at team location.
@@ -1349,6 +1396,9 @@ function PlayingTeam:UpdateSpawnWave(deltaTime)
     end
 
 end
+
+
+
 
 function PlayingTeam:AddFlagCapture()
     self.numFlagsCaptured = self.numFlagsCaptured + 1

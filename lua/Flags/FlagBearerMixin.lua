@@ -53,7 +53,7 @@ if Server then
             self.attachedFlag = flag
             self.attachedFlagId = flag:GetId()
             flag:SetParent(self)
-            flag:SetAttachPoint(GetTeamAttachPoint())
+            flag:SetAttachPoint("JetPack")
             success = true
             self.hasFlag = true
         end

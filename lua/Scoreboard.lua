@@ -523,18 +523,6 @@ local function UpdatePlayerRecords()
             status = Locale.ResolveString("STATUS_COMMANDER")
         elseif playerInfo.status == kPlayerStatus.Exo then
             status = Locale.ResolveString("STATUS_EXO")
-        elseif playerInfo.status == kPlayerStatus.GrenadeLauncher then
-            status = Locale.ResolveString("STATUS_GRENADE_LAUNCHER")
-        elseif playerInfo.status == kPlayerStatus.Rifle then
-            status = Locale.ResolveString("STATUS_RIFLE")
-		elseif playerInfo.status == kPlayerStatus.LMG then
-			status = Locale.ResolveString("STATUS_LMG")
-        elseif playerInfo.status == kPlayerStatus.Shotgun then
-            status = Locale.ResolveString("STATUS_SHOTGUN")
-        elseif playerInfo.status == kPlayerStatus.Flamethrower then
-            status = Locale.ResolveString("STATUS_FLAMETHROWER")
-		elseif playerInfo.status == kPlayerStatus.Cannon then
-            status = Locale.ResolveString("STATUS_CANNON")
         elseif playerInfo.status == kPlayerStatus.Void then
             status = Locale.ResolveString("STATUS_VOID")
         elseif playerInfo.status == kPlayerStatus.Spectator then

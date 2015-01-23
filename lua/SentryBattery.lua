@@ -8,7 +8,7 @@
 //
 // ========= For more information, visit us at http://www.unknownworlds.com =====================
 
-Script.Load("lua/Mixins/ClientModelMixin.lua")
+Script.Load("lua/Mixins/ModelMixin.lua")
 Script.Load("lua/TeamMixin.lua")
 Script.Load("lua/ScriptActor.lua")
 Script.Load("lua/Flags/FlagMixin.lua")
@@ -29,7 +29,7 @@ local networkVars =
 }
 
 AddMixinNetworkVars(BaseModelMixin, networkVars)
-AddMixinNetworkVars(ClientModelMixin, networkVars)
+AddMixinNetworkVars(ModelMixin, networkVars)
 AddMixinNetworkVars(TeamMixin, networkVars)
 AddMixinNetworkVars(FlagMixin, networkVars)
 AddMixinNetworkVars(LiveMixin, networkVars)
@@ -42,7 +42,7 @@ function SentryBattery:OnCreate()
     ScriptActor.OnCreate(self)
     
     InitMixin(self, BaseModelMixin)
-    InitMixin(self, ClientModelMixin)
+    InitMixin(self, ModelMixin)
     InitMixin(self, TeamMixin)
 	InitMixin(self, FlagMixin, { kRecipientType = "Player" })
     InitMixin(self, LiveMixin)
@@ -62,7 +62,7 @@ function SentryBattery:OnInitialized()
 
     ScriptActor.OnInitialized(self)
         
-    self:SetModel(SentryBattery.kModelName, kAnimationGraph)
+    self:SetModel(SentryBattery.kModelName, nil)
 
 	self.kAtBase = true
     self.kCarried = false

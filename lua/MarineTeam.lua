@@ -633,17 +633,13 @@ function MarineTeam:SpawnInitialStructures(techPoint)
 		
 	// Combat: Change initial structures 
 	if GetGamerulesInfo():GetStartWithArmory() then
-		SpawnMarineStructure(self, techPoint, kTechId.SentryBattery, SentryBattery.kMapName, Server.armorySpawnPoints, kSpawnMaxDistance)
+		SpawnMarineStructure(self, techPoint, kTechId.Armory, Armory.kMapName, Server.armorySpawnPoints, kSpawnMaxDistance)
 	end
 	
 	if GetGamerulesInfo():GetStartWithPhaseGate() then
-		SpawnMarineStructure(self, techPoint, kTechId.Armory, Armory.kMapName, Server.phaseGateSpawnPoints, kSpawnMaxDistance)
+		SpawnMarineStructure(self, techPoint, kTechId.PhaseGate, PhaseGate.kMapName, Server.phaseGateSpawnPoints, kSpawnMaxDistance)
 	end
 
-	if GetGamerulesInfo():GetStartWithFlag() then
-		SpawnMarineStructure(self, techPoint, kTechId.Armory, Armory.kMapName, Server.flagSpawnPoints, kSpawnMaxDistance)
-	end
-	
 	// COMBAT MODE: NO!
     /*if Shared.GetCheatsEnabled() and MarineTeam.gSandboxMode then
 
