@@ -20,7 +20,7 @@ SentryBattery.kMapName = "sentrybattery"
 SentryBattery.kRange = 4.0
 
 SentryBattery.kModelName = PrecacheAsset("models/props/flag/flag.model")
-local kAnimationGraph = PrecacheAsset("models/marine/portable_node/portable_node.animation_graph")
+local kAnimationGraph = PrecacheAsset("models/props/flag/flag.animation_graph")
 
 
 
@@ -62,7 +62,7 @@ function SentryBattery:OnInitialized()
 
     ScriptActor.OnInitialized(self)
         
-    self:SetModel(SentryBattery.kModelName, nil)
+    self:SetModel(SentryBattery.kModelName, kAnimationGraph)
 
 	self.kAtBase = true
     self.kCarried = false
@@ -120,12 +120,19 @@ function SentryBattery:OnUpdate(deltaTime)
     end
 end
 
+function SentryBattery:OnUpdateAnimationInput(modelMixin)
+    
+	//Print("%s", self.kAtBase)
+	//Print("%s", self.kCarried)
+	modelMixin:SetAnimationInput("deploy", self.kAtBase)
+    modelMixin:SetAnimationInput("pack", self.kCarried)
+	modelMixin:SetAnimationInput("deploy", self.kReturning)
+
+end
+
 if Server then
     function SentryBattery:SetConstructionComplete() 
     end
 end   
-
-
-
 
 Shared.LinkClassToMap("SentryBattery", SentryBattery.kMapName, networkVars)

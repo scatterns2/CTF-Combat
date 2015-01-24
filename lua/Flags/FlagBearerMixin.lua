@@ -25,7 +25,6 @@ function FlagBearerMixin:__initmixin()
 
     self.attachedFlag = nil
     self.hasFlag = false
-    team = self:GetTeamNumber()
 
 end
 
@@ -35,13 +34,14 @@ end
 
 if Server then
     
-    local function GetTeamAttachPoint()
+     function FlagBearerMixin:GetFlagAttachPointName()
+	 local team = self:GetTeamNumber()
         if team == kTeam1Index then
             return "JetPack"
         elseif team == kTeam2Index then
 			return "babbler_attach1"
         else
-            Print("GetTeamAttachPoint(team = %d) is an invalid team.", team)
+            Print("GetFlagAttachPointName(team = %d) is an invalid team.", team)
             return nil
         end
     end
@@ -53,7 +53,7 @@ if Server then
             self.attachedFlag = flag
             self.attachedFlagId = flag:GetId()
             flag:SetParent(self)
-            flag:SetAttachPoint("JetPack")
+            flag:SetAttachPoint(self:GetFlagAttachPointName())
             success = true
             self.hasFlag = true
         end
@@ -99,7 +99,7 @@ if Server then
         if team ~= 0 then
             if (self.attachedFlag ~= nil) then
                 local flag = self.attachedFlag
-                local origin, success = self:GetAttachPointOrigin(GetTeamAttachPoint())
+                local origin, success = self:GetAttachPointOrigin(self:GetFlagAttachPointName())
                 if origin then
                     flag:SetOrigin(origin)
                 end   

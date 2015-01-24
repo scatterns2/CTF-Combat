@@ -131,6 +131,7 @@ function FlagMixin:OnTaken(player)
     if self.kAtBase then
         self.kAtBase = false
     end
+	
     player:AddScore(kPickUpFlagScore)
 end
 
@@ -150,16 +151,12 @@ function FlagMixin:ReturnFlag()
     if Server then
         local team = self:GetTeam()
         local techPoint = team:GetInitialTechPoint()
-        local structure = techPoint:GetAttached()
-        local numSpawns = table.maxn(structure.spawnPointList)
-        local spawnPoint = nil
-
-        local spawnIndex = NetworkRandomInt(1, numSpawns)
-        local spawnPoint = structure.spawnPointList[spawnIndex]
-                 
-        // Now spawn the flag
-        if spawnPoint ~= nil then
-            return team:SpawnFlagForTeam(spawnPoint) 
+        for index, current in ientitylist(Shared.GetEntitiesWithClassname("ResourcePoint")) do
+            local sameLocation = (techPoint:GetLocationName() == current:GetLocationName())
+            if sameLocation then
+                current:SetAttached(nil)
+                current:SpawnFlagForTeam(team)
+            end
         end
     end
     self:_DestroySelf() 

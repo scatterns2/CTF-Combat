@@ -10,7 +10,6 @@
 
 // Game rules
 kInitialTimeLeft = 1500
-kCaptureWinTotal = 5
 -- Use 0 for no limit
 kOvertimeLimit = 0
 kOverTimeSpeed = 1.1
@@ -86,6 +85,14 @@ kAlienVisionEnergyRegenMod = 1
 kCamouflageVelocity = 4
 kCamouflageTime = 2
 kCamouflageUncloakFactor = 2 / 3
+
+-- CTF Mode Specific
+kPickUpFlagScore = 10
+kReturnFlagScore = 20
+kCaptureFlagScore = 50
+
+kCaptureWinTotal = 2
+
 
 /* Healing/Welding */
 // Gorge Healspray heals more (and makes a bit more damage)
