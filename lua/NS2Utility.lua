@@ -2827,6 +2827,7 @@ function FormatMapName(mapName)
 	-- See http://www.lua.org/manual/5.2/manual.html#6.4.1
 	mapName = string.gsub(mapName,"^co_", "")
 	mapName = string.gsub(mapName,"^cp_", "")
+	mapName = string.gsub(mapName,"^ctf_", "")
 	mapName = string.gsub(mapName,"^koth_", "")
 	return mapName
 end

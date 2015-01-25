@@ -11,7 +11,7 @@ Script.Load("lua/GenericGamerules.lua")
 
 class 'CombatCTFGamerules' (GenericGamerules)
 
-CombatCTFGamerules.kMapName = "combatdeathmatch_gamerules"
+CombatCTFGamerules.kMapName = "combatctf_gamerules"
 CombatCTFGamerules.kDefaultTimeLimit = 0
 
 local networkVars =
@@ -28,12 +28,13 @@ if Server then
 		self.powerPointsTakeDamage = true
 		self.startWithArmory = true
 		self.startWithPhaseGate = true
+		self.startWithFlag = true
 		self.startWithCommandChair = true
 		self.startWithShift = true
 		self.startWithCrag = true
 		self.startWithHive = true
 		self.commandStructuresTakeDamage = false
-		self.combatGameType = kCombatGameType.CombatCTF
+		self.combatGameType = kCombatGameType.CombatDeathmatch
 		self.timeLimit = CombatCTFGamerules.kDefaultTimeLimit
 	
 		GenericGamerules.OnCreate(self)
@@ -45,21 +46,16 @@ if Server then
 	end
 	
 	function CombatCTFGamerules:GetGameModeText()
-		return { "Fight until the other team's base is destroyed!" }
-	end
-
-	local overrideResetGame = GenericGamerules.ResetGame
-	function CombatCTFGamerules:ResetGame()
-		
-		overrideResetGame(self)
-		
-		// Lock the command chairs and reveal the objectives.
-		self:RevealCommandChairLocations()
-		self:LockCommandChairs()
-		
+		return { "Capture the Enemy Flag, Protect your own!" }
 	end
 	
-	function CombatDeathmatchGamerules:CheckGameEnd()
+    function CombatCTFGamerules:EndGame(winningTeam)
+        Generic.Gamerules:EndGame(winningTeam)
+	    self.team1Won = nil
+        self.team2Won = nil
+    end
+	
+	function CombatCTFGamerules:CheckGameEnd()
 	
 	    GenericGamerules.CheckGameEnd(self)
         if self:GetGameStarted() and self.timeGameEnded == nil and not Shared.GetCheatsEnabled() and not self.preventGameEnd then
@@ -96,7 +92,7 @@ if Server then
         end
     end
 
-	function CombatDeathmatchGamerules:ResetGame()
+	function CombatCTFGamerules:ResetGame()
 		
 		GenericGamerules.ResetGame(self)
 		
@@ -105,7 +101,6 @@ if Server then
 		self:LockCommandChairs()
 		
 	end
-
 
 end
 

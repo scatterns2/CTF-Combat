@@ -53,6 +53,9 @@ Script.Load("lua/TeamMessenger.lua")
 Script.Load("lua/TokenBucket.lua")
 Script.Load("lua/RingBuffer.lua")
 Script.Load("lua/BuildUtility.lua")
+Script.Load("lua/AlienTeamInfo.lua")
+Script.Load("lua/TeamInfo.lua")
+Script.Load("lua/GameInfo.lua")
 
 Script.Load("lua/MissingClasses.lua")
 
@@ -271,9 +274,8 @@ Script.Load("lua/PowerPoint.lua")
 Script.Load("lua/SentryBattery.lua")
 Script.Load("lua/NS2Utility.lua")
 Script.Load("lua/WeaponUtility.lua")
-Script.Load("lua/TeamInfo.lua")
-Script.Load("lua/GameInfo.lua")
-Script.Load("lua/AlienTeamInfo.lua")
+
+
 Script.Load("lua/PathingUtility.lua")
 Script.Load("lua/HotloadConsole.lua")
 Script.Load("lua/ServerPerformanceData.lua")

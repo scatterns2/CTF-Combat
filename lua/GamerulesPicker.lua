@@ -50,10 +50,10 @@ if Server then
 			return CombatDeathmatchGamerules.kMapName
 		elseif self.gameType == kCombatGameType.CombatCapture then
 			return CombatCaptureGamerules.kMapName
-		elseif self.gameType == kCombatGameType.CombatCTF then
-			return CombatCTFGamerules.kMapName	
 		elseif self.gameType == kCombatGameType.Infection then
 			return InfectionGamerules.kMapName
+		elseif self.gameType == kCombatGameType.CombatCTF then
+			return CombatCTFGamerules.kMapName	
 		end
 	end
 	
