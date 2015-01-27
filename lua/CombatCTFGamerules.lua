@@ -34,7 +34,7 @@ if Server then
 		self.startWithCrag = true
 		self.startWithHive = true
 		self.commandStructuresTakeDamage = false
-		self.combatGameType = kCombatGameType.CombatDeathmatch
+		self.combatGameType = kCombatGameType.CombatCTF
 		self.timeLimit = CombatCTFGamerules.kDefaultTimeLimit
 	
 		GenericGamerules.OnCreate(self)

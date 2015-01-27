@@ -19,8 +19,8 @@ class 'SentryBattery' (ScriptActor)
 SentryBattery.kMapName = "sentrybattery"
 SentryBattery.kRange = 4.0
 
-SentryBattery.kModelName = PrecacheAsset("models/props/flag/flag.model")
-local kAnimationGraph = PrecacheAsset("models/props/flag/flag.animation_graph")
+SentryBattery.kModelName = PrecacheAsset("models/marine/portable_node/portable_node.model")
+local kAnimationGraph = PrecacheAsset("models/props/portable_node/portable_node.animation_graph")
 
 
 

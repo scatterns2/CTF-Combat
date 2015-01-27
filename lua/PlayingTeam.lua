@@ -781,7 +781,7 @@ function PlayingTeam:SpawnInitialStructures(techPoint)
 		commandStructure = SpawnCommandStructure(techPoint, self:GetTeamNumber())
 	end
     
-    return flag, commandStructure
+    return tower, commandStructure
     
 end
 
