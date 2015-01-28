@@ -50,9 +50,9 @@ if Server then
 	end
 	
     function CombatCTFGamerules:EndGame(winningTeam)
-        Generic.Gamerules:EndGame(winningTeam)
 	    self.team1Won = nil
         self.team2Won = nil
+        GenericGamerules.EndGame(self, winningTeam)
     end
 	
 	function CombatCTFGamerules:CheckGameEnd()

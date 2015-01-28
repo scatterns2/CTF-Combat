@@ -62,6 +62,10 @@ kDamageReductionPerDeath = 0.10
 
 kSpawnLifeformPenalties = {}
 kSpawnLifeformPenalties["Marine"] = 0
+kSpawnLifeformPenalties["Assault"] = 0
+kSpawnLifeformPenalties["Recon"] = 0
+kSpawnLifeformPenalties["Medic"] = 0
+kSpawnLifeformPenalties["Engineer"] = 0
 kSpawnLifeformPenalties["DevouredPlayer"] = 0
 kSpawnLifeformPenalties["JetpackMarine"] = 0
 kSpawnLifeformPenalties["Exo"] = 5
@@ -106,6 +110,7 @@ kHiveCCHealRate = 1
 // The rate at which players gain XP for healing... relative to damage dealt.
 kHealXpRate = .10
 kPlayerHealMultiplier = 10 --you gain 10x as much experience for the same heal amount on a player as you do on a structure
+kStructureHealSprayMultiplier = 51
 
 // HEALTH OVERRIDES
 kClogHealth = 500  kClogArmor = 0 kClogPointValue = 5

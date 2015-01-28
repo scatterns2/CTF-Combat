@@ -199,6 +199,8 @@ function PlayingTeam:ResetTeam()
 	self:ResetUpgradeCounts()
     self.commandStructure = commandStructure
     
+    self.numFlagsCaptured = 0
+    
     return commandStructure
     
 end
