@@ -256,7 +256,7 @@ Script.Load("lua/Jetpack.lua")
 Script.Load("lua/Seasonal/Seasonal.lua")
 
 // Halloween 2014
-Script.Load("lua/Weapons/CandyThrower.lua")
+//Script.Load("lua/Weapons/CandyThrower.lua")
 
 local GRENADES_ENABLED = true // false
 if GRENADES_ENABLED then
