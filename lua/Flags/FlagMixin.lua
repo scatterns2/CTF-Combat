@@ -132,11 +132,11 @@ function FlagMixin:OnTaken(player)
         self.kAtBase = false
     end
 	
-    player:AddScore(kPickUpFlagScore)
+    player:AddXp(kPickUpFlagScore)
 end
 
 function FlagMixin:OnPlayerReturn(player)
-    player:AddScore(kReturnFlagScore)
+    player:AddXp(kReturnFlagScore)
     self:ReturnFlag()
 end
 

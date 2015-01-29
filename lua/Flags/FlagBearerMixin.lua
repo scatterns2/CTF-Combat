@@ -76,7 +76,7 @@ if Server then
     function FlagBearerMixin:OnCaptureFlag()
         local flag = self.attachedFlag
         flag:ReturnFlag()
-        self:AddScore(kCaptureFlagScore)
+        self:AddXp(kCaptureFlagScore)
         self:DetachOnCapture()
         self:GetTeam():AddFlagCapture()
     end

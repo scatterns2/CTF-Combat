@@ -95,9 +95,13 @@ function Flag:OnUpdate(deltaTime)
     end
 end
 
+function Flag:OnUpdateAnimationInput(modelMixin)
+    PROFILE("Flag:OnUpdateAnimationInput")    
+end
+
 if Server then
     function Flag:SetConstructionComplete() 
     end
-end   
+end
 
 Shared.LinkClassToMap("Flag", Flag.kMapName, networkVars)

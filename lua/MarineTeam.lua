@@ -9,7 +9,7 @@
 //
 // ========= For more information, visit us at http://www.unknownworlds.com =====================
 
-Script.Load("lua/Marine.lua")
+Script.Load("lua/Assault.lua")
 Script.Load("lua/PlayingTeam.lua")
 
 class 'MarineTeam' (PlayingTeam)
@@ -65,7 +65,7 @@ function MarineTeam:Initialize(teamName, teamNumber)
 
     PlayingTeam.Initialize(self, teamName, teamNumber)
     
-    self.respawnEntity = Marine.kMapName
+    self.respawnEntity = Assault.kMapName
     
     self.updateMarineArmor = false
     
