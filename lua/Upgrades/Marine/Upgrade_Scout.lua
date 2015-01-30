@@ -110,7 +110,7 @@ function ScoutUpgrade:OnAdd(player, isReapply)
 end
 
 function ScoutUpgrade:GetEventParams()
-	return { description = self:GetEventTitle(), bottomText = "You are now a Marine!" }
+	return { description = self:GetEventTitle(), bottomText = "You are now a Scout Class!" }
 end
 
 

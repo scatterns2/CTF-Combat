@@ -15,9 +15,10 @@ if Server then
     Script.Load("lua/Medic_Server.lua")
 end
 
-Medic.kHealth = 125
-Medic.kBaseArmor = 120
-Medic.kRunMaxSpeed = 8             
+Medic.kHealth = 200
+Medic.kBaseArmor = 0
+Medic.kRunMaxSpeed = 6.5             
+Medic.kWalkMaxSpeed = 5.5
 
 local networkVars =
 {      

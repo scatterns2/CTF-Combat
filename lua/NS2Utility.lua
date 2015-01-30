@@ -2342,7 +2342,6 @@ function BuildClassToGrid()
 
     ClassToGrid["ReadyRoomPlayer"] = { 1, 2 }
     ClassToGrid["Marine"] = { 1, 2 }
-    ClassToGrid["Medic"] = { 2, 2 }
     ClassToGrid["JetpackMarine"] = { 3, 2 }
     ClassToGrid["Exo"] = { 2, 2 }
     ClassToGrid["MAC"] = { 4, 2 }
@@ -2410,7 +2409,11 @@ function BuildClassToGrid()
     
     ClassToGrid["Player"] = { 7, 8 }
     ClassToGrid["CapturePoint"] = { 4, 8  }
-    
+    ClassToGrid["Medic"] = { 1, 2 }
+    ClassToGrid["Assault"] = { 1, 2 }
+    ClassToGrid["Scout"] = { 1, 2 }
+    ClassToGrid["Engineer"] = { 1, 2 }
+
     return ClassToGrid
     
 end

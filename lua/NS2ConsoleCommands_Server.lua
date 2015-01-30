@@ -637,7 +637,7 @@ local function OnCommandRespawn(client)
         local teamNumber = kTeam2Index
         local extraValues = nil
         
-        if player.lastClass == "exo" or player.lastClass == "marine" or player.lastClass == "jetpackmarine" then
+        if player.lastClass == "exo" or player.lastClass == "marine" or player.lastClass == "jetpackmarine" or player.lastClass == "medic" or player.lastClass == "assault" or player.lastClass == "Scout" or player.lastClass == "engineer" then
             teamNumber = kTeam1Index
             
             if player.lastClass == "exo" then
@@ -1700,7 +1700,6 @@ Event.Hook("Console_lerk", OnCommandChangeClass("lerk", kTeam2Index))
 Event.Hook("Console_fade", OnCommandChangeClass("fade", kTeam2Index))
 Event.Hook("Console_onos", OnCommandChangeClass("onos", kTeam2Index))
 Event.Hook("Console_marine", OnCommandChangeClass("marine", kTeam1Index))
-Event.Hook("Console_medic", OnCommandChangeClass("medic", kTeam1Index))
 
 
 Event.Hook("Console_jetpack", OnCommandChangeClass("jetpackmarine", kTeam1Index))

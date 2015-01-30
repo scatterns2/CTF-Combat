@@ -11,12 +11,12 @@ function Assault:InitWeapons()
 
     Player.InitWeapons(self)
     
-    self:GiveItem(Cannon.kMapName)
+    self:GiveItem(Rifle.kMapName)
     self:GiveItem(Pistol.kMapName)
     self:GiveItem(Knife.kMapName)
     self:GiveItem(Builder.kMapName)
     
     self:SetQuickSwitchTarget(Pistol.kMapName)
-    self:SetActiveWeapon(Cannon.kMapName)
+    self:SetActiveWeapon(Rifle.kMapName)
 
 end

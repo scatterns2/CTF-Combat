@@ -108,13 +108,11 @@ function MedicUpgrade:OnAdd(player, isReapply)
 		end
 	end
 	
-	
-	
 	return marine
 end
 
 function MedicUpgrade:GetEventParams()
-	return { description = self:GetEventTitle(), bottomText = "You are now a Marine!" }
+	return { description = self:GetEventTitle(), bottomText = "You are now a Scout!" }
 end
 
 

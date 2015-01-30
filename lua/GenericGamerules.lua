@@ -303,7 +303,7 @@ if Server then
     end
 	
 	local kMarineStartingUps = {}
-	table.insert(kMarineStartingUps, "marine") 
+	table.insert(kMarineStartingUps, "assault") 
 	
 	function GenericGamerules:GetMarineStartingUpgrades()
 		return kMarineStartingUps

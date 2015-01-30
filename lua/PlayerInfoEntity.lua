@@ -130,10 +130,7 @@ function PlayerInfoEntity:UpdateScore()
                     self.currentTech = bit.bor(self.currentTech, techUpgradesBitmask[kTechId.Parasite])
                 end
             
-                if scorePlayer:isa("Medic") then
-                    self.currentTech = bit.bor(self.currentTech, techUpgradesBitmask[kTechId.Medic])
-                end
-                
+                         
                 // Mapname to TechId list of displayed weapons
                 local displayWeapons = { { Welder.kMapName, kTechId.Welder },
                 { ClusterGrenadeThrower.kMapName, kTechId.ClusterGrenade },

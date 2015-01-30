@@ -87,7 +87,7 @@ Marine.kSprintTiredEndFemale = PrecacheAsset("sound/NS2.fev/marine/common/sprint
 
 Marine.kEffectNode = "fxnode_playereffect"
 Marine.kHealth = kMarineHealth
-Marine.kBaseArmor = kMarineArmor
+Marine.kBaseArmor = 0
 Marine.kArmorPerUpgradeLevel = kArmorPerUpgradeLevel
 Marine.kMaxSprintFov = 95
 // Player phase delay - players can only teleport this often

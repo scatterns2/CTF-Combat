@@ -86,7 +86,7 @@ function AssaultUpgrade:OnAdd(player, isReapply)
 	
 	// Give the rifle if the marine doesn't have it already
 	if giveRifle then
-		local rifleUpgrade = player:GetUpgradeByName("Cannon")
+		local rifleUpgrade = player:GetUpgradeByName("rifle")
 		if rifleUpgrade then
 			marine:BuyUpgrade(rifleUpgrade:GetId(), true, true)
 		end
@@ -112,7 +112,7 @@ function AssaultUpgrade:OnAdd(player, isReapply)
 end
 
 function AssaultUpgrade:GetEventParams()
-	return { description = self:GetEventTitle(), bottomText = "You are now a Marine!" }
+	return { description = self:GetEventTitle(), bottomText = "You are now an Assault Class!" }
 end
 
 

@@ -5,7 +5,8 @@
 //  and Unknown Worlds Entertainment Inc.
 //
 //________________________________
-						
+	
+	
 class 'EngineerUpgrade' (CombatUpgrade)
 
 // Define these statically so we can easily access them without instantiating too.
@@ -80,20 +81,18 @@ function EngineerUpgrade:OnAdd(player, isReapply)
 	end
 	
 	// Switch player to marine if they're not one already
-	local marine = player
-	if not player:isa("Engineer") then
-		local percent = player:GetLifePercent()
-		player:OnDestroy()
-		marine = player:Replace(Engineer.kMapName, player:GetTeamNumber(), false, player:GetOrigin())
-		marine:SetHealth(marine:GetMaxHealth() * percent)
-		marine:SetArmor(marine:GetMaxArmor() * percent)
-	end
+	local engineer = player
+	local percent = player:GetLifePercent()
+	player:OnDestroy()
+	engineer = player:Replace(Engineer.kMapName, player:GetTeamNumber(), nil, player:GetOrigin())
+	engineer:SetHealth(engineer:GetMaxHealth() * percent)
+	engineer:SetArmor(engineer:GetMaxArmor() * percent)
 	
 	// Give the rifle if the marine doesn't have it already
 	if giveRifle then
 		local rifleUpgrade = player:GetUpgradeByName("Flamethrower")
 		if rifleUpgrade then
-			marine:BuyUpgrade(rifleUpgrade:GetId(), true, true)
+			engineer:BuyUpgrade(rifleUpgrade:GetId(), true, true)
 		end
 	end
 
@@ -101,7 +100,7 @@ function EngineerUpgrade:OnAdd(player, isReapply)
 	if givePistol then
 		local pistolUpgrade = player:GetUpgradeByName("pistol")
 		if pistolUpgrade then
-			marine:BuyUpgrade(pistolUpgrade:GetId(), true, true)
+			engineer:BuyUpgrade(pistolUpgrade:GetId(), true, true)
 		end
 	end
 	
@@ -109,7 +108,7 @@ function EngineerUpgrade:OnAdd(player, isReapply)
 	if giveKnife then
 		local welderUpgrade = player:GetUpgradeByName("welder")
 		if welderUpgrade then
-			marine:BuyUpgrade(welderUpgrade:GetId(), true, true)
+			engineer:BuyUpgrade(welderUpgrade:GetId(), true, true)
 		end
 	end
 	
@@ -117,15 +116,15 @@ function EngineerUpgrade:OnAdd(player, isReapply)
 	if giveBuild then
 		local structureUpgrade = player:GetUpgradeByName("MarineStructureAbility")
 		if structureUpgrade then
-			marine:BuyUpgrade(structureUpgrade:GetId(), true, true)
+			engineer:BuyUpgrade(structureUpgrade:GetId(), true, true)
 		end
 	end
 	
-	return marine
+	return engineer
 end
 
 function EngineerUpgrade:GetEventParams()
-	return { description = self:GetEventTitle(), bottomText = "You are now a Marine!" }
+	return { description = self:GetEventTitle(), bottomText = "You are now a Engineer Class!" }
 end
 
 

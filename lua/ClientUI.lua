@@ -16,7 +16,7 @@ local kShowOnTeam = { }
 kShowOnTeam["all"] = { GUIGameEnd = true, GUIScoreboard = true, GUIDeathMessages = true, 
                        GUIChat = true, GUIVoiceChat = true, GUIMinimapFrame = true, GUIMapAnnotations = true,
                        GUICommunicationStatusIcons = true, GUIUnitStatus = true, GUIDeathScreen = true,
-                       GUIStartVoteMenu = true, GUIVoteMenu = true }
+                       GUIStartVoteMenu = true, GUIVoteMenu = true,  }
 
 kShowOnTeam[kTeamReadyRoom] = { GUIReadyRoomOrders = true }
 kShowOnTeam[kTeam1Index] = {}
@@ -41,18 +41,19 @@ end
 local kShowAsClass = { }
 kShowAsClass["Marine"] = { ["Hud/Marine/GUIMarineHUD"] = true, GUIPoisonedFeedback = true, GUIPickups = true,
                            GUISensorBlips = true, GUIObjectiveDisplay = true, GUIProgressBar = true, GUIRequestMenu = true,
-                           GUIWaypoints = true, GUIExperienceBar = true }
+                           GUIWaypoints = true, GUIExperienceBar = true,}
 kShowAsClass["JetpackMarine"] = { GUIJetpackFuel = true }
 kShowAsClass["Exo"] = { GUIExoThruster = true, ["Hud/Marine/GUIMarineHUD"] = true, ["Hud/Marine/GUIExoHUD"] = true, GUIProgressBar = true, GUIRequestMenu = true, GUIWaypoints = true, GUIExperienceBar = true }
 kShowAsClass["MarineSpectator"] = { GUIRequestMenu = true, GUIExperienceBar = true }
 kShowAsClass["Alien"] = { GUIObjectiveDisplay = true, GUIProgressBar = true, GUIRequestMenu = true, GUIWaypoints = true, GUIAlienHUD = true,
                           GUIEggDisplay = true, GUIRegenerationFeedback = true, GUIExperienceBar = true, GUIAuraDisplay = true }
-kShowAsClass["AlienSpectator"] = { GUIRequestMenu = true, GUIExperienceBar = true }
+kShowAsClass["AlienSpectator"] = { GUIRequestMenu = true, GUIExperienceBar = true,  }
 kShowAsClass["Onos"] = { GUIDevour = true }
 kShowAsClass["DevouredPlayer"] = { GUIDevour = true }
 kShowAsClass["ReadyRoomPlayer"] = { }
 kShowAsClass["TeamSpectator"] = { }
 kShowAsClass["Spectator"] = { }
+
 
 
 // Any lua file loaded on demand should be listed here to avoid being loaded after game has started
@@ -307,7 +308,7 @@ local function AddScripts(forPlayer)
         
             if CheckPlayerIsOnTeam(forPlayer, kTeam1Index) or  CheckPlayerIsOnTeam(forPlayer, kTeam2Index) then   
                 gameRulesGuis = {  
-                                "GUIObjectiveScoreboard"
+                                "GUIObjectiveScoreboardCTF"
                                 }
             end        
         

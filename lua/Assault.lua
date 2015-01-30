@@ -15,9 +15,10 @@ if Server then
     Script.Load("lua/Assault_Server.lua")
 end
 
-Assault.kHealth = 200
-Assault.kBaseArmor = 120
-Assault.kRunMaxSpeed = 8             
+Assault.kHealth = 300
+Assault.kBaseArmor = 0
+Assault.kRunMaxSpeed = 6.5             
+Assault.kWalkMaxSpeed = 4.5            
 
 local networkVars =
 {      
@@ -35,5 +36,7 @@ function Assault:OnInitialized()
     Marine.OnInitialized(self)
    
 end
+
+
 
 Shared.LinkClassToMap("Assault", Assault.kMapName, networkVars, true)

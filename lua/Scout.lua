@@ -15,10 +15,10 @@ if Server then
     Script.Load("lua/Scout_Server.lua")
 end
 
-Scout.kHealth = 80
-Scout.kBaseArmor = 120
-Scout.kRunMaxSpeed = 8             
-Scout.kWalkMaxSpeed = 5
+Scout.kHealth = 160
+Scout.kBaseArmor = 0
+Scout.kRunMaxSpeed = 8.5            
+Scout.kWalkMaxSpeed = 7
 
 local networkVars =
 {      

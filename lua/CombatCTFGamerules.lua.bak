@@ -50,9 +50,9 @@ if Server then
 	end
 	
     function CombatCTFGamerules:EndGame(winningTeam)
+        GenericGamerules.EndGame(winningTeam)
 	    self.team1Won = nil
         self.team2Won = nil
-        GenericGamerules.EndGame(self, winningTeam)
     end
 	
 	function CombatCTFGamerules:CheckGameEnd()
@@ -99,15 +99,6 @@ if Server then
 		// Lock the command chairs and reveal the objectives.
 		self:RevealCommandChairLocations()
 		self:LockCommandChairs()
-		
-	end
-	
-	function CombatCTFGamerules:GetTeamFlags()
-	
-		local team1Points = GetGamerules():GetTeam1():GetNumFlagsCaptured()
-		local team2Points = GetGamerules():GetTeam2():GetNumFlagsCaptured()
-
-		return team1Points, team2Points
 		
 	end
 
