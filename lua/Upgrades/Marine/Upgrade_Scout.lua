@@ -6,7 +6,7 @@
 //
 //________________________________
 						
-class 'ScoutUpgrade' (CombatUpgrade)
+class 'ScoutUpgrade' (CombatMarineClassUpgrade)
 
 // Define these statically so we can easily access them without instantiating too.
 ScoutUpgrade.upgradeType 		= kCombatUpgradeTypes.Lifeform     			// The type of the upgrade
@@ -20,6 +20,7 @@ ScoutUpgrade.minPlayerLevel 	= 0											// Controls whether this upgrade requ
 ScoutUpgrade.rowOrder 			= 0											// Controls the horizontal position on the menu
 ScoutUpgrade.texture  			= PrecacheAsset("ui/buymenu/Icons/Icon_Marine_Active.dds")
 ScoutUpgrade.mustBeNearTechPoint = true
+ScoutUpgrade.isClassUpgrade 	= true						--Lifeforms, Marine and Exo are all classes
 ScoutUpgrade.uniqueSlot 		= kUpgradeUniqueSlot.Class
 ScoutUpgrade.vidDesc			= "videos/Marines_MinigunExo.webm"
 ScoutUpgrade.requirements		= {}
@@ -43,13 +44,15 @@ function ScoutUpgrade:Initialize()
 	self.vidDesc = ScoutUpgrade.vidDesc
 	self.vidDesc = ScoutUpgrade.vidDesc
 	self.requirements = ScoutUpgrade.requirements
+	self.isClassUpgrade = ScoutUpgrade.isClassUpgrade
+
 	
 end
 
 function ScoutUpgrade:GetClassName()
 	return "ScoutUpgrade"
 end
-
+/*
 function ScoutUpgrade:OnAdd(player, isReapply)
 	// Check whether we'll want to give the player their rifle
 	local giveRifle = false
@@ -108,7 +111,7 @@ function ScoutUpgrade:OnAdd(player, isReapply)
 	
 	return marine
 end
-
+*/
 function ScoutUpgrade:GetEventParams()
 	return { description = self:GetEventTitle(), bottomText = "You are now a Scout Class!" }
 end

@@ -7,7 +7,7 @@
 //________________________________
 	
 	
-class 'EngineerUpgrade' (CombatUpgrade)
+class 'EngineerUpgrade' (CombatMarineClassUpgrade)
 
 // Define these statically so we can easily access them without instantiating too.
 EngineerUpgrade.upgradeType 		= kCombatUpgradeTypes.Lifeform     			// The type of the upgrade
@@ -50,7 +50,7 @@ end
 function EngineerUpgrade:GetClassName()
 	return "EngineerUpgrade"
 end
-
+/*
 function EngineerUpgrade:OnAdd(player, isReapply)
 	// Check whether we'll want to give the player their rifle
 	local giveRifle = false
@@ -122,7 +122,7 @@ function EngineerUpgrade:OnAdd(player, isReapply)
 	
 	return engineer
 end
-
+*/
 function EngineerUpgrade:GetEventParams()
 	return { description = self:GetEventTitle(), bottomText = "You are now a Engineer Class!" }
 end

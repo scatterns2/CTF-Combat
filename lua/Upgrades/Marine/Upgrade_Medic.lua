@@ -6,7 +6,7 @@
 //
 //________________________________
 						
-class 'MedicUpgrade' (CombatUpgrade)
+class 'MedicUpgrade' (CombatMarineClassUpgrade)
 
 // Define these statically so we can easily access them without instantiating too.
 MedicUpgrade.upgradeType 		= kCombatUpgradeTypes.Lifeform     			// The type of the upgrade
@@ -20,7 +20,7 @@ MedicUpgrade.minPlayerLevel 	= 0											// Controls whether this upgrade requ
 MedicUpgrade.rowOrder 			= 0											// Controls the horizontal position on the menu
 MedicUpgrade.texture  			= PrecacheAsset("ui/buymenu/Icons/Icon_Marine_Active.dds")
 MedicUpgrade.mustBeNearTechPoint = true
-MedicUpgrade.isClassUpgrade = true						--Lifeforms, Marine and Exo are all classes
+MedicUpgrade.isClassUpgrade 	= true						--Lifeforms, Marine and Exo are all classes
 MedicUpgrade.uniqueSlot 		= kUpgradeUniqueSlot.Class
 MedicUpgrade.vidDesc			= "videos/Marines_MinigunExo.webm"
 MedicUpgrade.requirements		= {}
@@ -51,7 +51,7 @@ end
 function MedicUpgrade:GetClassName()
 	return "MedicUpgrade"
 end
-
+/*
 function MedicUpgrade:OnAdd(player, isReapply)
 	// Check whether we'll want to give the player their rifle
 	local giveRifle = false
@@ -110,7 +110,7 @@ function MedicUpgrade:OnAdd(player, isReapply)
 	
 	return marine
 end
-
+*/
 function MedicUpgrade:GetEventParams()
 	return { description = self:GetEventTitle(), bottomText = "You are now a Scout!" }
 end

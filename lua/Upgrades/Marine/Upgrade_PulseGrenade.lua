@@ -22,7 +22,7 @@ PulseGrenadeUpgrade.rowOrder 		= 2																	// Controls the horizontal po
 PulseGrenadeUpgrade.texture  		= PrecacheAsset("ui/buymenu/Icons/Icon_Grenade3_Active.dds")
 PulseGrenadeUpgrade.vidDesc			= "videos/Marines_PulseGrenade.webm"
 PulseGrenadeUpgrade.detailImage		= "ui/buymenu/Background/MarineCenters/Marine_BM_Center_Pulse.dds"
-PulseGrenadeUpgrade.requirements		= {"engineer"}
+PulseGrenadeUpgrade.requirements		= {"scout"}
 
 function PulseGrenadeUpgrade:Initialize()
 

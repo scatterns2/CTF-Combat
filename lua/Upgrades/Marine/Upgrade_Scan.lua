@@ -23,7 +23,7 @@ ScanUpgrade.vidDesc			= "videos/Marines_Scan.webm"
 ScanUpgrade.compatibleWithExo = true
 ScanUpgrade.disallowedGameModes = { kCombatGameType.Infection }
 ScanUpgrade.hideUpgrade = false
-ScanUpgrade.requirements		= {"engineer"}
+ScanUpgrade.requirements		= {"scout"}
 
 function ScanUpgrade:Initialize()
 

@@ -6,7 +6,7 @@
 //
 //________________________________
 						
-class 'AssaultUpgrade' (CombatUpgrade)
+class 'AssaultUpgrade' (CombatMarineClassUpgrade)
 
 // Define these statically so we can easily access them without instantiating too.
 AssaultUpgrade.upgradeType 			= kCombatUpgradeTypes.Lifeform     			// The type of the upgrade
@@ -51,7 +51,7 @@ end
 function AssaultUpgrade:GetClassName()
 	return "AssaultUpgrade"
 end
-
+/*
 function AssaultUpgrade:OnAdd(player, isReapply)
 	// Check whether we'll want to give the player their rifle
 	local giveRifle = false
@@ -110,7 +110,7 @@ function AssaultUpgrade:OnAdd(player, isReapply)
 	
 	return marine
 end
-
+*/
 function AssaultUpgrade:GetEventParams()
 	return { description = self:GetEventTitle(), bottomText = "You are now an Assault Class!" }
 end

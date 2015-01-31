@@ -11,13 +11,11 @@ function Engineer:InitWeapons()
 
     Player.InitWeapons(self)
     
-    self:GiveItem(Flamethrower.kMapName)
-    self:GiveItem(Pistol.kMapName)
+    self:GiveItem(Revolver.kMapName)
     self:GiveItem(Knife.kMapName)
     self:GiveItem(Builder.kMapName)
     
-    self:SetQuickSwitchTarget(Pistol.kMapName)
-    self:SetActiveWeapon(Flamethrower.kMapName)
+    self:SetActiveWeapon(Revolver.kMapName)
 
 end
 

@@ -17,13 +17,13 @@ EMPUpgrade.upgradeDesc 		= "COMBAT_UPGRADE_EMP_TOOLTIP"					// Description of th
 EMPUpgrade.upgradeTechId 	= kTechId.MACEMP								// TechId of the upgrade, default is kTechId.Move cause its the first entry
 EMPUpgrade.triggerInterval 	= { 12, 10, 8 } 								// Specify the timer interval (in seconds) per level.
 EMPUpgrade.teamType 		= kCombatUpgradeTeamType.MarineTeam				// Team Type
-EMPUpgrade.minPlayerLevel 	= 10											// Controls whether this upgrade requires the recipient to be a minimum level
+EMPUpgrade.minPlayerLevel 	= 6											// Controls whether this upgrade requires the recipient to be a minimum level
 EMPUpgrade.rowOrder 		= 0												// Controls the horizontal position on the menu
 EMPUpgrade.texture  		= PrecacheAsset("ui/buymenu/Icons/Icon_Reload_Active.dds")
-EMPUpgrade.hideUpgrade  	= true
+EMPUpgrade.hideUpgrade  	= false
 EMPUpgrade.vidDesc			= "videos/Marines_PulseGrenade.webm"
 EMPUpgrade.detailImage		= "ui/buymenu/Background/MarineCenters/Marine_BM_Center_Pulse.dds"
-EMPUpgrade.requirements		= {"engineer"}
+EMPUpgrade.requirements		= {"scout"}
 
 function EMPUpgrade:Initialize()
 

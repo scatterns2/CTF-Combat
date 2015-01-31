@@ -357,7 +357,7 @@ function BuildTechData()
         { [kTechDataId] = kTechId.JetpackTech,    [kTechDataCostKey] = kJetpackTechResearchCost,               [kTechDataResearchTimeKey] = kJetpackTechResearchTime,     [kTechDataDisplayName] = "JETPACK_TECH" },
         { [kTechDataId] = kTechId.JetpackFuelTech,       [kTechDataCostKey] = kJetpackFuelTechResearchCost,           [kTechDataResearchTimeKey] = kJetpackFuelTechResearchTime,     [kTechDataDisplayName] = "JETPACK_FUEL_TECH", [kTechDataHotkey] = Move.F, [kTechDataTooltipInfo] =  "JETPACK_FUEL_TOOLTIP"},
         { [kTechDataId] = kTechId.JetpackArmorTech,       [kTechDataCostKey] = kJetpackArmorTechResearchCost,         [kTechDataResearchTimeKey] = kJetpackArmorTechResearchTime,     [kTechDataDisplayName] = "JETPACK_ARMOR_TECH", [kTechDataImplemented] = false, [kTechDataHotkey] = Move.S, [kTechDataTooltipInfo] = "JETPACK_ARMOR_TOOLTIP"},
-
+		//{ [kTechDataId] = kTechId.HealGun, 		[kTechDataMapName] = HealGun.kMapName, 				[kTechDataDisplayName] = "HEAL_GUN",		[kTechDataModel] = Welder.kModelName },
         
         { [kTechDataId] = kTechId.Exosuit,           [kTechDataDisplayName] = "EXOSUIT", [kTechDataMapName] = "exo",               [kTechDataCostKey] = kExosuitCost, [kTechDataHotkey] = Move.E, [kTechDataTooltipInfo] = "EXOSUIT_TECH_TOOLTIP", [kTechDataSpawnHeightOffset] = kCommanderEquipmentDropSpawnHeight},
         { [kTechDataId] = kTechId.DualMinigunExosuit,     [kTechIDShowEnables] = false,       [kTechDataDisplayName] = "DUALMINIGUN_EXOSUIT", [kTechDataMapName] = "exo",               [kTechDataCostKey] = kDualExosuitCost, [kTechDataHotkey] = Move.E, [kTechDataTooltipInfo] = "DUALMINIGUN_EXOSUIT_TECH_TOOLTIP", [kTechDataSpawnHeightOffset] = kCommanderEquipmentDropSpawnHeight},

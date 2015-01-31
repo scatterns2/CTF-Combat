@@ -379,9 +379,8 @@ function GUIObjectiveScoreboardCTF:Update(deltaTime)
 	if player and player:GetIsAlive() and not player:isa("DevouredPlayer") then
 		self.background:SetIsVisible(true)
 		
-		//local team1flags, team2flags = GetGamerulesInfo():GetTeamFlags()	
-		local team1Score = 1
-		local team2Score = 1
+		local team1Score = 0 //GetTeamType():GetNumFlagsCaptured()
+		local team2Score = 0 //GetTeamType():GetNumFlagsCaptured()
 	   local maxScore = " / " .. kCaptureWinTotal
 		
 		self.commandChairLifeRemainingText:SetText(ToString(team1Score .. maxScore))
