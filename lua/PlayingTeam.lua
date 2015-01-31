@@ -727,10 +727,10 @@ function PlayingTeam:SpawnBaseFlag(self, techPoint)
         end
         if closestPoint ~= nil then
             self.flagSpawnPoint = closestPoint
-            return self.flagSpawnPoint:SpawnFlagForTeam(self)
+            return self:GetFlagSpawnPoint():SpawnFlagForTeam(self)
         end
     elseif self.flagSpawnPoint ~= nil then
-        return self.flagSpawnPoint:SpawnFlagForTeam(self)
+        return self:GetFlagSpawnPoint():SpawnFlagForTeam(self)
     end
     
     return nil
