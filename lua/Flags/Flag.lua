@@ -99,10 +99,9 @@ function Flag:OnUpdateAnimationInput(modelMixin)
    
     //Print("%s", self.kAtBase)
     //Print("%s", self.kCarried)
-	self.kCarried = true
-    //modelMixin:SetAnimationInput("deploy", self.kAtBase)
-   modelMixin:SetAnimationInput("pack", self.kCarried)
-   // modelMixin:SetAnimationInput("deploy", self.kReturning)
+    modelMixin:SetAnimationInput("deploy", self.kAtBase)
+    modelMixin:SetAnimationInput("pack", self.kCarried)
+    modelMixin:SetAnimationInput("deploy", self.kReturning)
 
 end
 

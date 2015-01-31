@@ -96,7 +96,8 @@ if Server then
     end
     
     function FlagBearerMixin:DetachAll()
-        if team ~= 0 then
+        local team = self:GetTeamNumber()
+        if team >= 1 then
             if (self.attachedFlag ~= nil) then
                 local flag = self.attachedFlag
                 local origin, success = self:GetAttachPointOrigin(self:GetFlagAttachPointName())
