@@ -1,0 +1,5 @@
+shader = "shaders/Level.surface_shader"
+albedoMap = "materials/mrp/killblock_i4.dds"
+normalMap = "materials/mrp/killblock_i4_normal.dds"
+specularMap = "materials/mrp/killblock_i4_SPEC.dds"
+surface = "rock"

@@ -1,0 +1,5 @@
+wdddshader = "shaders/Level.surface_shader"
+albedoMap = "materials/mrp/ns2_banner.dds"
+normalMap = "materials/mrp/ns2_banner_normal.dds"
+specularMap = "materials/mrp/ns2_banner_SPEC.dds"
+surface = "metal"

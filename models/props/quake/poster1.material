@@ -1,0 +1,4 @@
+shader = "shaders/Model.surface_shader"
+albedoMap = "models/props/quake/poster1.dds"
+normalMap = "models/props/quake/poster1_normal.dds"
+specularMap = "models/props/quake/poster1_SPEC.dds"

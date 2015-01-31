@@ -1,0 +1,6 @@
+shader = "shaders/Level.surface_shader"
+albedoMap = "materials/mrp/blocks9.dds"
+normalMap = "materials/mrp/blocks9_full_normal.dds"
+specularMap = "materials/mrp/blocks9_SPEC.dds"
+
+surface = "rock"

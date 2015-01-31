@@ -1,0 +1,5 @@
+shader = "shaders/Level.surface_shader"
+albedoMap = "materials/mrp/gkc10.dds"
+normalMap = "materials/mrp/gkc10_normal.dds"
+specularMap = "materials/mrp/gkc10_SPEC.dds"
+surface = "metal"

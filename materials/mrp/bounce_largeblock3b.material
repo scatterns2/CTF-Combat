@@ -1,0 +1,5 @@
+shader = "shaders/Level.surface_shader"
+albedoMap = "materials/mrp/bounce_largeblock3b.dds"
+normalMap = "materials/mrp/bounce_largeblock3b_normal.dds"
+specularMap = "materials/mrp/bounce_largeblock3b_SPEC.dds"
+surface = "metal"
