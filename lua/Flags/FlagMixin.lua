@@ -3,7 +3,7 @@
 Script.Load("lua/EquipmentOutline.lua")
 
 FlagMixin = CreateMixin(FlagMixin)
-FlagMixin.type = "SentryBattery"
+FlagMixin.type = "Flag"
 
 FlagMixin.expectedMixins =
 {
@@ -131,7 +131,6 @@ function FlagMixin:OnTaken(player)
     if self.kAtBase then
         self.kAtBase = false
     end
-	
     player:AddXp(kPickUpFlagScore)
 end
 
@@ -150,14 +149,8 @@ end
 function FlagMixin:ReturnFlag()
     if Server then
         local team = self:GetTeam()
-        local techPoint = team:GetInitialTechPoint()
-        for index, current in ientitylist(Shared.GetEntitiesWithClassname("ResourcePoint")) do
-            local sameLocation = (techPoint:GetLocationName() == current:GetLocationName())
-            if sameLocation then
-                current:SetAttached(nil)
-                current:SpawnFlagForTeam(team)
-            end
-        end
+        local spawnPoint = team:GetFlagSpawnPoint()
+        spawnPoint:SpawnFlagForTeam(team)
     end
     self:_DestroySelf() 
 end

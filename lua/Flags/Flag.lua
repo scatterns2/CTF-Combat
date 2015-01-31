@@ -70,6 +70,8 @@ function Flag:OnTouchEnemy(player)
     self.kCarried = true
     if self.kAtBase then
         self.kAtBase = false
+        local flagSpawn = self:GetTeam():GetFlagSpawnPoint()
+        flagSpawn:SetAttached(nil)
     end
     if self.kReturning then
         self.kReturning = false

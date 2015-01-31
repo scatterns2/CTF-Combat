@@ -83,6 +83,7 @@ function PlayingTeam:Initialize(teamName, teamNumber)
     
     self.commandStructure = nil
     self.numFlagsCaptured = 0
+    self.flagSpawnPoint = nil
 end
 
 function PlayingTeam:AddListener( event, func )
@@ -711,11 +712,8 @@ function PlayingTeam:SpawnBaseFlag(self, techPoint)
     local closestPoint = nil
     local closestPointDistance = 0
     
-    for index, current in ientitylist(Shared.GetEntitiesWithClassname("ResourcePoint")) do
-    
-        // The resource point and tech point must be in locations that share the same name.
-        local sameLocation = techPoint:GetLocationName() == current:GetLocationName()
-        if sameLocation then
+    if self.flagSpawnPoint == nil then
+        for index, current in ientitylist(Shared.GetEntitiesWithClassname("ResourcePoint")) do
         
             local pointOrigin = Vector(current:GetOrigin())
             local distance = (pointOrigin - techPointOrigin):GetLength()
@@ -726,14 +724,13 @@ function PlayingTeam:SpawnBaseFlag(self, techPoint)
                 closestPointDistance = distance
                 
             end
-            
         end
-        
-    end
-    
-    // Now spawn appropriate resource tower there
-    if closestPoint ~= nil then
-        return closestPoint:SpawnFlagForTeam(self) 
+        if closestPoint ~= nil then
+            self.flagSpawnPoint = closestPoint
+            return self.flagSpawnPoint:SpawnFlagForTeam(self)
+        end
+    elseif self.flagSpawnPoint ~= nil then
+        return self.flagSpawnPoint:SpawnFlagForTeam(self)
     end
     
     return nil
@@ -1399,8 +1396,9 @@ function PlayingTeam:UpdateSpawnWave(deltaTime)
 
 end
 
-
-
+function PlayingTeam:GetFlagSpawnPoint()
+    return self.flagSpawnPoint
+end
 
 function PlayingTeam:AddFlagCapture()
     self.numFlagsCaptured = self.numFlagsCaptured + 1

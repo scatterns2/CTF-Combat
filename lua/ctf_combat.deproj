@@ -67,12 +67,6 @@
     <filename>MarineTeam.lua</filename>
   </file>
   <file>
-    <filename>Marine_Client.lua</filename>
-  </file>
-  <file>
-    <filename>Marine_Server.lua</filename>
-  </file>
-  <file>
     <filename>Medic.lua</filename>
   </file>
   <file>
