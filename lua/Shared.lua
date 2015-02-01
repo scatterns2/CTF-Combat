@@ -250,7 +250,7 @@ Script.Load("lua/Weapons/Marine/Builder.lua")
 Script.Load("lua/Weapons/Marine/Welder.lua")
 Script.Load("lua/Weapons/Marine/LayLaserMines.lua")
 Script.Load("lua/Weapons/Marine/MarineStructureAbility.lua")
-//Script.Load("lua/Weapons/Marine/HealGun.lua")
+Script.Load("lua/Weapons/Marine/HealGun.lua")
 Script.Load("lua/Jetpack.lua")
 
 Script.Load("lua/Seasonal/Seasonal.lua")
@@ -271,7 +271,6 @@ if GRENADES_ENABLED then
 end
 
 Script.Load("lua/PowerPoint.lua")
-Script.Load("lua/SentryBattery.lua")
 Script.Load("lua/NS2Utility.lua")
 Script.Load("lua/WeaponUtility.lua")
 

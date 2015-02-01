@@ -251,7 +251,7 @@ kTechId = createTechIdEnum({
 	"Scout",
 	"Engineer",
 	"Flag",
-	//"HealGun",
+	"HealGun",
 	
 
     // Maximum index

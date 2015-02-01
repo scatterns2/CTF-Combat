@@ -2365,7 +2365,7 @@ function BuildClassToGrid()
     ClassToGrid["Sentry"] = { 5, 4 }
     ClassToGrid["ARC"] = { 6, 4 }
     ClassToGrid["ARCDeployed"] = { 7, 4 }
-    ClassToGrid["SentryBattery"] = { 8, 4 }
+    ClassToGrid["Flag"] = { 8, 4 }
 
     ClassToGrid["InfantryPortal"] = { 1, 5 }
     ClassToGrid["Armory"] = { 2, 5 }
