@@ -67,24 +67,11 @@ end
 
 function Flag:OnTouchEnemy(player)
     player:AttachFlag(self)
-    self.kCarried = true
-    if self.kAtBase then
-        self.kAtBase = false
-        local flagSpawn = self:GetTeam():GetFlagSpawnPoint()
-        flagSpawn:SetAttached(nil)
-    end
-    if self.kReturning then
-        self.kReturning = false
-    end
     self:OnTaken(player)    
 end
 
 function Flag:OnTouchFriendly(player)
     self:OnPlayerReturn(player)
-end
-
-function Flag:GetIsPermanent()
-    return true
 end
 
 function Flag:OnUpdate(deltaTime)
@@ -101,10 +88,13 @@ function Flag:OnUpdateAnimationInput(modelMixin)
    
     //Print("%s", self.kAtBase)
     //Print("%s", self.kCarried)
-    modelMixin:SetAnimationInput("deploy", self.kAtBase)
-    modelMixin:SetAnimationInput("pack", self.kCarried)
-    modelMixin:SetAnimationInput("deploy", self.kReturning)
-
+    if self.kAtBase then
+        modelMixin:SetAnimationInput("deploy", true)
+    elseif self.kCarried then
+        modelMixin:SetAnimationInput("pack", true)
+    elseif self.kReturning then
+        modelMixin:SetAnimationInput("deploy", true)
+    end
 end
 
 if Server then

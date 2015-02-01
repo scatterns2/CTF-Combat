@@ -778,4 +778,8 @@ function Alien:SetCanCamouflage(value)
 	self.canCamouflage = value
 end
 
+function Alien:GetFlagAttachPointName()
+    return "babbler_attach1"
+end
+
 Shared.LinkClassToMap("Alien", Alien.kMapName, networkVars, true)

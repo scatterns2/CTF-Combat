@@ -34,28 +34,14 @@ end
 
 if Server then
     
-     function FlagBearerMixin:GetFlagAttachPointName()
-	 local team = self:GetTeamNumber()
-        if team == kTeam1Index then
-            return "JetPack"
-        elseif team == kTeam2Index then
-			return "babbler_attach1"
-        else
-            Print("GetFlagAttachPointName(team = %d) is an invalid team.", team)
-            return nil
-        end
-    end
-
     function FlagBearerMixin:AttachFlag(flag)
     
         local success = false
         if self.attachedFlag == nil then
             self.attachedFlag = flag
             self.attachedFlagId = flag:GetId()
-            flag:SetParent(self)
-            flag:SetAttachPoint(self:GetFlagAttachPointName())
-            success = true
             self.hasFlag = true
+            success = true
         end
         
         return success
@@ -68,13 +54,13 @@ if Server then
     
     function FlagBearerMixin:OnF4WithFlag()
         if self.attachedFlag ~= nil then
-            local flag = self.attachedFlag
+            local flag = self:GetFlag()
             flag:ReturnFlag()
         end
     end
     
     function FlagBearerMixin:OnCaptureFlag()
-        local flag = self.attachedFlag
+        local flag = self:GetFlag()
         flag:ReturnFlag()
         self:AddXp(kCaptureFlagScore)
         self:DetachOnCapture()
@@ -99,12 +85,12 @@ if Server then
         local team = self:GetTeamNumber()
         if team >= 1 then
             if (self.attachedFlag ~= nil) then
-                local flag = self.attachedFlag
+                local flag = self:GetFlag()
                 local origin, success = self:GetAttachPointOrigin(self:GetFlagAttachPointName())
                 if origin then
                     flag:SetOrigin(origin)
                 end   
-                self.attachedFlag:OnDrop()
+                flag:OnDrop()
                 self.attachedFlagId = nil
                 self.attachedFlag = nil
                 self.hasFlag = false
@@ -127,14 +113,4 @@ if Server then
     function FlagBearerMixin:OnDestroy()
         self:DetachAll()
     end
-    
-    function FlagBearerMixin:GetFreeFlagAttachPointOrigin()
-    
-        local freeAttachPoint = #self.freeAttachPoints > 0 and self.freeAttachPoints[1] or false
-        if freeAttachPoint then
-            return self:GetAttachPointOrigin(freeAttachPoint)
-        end
-    
-    end
-
 end

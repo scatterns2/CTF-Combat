@@ -88,6 +88,9 @@
     <filename>PlayingTeam.lua</filename>
   </file>
   <file>
+    <filename>ResourcePoint.lua</filename>
+  </file>
+  <file>
     <filename>ResourcePoint_Server.lua</filename>
   </file>
   <file>

@@ -1014,5 +1014,8 @@ function Marine:GetIsStunAllowed()
     return not self.timeLastStun or self.timeLastStun + kDisruptMarineTimeout < Shared.GetTime() and not self:GetIsVortexed()
 end
 
+function Marine:GetFlagAttachPointName()
+    return "JetPack"
+end
 
 Shared.LinkClassToMap("Marine", Marine.kMapName, networkVars, true)

@@ -20,9 +20,7 @@ FlagMixin.expectedCallbacks =
 
 FlagMixin.optionalCallbacks =
 {
-    GetIsPermanent = "Return true when this item has unlimited life time.",
-    SetExpireTime = "Sets expiration time for the entity.",
-    GetExpireTimeFraction = "Returns the expire time fraction, if it has limited time, otherwise it returns 0."
+
 }
 
 FlagMixin.expectedConstants =
@@ -48,10 +46,6 @@ function FlagMixin:__initmixin()
     
         if not self.GetCheckForRecipient or self:GetCheckForRecipient() then
             self:AddTimedCallback(FlagMixin._CheckForPickup, kCheckForPickupRate)
-        end
-        
-        if not self.GetIsPermanent or not self:GetIsPermanent() then
-            self:AddTimedCallback(FlagMixin._DestroySelf, kItemStayTime)
         end
         
     end
@@ -117,20 +111,26 @@ function FlagMixin:_DestroySelf()
 end
 
 function FlagMixin:OnDrop()
-
-        if not self:GetIsDestroyed() then
+    if not self:GetIsDestroyed() then
             self.kDropTime = Shared.GetTime()
             self.kReturning = true
             self.kCarried = false
             self:SetParent(nil)
-        end  
-        
+    end          
 end
 
 function FlagMixin:OnTaken(player)
     if self.kAtBase then
         self.kAtBase = false
+        local flagSpawn = self:GetTeam():GetFlagSpawnPoint()
+        flagSpawn:SetAttached(nil)
     end
+    self.kCarried = true
+    if self.kReturning then
+        self.kReturning = false
+    end
+    self:SetParent(player)
+    self:SetAttachPoint(player:GetFlagAttachPointName())
     player:AddXp(kPickUpFlagScore)
 end
 
