@@ -62,8 +62,8 @@ local networkVars =
 	hasHadBots = "boolean",
 	hasHadCheats = "boolean",
 	startWithFlag = "boolean",
-	marineFlagScore = "integer (0 to 99)",
-	alienFlagScore =  "integer (0 to 99)",
+	team1FlagScore = "integer (0 to 99)",
+	team2FlagScore = "integer (0 to 99)",
 
 }
 
@@ -156,8 +156,8 @@ if Server then
 		self.team2Score = newTeam2Health
 		self.team1Armor = newTeam1Armor
 		self.team2Armor = newTeam2Armor
-		self.marineFlagScore = 1 --layingTeam:GetNumFlagsCaptured()
-		self.alienFlagScore = 2 --self.numFlagsCaptured
+		self.team1FlagScore = newTeam1Flags --layingTeam:GetNumFlagsCaptured()
+		self.team2FlagScore = newTeam2Flags --self.numFlagsCaptured
 		--Print("%s", self.numFlagsCaptured)
 		
 	end
@@ -284,7 +284,7 @@ function CombatGamerulesInfo:GetGameStarted()
 end
 
 function CombatGamerulesInfo:GetTeamScores()
-    return self.marineFlagScore, self.alienFlagScore
+    return self.team1FlagScore, self.team2FlagScore
 end
 
 function CombatGamerulesInfo:GetHasHadBots(value)
@@ -292,11 +292,11 @@ function CombatGamerulesInfo:GetHasHadBots(value)
 end
 
 function CombatGamerulesInfo:GetAlienFlags()
-	return self.alienFlagScore
+	return self.team2FlagScore
 end
 
 function CombatGamerulesInfo:GetMarineFlags()
-	return self.marineFlagScore
+	return self.team1FlagScore
 end
 
 function CombatGamerulesInfo:GetHasHadCheats()

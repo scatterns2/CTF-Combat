@@ -382,7 +382,7 @@ function GUIObjectiveScoreboardCTF:Update(deltaTime)
 		self.background:SetIsVisible(true)
 		
 	   local marineFlagScore, alienFlagScore = GetGamerulesInfo():GetTeamScores()	
-		Print("%s", marineFlagScore)
+		--Print("%s", marineFlagScore)
 	   local maxScore = " / " .. kCaptureWinTotal
 		
 		self.commandChairLifeRemainingText:SetText(ToString(marineFlagScore .. maxScore))

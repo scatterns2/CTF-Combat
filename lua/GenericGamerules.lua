@@ -97,7 +97,6 @@ if Server then
 		gameInfo:SetLightsStartOff(self.lightsStartOff)
 		gameInfo:SetPowerPointsTakeDamage(self.powerPointsTakeDamage)
 		gameInfo:SetStartWithArmory(self.startWithArmory)
-		gameInfo:SetStartWithArmory(self.startWithFlag)
 		gameInfo:SetStartWithPhaseGate(self.startWithPhaseGate)
 		gameInfo:SetStartWithCommandChair(self.startWithCommandChair)
 		gameInfo:SetStartWithShift(self.startWithShift)
@@ -449,6 +448,23 @@ if Server then
 		return team1Structure, team2Structure
 		
 	end
+
+	function GenericGamerules:GetTeamFlags()
+	
+		local team1Flag = nil
+		local team2Flag = nil
+		
+		for index, flag in ientitylist(Shared.GetEntitiesWithClassname("Flag")) do
+			if flag:GetTeamNumber() == kTeam1Index then
+				team1Flag = flag
+			elseif flag:GetTeamNumber() == kTeam2Index then
+				team2Flag = flag
+			end
+		end
+		
+		return team1Flag, team2Flag
+		
+	end
 	
 	function GenericGamerules:GetTeamScores()
 	
@@ -456,6 +472,8 @@ if Server then
 		local team2Health = 100
 		local team1Armor = 100
 		local team2Armor = 100
+		local team1Flags = 0
+		local team2Flags = 0
 		if GetGamerulesInfo():GetGameStarted() then
 			local team1Structure, team2Structure = self:GetTeamCommandStructures()
 			if team1Structure then
@@ -477,8 +495,11 @@ if Server then
 				team2Health = 0
 				team2Armor = 0
 			end
+			
+			team1Flags = self.team1:GetNumFlagsCaptured()
+			team2Flags = self.team2:GetNumFlagsCaptured()
 		end
-		return team1Health, team2Health, team1Armor, team2Armor
+		return team1Health, team2Health, team1Armor, team2Armor, team1Flags, team2Flags
 		
 	end
 	
