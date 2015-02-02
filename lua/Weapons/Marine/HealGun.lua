@@ -34,11 +34,12 @@ local networkVars =
 
 AddMixinNetworkVars(LiveMixin, networkVars)
 
-local kHealGunFireDelay = 0.5
+local kHealGunFireDelay = 0.2 //0.5
 local kHealGunDamagePerSecond = 30
-local kWeldRange = 3.4
+local kWeldRange = 6 //3.4
 local kHealGunEffectRate = 0.45
-local kHealRate = 2.5
+local kHealRate = 15 //2.5
+local kSelfHealRate = 5
 local kFireLoopingSound = PrecacheAsset("sound/NS2.fev/marine/welder/weld")
 
 local kHealScoreAdded = 2
@@ -168,7 +169,7 @@ function HealGun:OnPrimaryAttack(player)
     self.healing = true
     local hitPoint = nil
     
-    if self.timeLastWeld + kHealGunFireDelay < Shared.GetTime () then
+    if self.timeLastWeld + kHealGunFireDelay < Shared.GetTime() then
     
         hitPoint = self:PerformWeld(player)
         self.timeLastWeld = Shared.GetTime()
@@ -246,14 +247,14 @@ function HealGun:PerformWeld(player)
     if didHit and target and HasMixin(target, "Live") then
         
         if GetAreEnemies(player, target) then
-            self:DoDamage(kHealGunDamagePerSecond * kHealGunFireDelay, target, endPoint, attackDirection)
-            success = true     
+            //self:DoDamage(kHealGunDamagePerSecond * kHealGunFireDelay, target, endPoint, attackDirection)
+                
         elseif player:GetTeamNumber() == target:GetTeamNumber() and self:GetIsAlive() then
         
 			if target:GetHealth() < target:GetMaxHealth() then                 
 
-				target:AddHealth(kHealRate + kHealGunFireDelay * kSelfWeldAmount)
-				
+				target:AddHealth(kHealRate)
+				success = true 
             end
  
 			
@@ -261,9 +262,9 @@ function HealGun:PerformWeld(player)
         
     end
     
-    if player:GetHealth() < player:GetMaxHealth() then
-	
-		player:AddHealth(kHealRate + kHealGunFireDelay * kSelfWeldAmount)
+    if player:GetHealth() < player:GetMaxHealth() and success then
+		// self healing is rewarded for healing allies
+		player:AddHealth(kSelfHealRate)
 	
     end
 	

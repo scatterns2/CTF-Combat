@@ -144,13 +144,13 @@ kAcidRocketBombDotIntervall = 0.4
 // Hydras
 kHydraJetpackFuelDamage = 0.17 // from 0 to 1
 kHydraFireRate = 0.25
-kHydraHealth = 610 // Original value 350
-kHydraArmor = 13 // Original value 10
+kHydraHealth = 600 // Original value 350
+kHydraArmor = 0 // Original value 10
 
 // MARINE DAMAGE VALUES
 kLmgDamage = 10
 kLmgDamageType = kDamageType.Normal
-kLmgClipSize = 50
+kLmgClipSize = 40
 
 // MARINE DAMAGE VALUES
 kRifleDamage = 11
@@ -160,8 +160,8 @@ kRifleMeleeDamage = 40
 
 // 10 bullets per second
 kPistolRateOfFire = 0.1
-kPistolDamage = 25
-kPistolDamageType = kDamageType.Light
+kPistolDamage = 20
+kPistolDamageType = kDamageType.Normal
 kPistolClipSize = 10
 // not used yet
 kPistolMinFireDelay = 0.1
@@ -186,25 +186,25 @@ kAxeDamage = 30
 kAxeDamageType = kDamageType.Structural
 SetCachedTechData(kTechId.Axe, kTechDataDamageType, kAxeDamageType)
 
-kPulseGrenadeDamageRadius = 10
-kPulseGrenadeEnergyDamageRadius = 10
-kPulseGrenadeDamage = 50
-kPulseGrenadeEnergyDamagePercent = .5
+kPulseGrenadeDamageRadius = 6
+kPulseGrenadeEnergyDamageRadius = 6
+kPulseGrenadeDamage = 100
+kPulseGrenadeEnergyDamagePercent = .2
 kPulseGrenadeDamageType = kDamageType.Normal
 
-kClusterGrenadeDamageRadius = 10
-kClusterGrenadeDamage = 75
+kClusterGrenadeDamageRadius = 6
+kClusterGrenadeDamage = 50
 kClusterFragmentDamageRadius = 6
-kClusterFragmentDamage = 25
+kClusterFragmentDamage = 100
 kClusterGrenadeDamageType = kDamageType.Normal
 
-kNerveGasDamagePerSecond = 100
-kNerveGasDamageType = kDamageType.NerveGas
+kNerveGasDamagePerSecond = 15
+kNerveGasDamageType = kDamageType.Gas
 
 kGrenadeLauncherGrenadeDamage = 100
 kGrenadeLauncherGrenadeDamageType = kDamageType.Normal
 kGrenadeLauncherClipSize = 4
-kGrenadeLauncherGrenadeDamageRadius = 8
+kGrenadeLauncherGrenadeDamageRadius = 6
 kGrenadeLifetime = 2.5
 
 kShotgunDamage = 10
@@ -242,7 +242,7 @@ kMineDetonateRange = 7
 
 kKnifeWeight = 0.05
 kKnifeDamage = 30
-kKnifeRange = 1 // Axe range is 1
+kKnifeRange = 1.2 // Axe range is 1
 kKnifeDamageType = kDamageType.Structural
 kKnifeCost = 10
 
