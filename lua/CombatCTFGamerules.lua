@@ -92,15 +92,6 @@ if Server then
         end
     end
 
-	function CombatCaptureGamerules:GetTeamScores()
-	
-		local team1Points = GetGamerules():GetTeam1():GetNumFlagsCaptured()
-		local team2Points = GetGamerules():GetTeam2():GetNumFlagsCaptured()
-
-		return team1Points, team2Points
-		
-	end
-	
 	function CombatCTFGamerules:ResetGame()
 		
 		GenericGamerules.ResetGame(self)
@@ -111,6 +102,15 @@ if Server then
 		
 	end
 	
+	function CombatCTFGamerules:GetTeamFlags()
+	
+		local team1Points = GetGamerules():GetTeam1():GetNumFlagsCaptured()
+		local team2Points = GetGamerules():GetTeam2():GetNumFlagsCaptured()
+
+		return team1Points, team2Points
+		
+	end
+
 end
 
 Shared.LinkClassToMap("CombatCTFGamerules", CombatCTFGamerules.kMapName, networkVars)
