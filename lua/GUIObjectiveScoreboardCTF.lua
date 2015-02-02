@@ -371,6 +371,8 @@ function GUIObjectiveScoreboardCTF:GetTeamType()
 	
 end
 
+
+
 function GUIObjectiveScoreboardCTF:Update(deltaTime)
 
     local player = Client.GetLocalPlayer()
@@ -379,18 +381,13 @@ function GUIObjectiveScoreboardCTF:Update(deltaTime)
 	if player and player:GetIsAlive() and not player:isa("DevouredPlayer") then
 		self.background:SetIsVisible(true)
 		
-		local team1Score = 0 //GetTeamType():GetNumFlagsCaptured()
-		local team2Score = 0 //GetTeamType():GetNumFlagsCaptured()
+	   local marineFlagScore, alienFlagScore = GetGamerulesInfo():GetTeamScores()	
+		Print("%s", marineFlagScore)
 	   local maxScore = " / " .. kCaptureWinTotal
 		
-		self.commandChairLifeRemainingText:SetText(ToString(team1Score .. maxScore))
-		self.hiveLifeRemainingText:SetText(ToString(team2Score .. maxScore))
-		
-        local reduceAmountTeam1 = team1Score / CombatCaptureGamerules.kWinningPoints
-        local reduceAmountTeam2 = team2Score / CombatCaptureGamerules.kWinningPoints
-    
- 
-		
+		self.commandChairLifeRemainingText:SetText(ToString(marineFlagScore .. maxScore))
+		self.hiveLifeRemainingText:SetText(ToString(alienFlagScore .. maxScore))
+				
 		// update capture points
 		if self.capturePoints then
 		

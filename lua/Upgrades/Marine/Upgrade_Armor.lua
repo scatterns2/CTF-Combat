@@ -21,7 +21,7 @@ ArmorUpgrade.rowOrder 		= 0												// Controls the horizontal position on th
 ArmorUpgrade.texture 		= PrecacheAsset("ui/buymenu/Icons/Icon_Armor_Active.dds")
 ArmorUpgrade.vidDesc		= "videos/Marines_Armor.webm"
 ArmorUpgrade.compatiblewithExo = true
-ArmorUpgrade.requirements		= { "marine" }
+ArmorUpgrade.requirements		= { "engineer","revolver" }
 
 function ArmorUpgrade:Initialize()
 
