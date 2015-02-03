@@ -18,7 +18,7 @@ WelderUpgrade.upgradeTechId = kTechId.Welder 	    						// TechId of the upgrade
 WelderUpgrade.hudSlot 		= kWelderHUDSlot								// Is this a primary weapon?
 WelderUpgrade.texture  		= PrecacheAsset("ui/buymenu/Icons/Icon_Welder_Active.dds")
 WelderUpgrade.vidDesc		= "videos/Marines_Welder1.webm"
-WelderUpgrade.requirements	= { "engineer"}
+WelderUpgrade.requirements	= { "engineer","marine"}
 
 function WelderUpgrade:Initialize()
 

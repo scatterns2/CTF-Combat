@@ -381,7 +381,7 @@ function GUIObjectiveScoreboardCTF:Update(deltaTime)
 	if player and player:GetIsAlive() and not player:isa("DevouredPlayer") then
 		self.background:SetIsVisible(true)
 		
-	   local team1Health, team2Health, team1Armor, team2Armor, marineFlagScore, alienFlagScore = GetGamerulesInfo():GetTeamScores()	
+	   local marineFlagScore, alienFlagScore = GetGamerulesInfo():GetTeamScores()	
 		--Print("%s", marineFlagScore)
 	   local maxScore = " / " .. kCaptureWinTotal
 		

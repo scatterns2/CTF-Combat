@@ -21,7 +21,7 @@ GasGrenadeUpgrade.rowOrder 		 = 1											// Controls the horizontal position 
 GasGrenadeUpgrade.texture 		 = PrecacheAsset("ui/buymenu/Icons/Icon_Grenade2_Active.dds")
 GasGrenadeUpgrade.vidDesc		 = "videos/Marines_NerveGasGrenade.webm"
 GasGrenadeUpgrade.detailImage		= "ui/buymenu/Background/MarineCenters/Marine_BM_Center_Gas.dds"
-GasGrenadeUpgrade.requirements		= { "medic" }
+GasGrenadeUpgrade.requirements		= { "medic","marine" }
 
 function GasGrenadeUpgrade:Initialize()
 

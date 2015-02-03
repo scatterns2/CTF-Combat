@@ -24,6 +24,7 @@ MedicUpgrade.isClassUpgrade 	= true						--Lifeforms, Marine and Exo are all cla
 MedicUpgrade.uniqueSlot 		= kUpgradeUniqueSlot.Class
 MedicUpgrade.vidDesc			= "videos/Marines_MinigunExo.webm"
 MedicUpgrade.requirements		= {}
+MedicUpgrade.hideUpgrade  	= false
 
 function MedicUpgrade:Initialize()
 
@@ -45,6 +46,7 @@ function MedicUpgrade:Initialize()
 	self.vidDesc = MedicUpgrade.vidDesc
 	self.requirements = MedicUpgrade.requirements
 	self.isClassUpgrade = MedicUpgrade.isClassUpgrade
+	self.hideUpgrade = MedicUpgrade.hideUpgrade
 
 end
 

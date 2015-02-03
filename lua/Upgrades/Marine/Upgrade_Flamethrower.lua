@@ -22,7 +22,7 @@ FlamethrowerUpgrade.rowOrder 		= 1												// Controls the horizontal positio
 FlamethrowerUpgrade.texture 		= PrecacheAsset("ui/buymenu/Icons/Icon_Flamethrower_Active.dds")
 FlamethrowerUpgrade.vidDesc			= "videos/Marines_Flamethrower.webm"
 FlamethrowerUpgrade.detailImage		= "ui/buymenu/Background/MarineCenters/Marine_BM_Center_Flame.dds"
-FlamethrowerUpgrade.requirements			= { "medic"}
+FlamethrowerUpgrade.requirements			= { "medic","marine"}
 
 function FlamethrowerUpgrade:Initialize()
 

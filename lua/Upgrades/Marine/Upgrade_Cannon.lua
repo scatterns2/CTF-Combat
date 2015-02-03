@@ -21,7 +21,7 @@ CannonUpgrade.rowOrder 		= 0												// Controls the horizontal position on t
 CannonUpgrade.texture  		= PrecacheAsset("ui/buymenu/Icons/Icon_HeavyCannon_Active.dds")
 CannonUpgrade.vidDesc			= "videos/Marines_Shotgun.webm"
 CannonUpgrade.detailImage	= "ui/buymenu/Background/MarineCenters/Marine_BM_Center_HC.dds"
-CannonUpgrade.requirements			= { "assault"}
+CannonUpgrade.requirements			= { "assault","marine"}
 
 
 function CannonUpgrade:Initialize()

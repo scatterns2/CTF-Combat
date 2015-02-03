@@ -24,6 +24,7 @@ ScoutUpgrade.isClassUpgrade 	= true						--Lifeforms, Marine and Exo are all cla
 ScoutUpgrade.uniqueSlot 		= kUpgradeUniqueSlot.Class
 ScoutUpgrade.vidDesc			= "videos/Marines_MinigunExo.webm"
 ScoutUpgrade.requirements		= {}
+ScoutUpgrade.hideUpgrade  	= false
 
 function ScoutUpgrade:Initialize()
 
@@ -45,6 +46,7 @@ function ScoutUpgrade:Initialize()
 	self.vidDesc = ScoutUpgrade.vidDesc
 	self.requirements = ScoutUpgrade.requirements
 	self.isClassUpgrade = ScoutUpgrade.isClassUpgrade
+	self.hideUpgrade = ScoutUpgrade.hideUpgrade
 
 	
 end

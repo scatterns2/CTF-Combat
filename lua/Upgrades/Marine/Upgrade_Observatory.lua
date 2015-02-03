@@ -21,7 +21,7 @@ ObservatoryUpgrade.rowOrder 		= 0													// Controls the horizontal positio
 ObservatoryUpgrade.texture  		= PrecacheAsset("ui/buymenu/Icons/Icon_Observatory_Active.dds")
 ObservatoryUpgrade.vidDesc			= "videos/Marines_Observatory.webm"
 ObservatoryUpgrade.detailImage		= "ui/buymenu/Background/MarineCenters/Marine_BM_Center_Observatory.dds"
-ObservatoryUpgrade.requirements		= { "engineer"}
+ObservatoryUpgrade.requirements		= { "engineer","marine"}
 
 function ObservatoryUpgrade:Initialize()
 

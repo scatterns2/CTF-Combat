@@ -27,7 +27,6 @@ RailgunExoUpgrade.hideUpgrade 		= false
 RailgunExoUpgrade.rebuyCooldownTime = 60
 RailgunExoUpgrade.requirements = {"marine", "railgunexo"}
 RailgunExoUpgrade.disallowedGameModes = { kCombatGameType.Infection }
-RailgunExoUpgrade.hideUpgrade  	= true
 
 function RailgunExoUpgrade:Initialize()
 
@@ -51,7 +50,6 @@ function RailgunExoUpgrade:Initialize()
 	self.requirements = RailgunExoUpgrade.requirements
 	self.rebuyCooldownTime = RailgunExoUpgrade.rebuyCooldownTime 
 	self.disallowedGameModes = RailgunExoUpgrade.disallowedGameModes
-	self.hideUpgrade = RailgunExoUpgrade.hideUpgrade
 	
 end
 

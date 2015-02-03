@@ -23,7 +23,7 @@ SentryUpgrade.texture  		 = PrecacheAsset("ui/buymenu/Icons/Icon_Sentry_Active.d
 SentryUpgrade.vidDesc		 = "videos/Marines_Sentry.webm"
 SentryUpgrade.detailImage		= "ui/buymenu/Background/MarineCenters/Marine_BM_Center_SentryT.dds"
 SentryUpgrade.disallowedGameModes = { kCombatGameType.Infection }
-SentryUpgrade.requirements		= {"engineer"}
+SentryUpgrade.requirements		= {"engineer","marine"}
 
 function SentryUpgrade:Initialize()
 

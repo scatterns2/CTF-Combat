@@ -24,6 +24,7 @@ AssaultUpgrade.isClassUpgrade = true
 AssaultUpgrade.uniqueSlot 			= kUpgradeUniqueSlot.Class
 AssaultUpgrade.vidDesc				= "videos/Marines_MinigunExo.webm"
 AssaultUpgrade.requirements			= { }
+AssaultUpgrade.hideUpgrade  	= false
 
 function AssaultUpgrade:Initialize()
 
@@ -45,6 +46,7 @@ function AssaultUpgrade:Initialize()
 	self.vidDesc = AssaultUpgrade.vidDesc
 	self.requirements = AssaultUpgrade.requirements
 	self.isClassUpgrade = AssaultUpgrade.isClassUpgrade
+	self.hideUpgrade = AssaultUpgrade.hideUpgrade
 
 end
 

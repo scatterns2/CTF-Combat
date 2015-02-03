@@ -18,7 +18,7 @@ HealGunUpgrade.upgradeTechId = kTechId.HealGun 	    						// TechId of the upgra
 HealGunUpgrade.hudSlot 		= kWelderHUDSlot								// Is this a primary weapon?
 HealGunUpgrade.texture  		= PrecacheAsset("ui/buymenu/Icons/Icon_Welder_Active.dds")
 HealGunUpgrade.vidDesc		= "videos/Marines_Welder1.webm"
-HealGunUpgrade.requirements	= { "medic"}
+HealGunUpgrade.requirements	= { "medic","marine"}
 
 function HealGunUpgrade:Initialize()
 

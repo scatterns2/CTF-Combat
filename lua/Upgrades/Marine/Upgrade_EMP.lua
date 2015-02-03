@@ -23,7 +23,7 @@ EMPUpgrade.texture  		= PrecacheAsset("ui/buymenu/Icons/Icon_Reload_Active.dds")
 EMPUpgrade.hideUpgrade  	= false
 EMPUpgrade.vidDesc			= "videos/Marines_PulseGrenade.webm"
 EMPUpgrade.detailImage		= "ui/buymenu/Background/MarineCenters/Marine_BM_Center_Pulse.dds"
-EMPUpgrade.requirements		= {"scout"}
+EMPUpgrade.requirements		= {"scout","marine"}
 
 function EMPUpgrade:Initialize()
 

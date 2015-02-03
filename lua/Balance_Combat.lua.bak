@@ -95,7 +95,7 @@ kPickUpFlagScore = 10
 kReturnFlagScore = 20
 kCaptureFlagScore = 50
 
-kCaptureWinTotal = 5
+kCaptureWinTotal = 2
 
 
 /* Healing/Welding */

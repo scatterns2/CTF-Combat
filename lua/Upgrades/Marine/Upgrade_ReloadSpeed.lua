@@ -21,7 +21,7 @@ ReloadSpeedUpgrade.minPlayerLevel 	= 5														// Controls whether this upg
 ReloadSpeedUpgrade.rowOrder			= 0														// Controls the horizontal position on the menu
 ReloadSpeedUpgrade.texture  		= PrecacheAsset("ui/buymenu/Icons/Icon_Reload_Active.dds")
 ReloadSpeedUpgrade.vidDesc			= "videos/Marines_ReloadSpeed.webm"
-ReloadSpeedUpgrade.requirements		= {"assault"}
+ReloadSpeedUpgrade.requirements		= {"assault","marine"}
 
 
 function ReloadSpeedUpgrade:Initialize()

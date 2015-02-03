@@ -284,7 +284,7 @@ function CombatGamerulesInfo:GetGameStarted()
 end
 
 function CombatGamerulesInfo:GetTeamScores()
-    return self.team1Score, self.team2Score, self.team1Armor, self.team2Armor, self.team1FlagScore, self.team2FlagScore
+    return self.team1FlagScore, self.team2FlagScore
 end
 
 function CombatGamerulesInfo:GetHasHadBots(value)

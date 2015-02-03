@@ -21,7 +21,7 @@ LaserMinesUpgrade.rowOrder 		= 0											// Controls the horizontal position o
 LaserMinesUpgrade.texture  		= PrecacheAsset("ui/buymenu/Icons/Icon_Mines_Active.dds")
 LaserMinesUpgrade.vidDesc		= "videos/Marines_Mines.webm"
 LaserMinesUpgrade.detailImage		= "ui/buymenu/Background/MarineCenters/Marine_BM_Center_Mine.dds"
-LaserMinesUpgrade.requirements		= { "engineer" }
+LaserMinesUpgrade.requirements		= { "engineer","marine" }
 
 function LaserMinesUpgrade:Initialize()
 

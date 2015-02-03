@@ -22,7 +22,7 @@ ClusterGrenadeUpgrade.rowOrder 		 = 0													// Controls the horizontal pos
 ClusterGrenadeUpgrade.texture 		 = PrecacheAsset("ui/buymenu/Icons/Icon_Grenade1_Active.dds")
 ClusterGrenadeUpgrade.vidDesc		 = "videos/Marines_ClusterGrenade.webm"
 ClusterGrenadeUpgrade.detailImage		= "ui/buymenu/Background/MarineCenters/Marine_BM_Center_Cluster.dds"
-ClusterGrenadeUpgrade.requirements		= {"assault"}
+ClusterGrenadeUpgrade.requirements		= {"assault","marine"}
 
 function ClusterGrenadeUpgrade:Initialize()
 

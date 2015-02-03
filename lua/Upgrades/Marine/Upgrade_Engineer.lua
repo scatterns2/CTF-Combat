@@ -24,6 +24,7 @@ EngineerUpgrade.mustBeNearTechPoint = true
 EngineerUpgrade.uniqueSlot 			= kUpgradeUniqueSlot.Class
 EngineerUpgrade.vidDesc				= "videos/Marines_MinigunExo.webm"
 EngineerUpgrade.requirements		= {}
+EngineerUpgrade.hideUpgrade  	= false
 
 function EngineerUpgrade:Initialize()
 
@@ -44,6 +45,7 @@ function EngineerUpgrade:Initialize()
 	self.vidDesc = EngineerUpgrade.vidDesc
 	self.vidDesc = EngineerUpgrade.vidDesc
 	self.requirements = EngineerUpgrade.requirements
+	self.hideUpgrade = EngineerUpgrade.hideUpgrade
 	
 end
 

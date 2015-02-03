@@ -21,7 +21,7 @@ DamageUpgrade.texture 		 = PrecacheAsset("ui/buymenu/Icons/Icon_Damage_Active.dd
 DamageUpgrade.vidDesc		 = "videos/Marines_Damage.webm"
 DamageUpgrade.compatiblewithExo = true
 DamageUpgrade.upgradeType 	= kCombatUpgradeTypes.Offense        			// the type of the upgrade
-DamageUpgrade.requirements		= { "marine" }
+DamageUpgrade.requirements		= { "marine","marine" }
 
 function DamageUpgrade:Initialize()
 

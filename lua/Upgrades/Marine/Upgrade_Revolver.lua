@@ -22,7 +22,7 @@ RevolverUpgrade.menuPositionY	= 0
 RevolverUpgrade.texture 		= PrecacheAsset("ui/buymenu/Icons/Icon_Revolver_Active.dds")
 RevolverUpgrade.vidDesc			= "videos/Marines_ReloadSpeed.webm"
 RevolverUpgrade.detailImage		= "ui/buymenu/Background/MarineCenters/Marine_BM_Center_Revolver.dds"
-RevolverUpgrade.requirements	= { "engineer"}
+RevolverUpgrade.requirements	= { "engineer","marine"}
 
 function RevolverUpgrade:Initialize()
 

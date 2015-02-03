@@ -20,7 +20,7 @@ WeaponCacheUpgrade.minPlayerLevel = 4											// Controls whether this upgrade
 WeaponCacheUpgrade.rowOrder 		 = 0											// Controls the horizontal position on the menu
 WeaponCacheUpgrade.texture  		 = PrecacheAsset("ui/buymenu/Icons/Icon_Armory_Active.dds")
 WeaponCacheUpgrade.detailImage		= "ui/buymenu/Background/MarineCenters/Marine_BM_Center_Cache.dds"
-WeaponCacheUpgrade.requirements		= {"engineer"}
+WeaponCacheUpgrade.requirements		= {"engineer","marine"}
 
 function WeaponCacheUpgrade:Initialize()
 

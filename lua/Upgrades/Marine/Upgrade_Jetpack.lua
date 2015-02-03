@@ -22,7 +22,7 @@ JetpackUpgrade.texture  		= PrecacheAsset("ui/buymenu/Icons/Icon_Jetpack_Active.
 JetpackUpgrade.mustBeNearTechPoint = false
 JetpackUpgrade.fuelRechargeRate = 1.0
 JetpackUpgrade.vidDesc			= "videos/Marines_Jetpack.webm"
-JetpackUpgrade.requirements		= {"scout"}
+JetpackUpgrade.requirements		= {"marine"}
 
 function JetpackUpgrade:Initialize()
 
