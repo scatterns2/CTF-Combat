@@ -126,9 +126,10 @@ kAcidicVengeanceDPS = 25
 kShadeInkDisorientRadius = 9
 
 // Babbler Bomb
-kBabblersPerBomb = 3
-kTimeBetweenBabblerBombShots = 2
-kBabblerLifetime = 10
+kBabblersPerBomb = 4
+kTimeBetweenBabblerBombShots = 4
+kBabblerLifetime = 8
+kBabblerDamage = 20
 
 // Acid Rocket
 kAcidRocketVelocity = 40
