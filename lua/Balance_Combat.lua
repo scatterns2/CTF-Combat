@@ -117,9 +117,8 @@ kClogHealth = 500  kClogArmor = 0 kClogPointValue = 5
 kWebHealth = 50
 
 // ALIEN DAMAGE VALUES
-// reduce the spike dmg a bit
-kSpikeMaxDamage = 10
-kSpikeMinDamage = 3
+kSpikeMaxDamage = 25 //10
+kSpikeMinDamage = 20 //3
 kAcidicVengeanceDPS = 25
 
 // reduce ink amount a bit
@@ -127,8 +126,8 @@ kShadeInkDisorientRadius = 9
 
 // Babbler Bomb
 kBabblersPerBomb = 4
-kTimeBetweenBabblerBombShots = 4
-kBabblerLifetime = 8
+kTimeBetweenBabblerBombShots = 5
+kBabblerLifetime = 10
 kBabblerDamage = 20
 
 // Acid Rocket

@@ -34,17 +34,17 @@ Babbler.kLinearDamping = 1 //0
 Babbler.kRestitution = .3 //.65
 Babbler.kAttackRange = 1
 
-local kTargetSearchRange = 12
+local kTargetSearchRange = 17.5
 local kAttackRate = 0.33
-local kLifeTime = 100 //kBabblerLifetime
+local kLifeTime = kBabblerLifetime
 
 local kUpdateMoveInterval = 0.4
 local kUpdateAttackInterval = 0.8
 local kMaxJumpDistance = 6
 local kBabblerRunSpeed = 10
-local kVerticalJumpForce = 3.5
-local kMaxJumpForce = 18
-local kMinJumpForce = 7
+local kVerticalJumpForce = 4
+local kMaxJumpForce = 14
+local kMinJumpForce = 6
 local kTurnSpeed = math.pi*3
 
 local kBabblerClingDuration = -1
@@ -312,7 +312,7 @@ if Server then
 
     local function GetMoveVelocity(self, targetPos)
 
-        moveVelocity = (targetPos - self:GetOrigin()) * 1.5
+        moveVelocity = (targetPos - self:GetOrigin()) * 2
 
 
 		local YDiff = moveVelocity.y
@@ -326,7 +326,7 @@ if Server then
         end   
         
 		if YDiff >= 1.5 then
-			moveVelocity.y = kVerticalJumpForce * 2
+			moveVelocity.y = math.min(moveVelocity.y, kVerticalJumpForce * 1.6)
 		else
 			moveVelocity.y = kVerticalJumpForce
 		end
@@ -371,8 +371,8 @@ if Server then
         local done = self:MoveToTarget(PhysicsMask.AIMovement, targetPos, kBabblerRunSpeed, deltaTime)
         
         local newOrigin = self:GetOrigin()
-        local desiredY = newOrigin.y + Babbler.kRadius + 0.2
-        newOrigin.y = Slerp(prevY, desiredY, deltaTime * 3)
+        local desiredY = newOrigin.y + Babbler.kRadius + 0.1
+        newOrigin.y = Slerp(prevY, desiredY, deltaTime * 5)
         
         self:SetOrigin(newOrigin)        
         self.targetSelector:AttackerMoved() 
@@ -398,7 +398,7 @@ if Server then
         PROFILE("Babbler:FindSomethingInteresting")
     
         local origin = self:GetOrigin()
-        local searchRange = 10
+        local searchRange = kTargetSearchRange
         local targetPos = nil
         local randomTarget = self:GetOrigin() + Vector(math.random() * 4 - 2, 0, math.random() * 4 - 2) 
         
@@ -450,7 +450,7 @@ if Server then
     end
     
     function Babbler:JumpRandom()
-        self:Jump(Vector( (math.random() * 3) - 1.5, 3 + math.random() * 3, (math.random() * 3) - 1.5 ))    
+        self:Jump(Vector( (math.random() * 3) - 1.5, 2 + math.random(), (math.random() * 3) - 1.5 ))    
     end
     
     function Babbler:MoveRandom()
@@ -486,7 +486,7 @@ if Server then
             end
 
             // jump randomly
-            if math.random() < 0.6 then
+            if math.random() < 0.05 then
                 self:JumpRandom()
             end
         
@@ -706,14 +706,14 @@ if Server then
                 
             elseif self:GetIsOnGround() then
             
-                if self.timeLastJump + 0.5 < Shared.GetTime() then
+                if self.timeLastJump + 0.4 < Shared.GetTime() then
 
                     local targetPosition = self.targetPosition or ( self:GetTarget() and self:GetTarget():GetOrigin())                    
                     if targetPosition then
                     
                         local distance = math.max(0, ((self:GetOrigin() - targetPosition):GetLength() - 1))
 						local Ydiff = (targetPosition - self:GetOrigin()).y
-                        local shouldJump = 0.5 //math.random()
+                        local shouldJump = 0.14 //math.random()
                         local jumpProbablity = 0 
 
 
