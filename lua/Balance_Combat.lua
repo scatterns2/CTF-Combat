@@ -117,8 +117,14 @@ kClogHealth = 500  kClogArmor = 0 kClogPointValue = 5
 kWebHealth = 50
 
 // ALIEN DAMAGE VALUES
-kSpikeMaxDamage = 25 //10
-kSpikeMinDamage = 20 //3
+kSpikeMaxDamage = 25
+kSpikeMinDamage = 20
+kSpikeEnergyCost = 20
+kSpikeMinDamageRange = 20
+kSpikeMaxDamageRange = 10
+kSpikesRange = 100
+kSpikesPerShot = 4
+
 kAcidicVengeanceDPS = 25
 
 // reduce ink amount a bit
@@ -128,7 +134,7 @@ kShadeInkDisorientRadius = 9
 kBabblersPerBomb = 4
 kTimeBetweenBabblerBombShots = 5
 kBabblerLifetime = 10
-kBabblerDamage = 20
+kBabblerDamage = 15
 
 // Acid Rocket
 kAcidRocketVelocity = 40
@@ -194,7 +200,7 @@ kPulseGrenadeDamageType = kDamageType.Normal
 
 kClusterGrenadeDamageRadius = 6
 kClusterGrenadeDamage = 50
-kClusterFragmentDamageRadius = 6
+kClusterFragmentDamageRadius = 5
 kClusterFragmentDamage = 100
 kClusterGrenadeDamageType = kDamageType.Normal
 
@@ -257,7 +263,7 @@ kJetpackUpgradeModifier = 1.2
 kSentryAttackBaseROF = .2
 kSentryAttackRandROF = 0.0
 kSentryAttackBulletsPerSalvo = 1
-kConfusedSentryBaseROF = 2.0
+kConfusedSentryBaseROF = 0.8
 kSentryDamage = 10
 
 // EMP energy drain
