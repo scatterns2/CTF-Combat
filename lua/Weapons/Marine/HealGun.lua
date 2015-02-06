@@ -249,7 +249,7 @@ function HealGun:PerformWeld(player)
         if GetAreEnemies(player, target) then
             //self:DoDamage(kHealGunDamagePerSecond * kHealGunFireDelay, target, endPoint, attackDirection)
                 
-        elseif player:GetTeamNumber() == target:GetTeamNumber() and self:GetIsAlive() then
+        elseif player:GetTeamNumber() == target:GetTeamNumber() and self:GetIsAlive() and target:isa("Player") then
         
 			if target:GetHealth() < target:GetMaxHealth() then                 
 
