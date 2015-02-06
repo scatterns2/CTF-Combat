@@ -17,7 +17,7 @@ local kMetabolizeDelay = 3.0  //7.5
 local kMetabolizeEnergyRegain = 0 //35
 local kMetabolizeHealthRegain = 120 //15
 local kMetabolizeShieldAmount = 60
-kMetabolizeEnergyCost = 40
+kMetabolizeEnergyCost = 30
 
 kMetabolizeUpgradeEnergyCost = 20
 
@@ -96,8 +96,8 @@ end
 function Metabolize:OnTag(tagName)
 
     PROFILE("Metabolize:OnTag")
-
-    if tagName == "metabolize" and not self:GetHasAttackDelay() then
+	
+    if tagName == "vortex_start" and not self:GetHasAttackDelay() then		
         local player = self:GetParent()
         if player then
             player:DeductAbilityEnergy(kMetabolizeEnergyCost)
@@ -109,6 +109,7 @@ function Metabolize:OnTag(tagName)
 					shieldedAmount = player:SetShield(kMetabolizeShieldAmount)
 				end
 				if Client and shieldedAmount > 0 then
+					--Print("Shield On!")
 					local GUIRegenerationFeedback = ClientUI.GetScript("GUIRegenerationFeedback")
 					GUIRegenerationFeedback:TriggerRegenEffect()
 					local cinematic = Client.CreateCinematic(RenderScene.Zone_ViewModel)
@@ -119,7 +120,7 @@ function Metabolize:OnTag(tagName)
             self.lastPrimaryAttackTime = Shared.GetTime()
             self.primaryAttacking = false
         end
-    elseif tagName == "metabolize_end" then
+    elseif tagName == "vortex_hit" then
         local player = self:GetParent()
         if player then
             self.primaryAttacking = false
