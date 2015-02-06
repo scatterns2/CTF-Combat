@@ -68,7 +68,7 @@ local function FireSpikes(self)
             trace = Shared.TraceBox(extents, startPoint, endPoint, CollisionRep.Damage, PhysicsMask.Bullets, filter)
         end
         
-        local distToTarget = (trace.endPoint - startPoint):GetLength()
+        local distToTarget = math.max(0, (trace.endPoint - startPoint):GetLength() - kSpikeMaxDamageRange)
         
         if trace.fraction < 1 then
 
