@@ -977,6 +977,7 @@ function AlienTeam:InitTechTree()
     self.techTree:AddResearchNode(kTechId.MetabolizeEnergy,        kTechId.BioMassThree, kTechId.None, kTechId.AllAliens) 
     self.techTree:AddResearchNode(kTechId.MetabolizeHealth,            kTechId.BioMassFive, kTechId.MetabolizeEnergy, kTechId.AllAliens)
     self.techTree:AddResearchNode(kTechId.Stab,              kTechId.BioMassSeven, kTechId.None, kTechId.AllAliens)
+	self.techTree:AddResearchNode(kTechId.VoidShroud,            kTechId.BioMassFive, kTechId.None, kTechId.AllAliens)
     
     // onos researches
     self.techTree:AddResearchNode(kTechId.Charge,            kTechId.BioMassTwo, kTechId.None, kTechId.AllAliens)

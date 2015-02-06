@@ -119,9 +119,9 @@ kWebHealth = 50
 // ALIEN DAMAGE VALUES
 kSpikeMaxDamage = 25
 kSpikeMinDamage = 20
-kSpikeEnergyCost = 20
+kSpikeEnergyCost = 30
 kSpikeMinDamageRange = 20
-kSpikeMaxDamageRange = 10
+kSpikeMaxDamageRange = 5
 kSpikesRange = 100
 kSpikesPerShot = 4
 
@@ -135,6 +135,9 @@ kBabblersPerBomb = 4
 kTimeBetweenBabblerBombShots = 5
 kBabblerLifetime = 10
 kBabblerDamage = 15
+
+//Metabolize
+kMetabolizeEnergyCost = 30
 
 // Acid Rocket
 kAcidRocketVelocity = 40

@@ -229,6 +229,7 @@ kTechId = createTechIdEnum({
 	"SporeMineAbility",
     "SporeMine",
 	"AcidRocket",
+	"VoidShroud",
 	
 	//Capture Point Alerts
 	"AliensCappedPointA",

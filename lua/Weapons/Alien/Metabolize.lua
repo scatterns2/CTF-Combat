@@ -13,12 +13,13 @@ local networkVars =
     lastPrimaryAttackTime = "time"
 }
 
-local kMetabolizeDelay = 7.5
+local kMetabolizeDelay = 3.0  //7.5
 local kMetabolizeEnergyRegain = 0 //35
 local kMetabolizeHealthRegain = 120 //15
+local kMetabolizeShieldAmount = 60
+kMetabolizeEnergyCost = 40
 
-local kMetabolizeEnergyCost = 40
-local kMetabolizeUpgradeEnergyCost = 20
+kMetabolizeUpgradeEnergyCost = 20
 
 local kAnimationGraph = PrecacheAsset("models/alien/fade/fade_view.animation_graph")
 
@@ -101,16 +102,20 @@ function Metabolize:OnTag(tagName)
         if player then
             player:DeductAbilityEnergy(kMetabolizeEnergyCost)
             player:TriggerEffects("metabolize")
-            if player:GetCanMetabolizeHealth() then
-                local totalHealed = player:AddHealth(kMetabolizeHealthRegain, false, false)
-				if Client and totalHealed > 0 then
+            --if player:GetCanMetabolizeHealth() then
+                --local totalHealed = player:AddHealth(kMetabolizeHealthRegain, false, false)
+				local shieldedAmount = 0
+				if player.SetShield then
+					shieldedAmount = player:SetShield(kMetabolizeShieldAmount)
+				end
+				if Client and shieldedAmount > 0 then
 					local GUIRegenerationFeedback = ClientUI.GetScript("GUIRegenerationFeedback")
 					GUIRegenerationFeedback:TriggerRegenEffect()
 					local cinematic = Client.CreateCinematic(RenderScene.Zone_ViewModel)
 					cinematic:SetCinematic(kRegenerationViewCinematic)
 				end
-            end 
-            player:AddEnergy(kMetabolizeEnergyRegain)			
+            --end 
+            --player:AddEnergy(kMetabolizeEnergyRegain)			
             self.lastPrimaryAttackTime = Shared.GetTime()
             self.primaryAttacking = false
         end

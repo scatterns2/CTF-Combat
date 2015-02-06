@@ -202,6 +202,9 @@
     <filename>Upgrades\Marine\Upgrade_Medic.lua</filename>
   </file>
   <file>
+    <filename>Upgrades\Alien\Upgrade_Metabolize.lua</filename>
+  </file>
+  <file>
     <filename>Upgrades\Marine\Upgrade_MinigunExo.lua</filename>
   </file>
   <file>
