@@ -2676,6 +2676,7 @@ function GetTexCoordsForTechId(techId)
         gTechIdPosition[kTechId.Vortex] = kDeathMessageIcon.Vortex
         gTechIdPosition[kTechId.MetabolizeEnergy] = kDeathMessageIcon.Metabolize
         gTechIdPosition[kTechId.MetabolizeHealth] = kDeathMessageIcon.Metabolize
+		gTechIdPosition[kTechId.VoidShield] = kDeathMessageIcon.Metabolize
         
         gTechIdPosition[kTechId.Gore] = kDeathMessageIcon.Gore
         gTechIdPosition[kTechId.Stomp] = kDeathMessageIcon.Stomp

@@ -12,7 +12,7 @@
 kTechPointDamageThreshold = 0 -- The hive/cc will only take HP damage if their armor fraction is below this.
 
 // HEALTH AND ARMOR		
-kMarineHealth = 100	kMarineArmor = 30	kMarinePointValue = 5
+kMarineHealth = 160	kMarineArmor = 0	kMarinePointValue = 5
 kScoutHealth = 160
 kMedicHealth = 230
 kEngineerHealth = 180
@@ -33,7 +33,7 @@ kSkulkHealth = 150	kSkulkArmor = 0		kSkulkPointValue = 5    kSkulkHealthPerBioMa
 kGorgeHealth = 350	kGorgeArmor = 0	    kGorgePointValue = 7    kGorgeHealthPerBioMass = 2
 kLerkHealth = 225	kLerkArmor = 0	    kLerkPointValue = 15    kLerkHealthPerBioMass = 2
 kFadeHealth = 400	kFadeArmor = 0      kFadePointValue = 20    kFadeHealthPerBioMass = 5
-kOnosHealth = 800	kOnosArmor = 400	kOnosPointValue = 30    kOnosHealtPerBioMass = 25
+kOnosHealth = 600	kOnosArmor = 300	kOnosPointValue = 30    kOnosHealtPerBioMass = 25
 
 kMarineWeaponHealth = 400
 		
@@ -85,7 +85,7 @@ kSentryBatteryHealth = 600	kSentryBatteryArmor = 200	kSentryBatteryPointValue = 
 		
 kDrifterHealth = 300	kDrifterArmor = 20	kDrifterPointValue = 2
 kMACHealth = 300	kMACArmor = 50	kMACPointValue = 2
-kMineHealth = 40	kMineArmor = 10	kMinePointValue = 0
+kMineHealth = 100	kMineArmor = 0	kMinePointValue = 0
 		
 kExtractorHealth = 2400 kExtractorArmor = 1050 kExtractorPointValue = 15
 kExtractorArmorAddAmount = 700 // not used

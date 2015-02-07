@@ -17,7 +17,6 @@
 Script.Load("lua/Utility.lua")
 Script.Load("lua/Weapons/Alien/SwipeBlink.lua")
 Script.Load("lua/Weapons/Alien/StabBlink.lua")
-Script.Load("lua/Weapons/Alien/Metabolize.lua")
 Script.Load("lua/Weapons/Alien/Vortex.lua")
 Script.Load("lua/Weapons/Alien/ReadyRoomBlink.lua")
 Script.Load("lua/Alien.lua")
@@ -35,6 +34,7 @@ Script.Load("lua/Weapons/PredictedProjectile.lua")
 Script.Load("lua/IdleMixin.lua")
 Script.Load("lua/FadeVariantMixin.lua")
 Script.Load("lua/Weapons/Alien/AcidRocket.lua")
+Script.Load("lua/Weapons/Alien/VoidShield.lua")
 
 class 'Fade' (Alien)
 
@@ -66,10 +66,10 @@ Fade.kShadowStepDuration = 0.25
 local kMaxSpeed = 6.2
 local kBlinkSpeed = 14
 local kBlinkAcceleration = 40
-local kBlinkAddAcceleration = 1
-local kMetabolizeAnimationDelay = 0.65
+local kBlinkAddAcceleration = 3
+local kVoidShieldAnimationDelay = 0.35 //0.65
 local kStabSpeed = 3
-local kShieldDuration = 1.0
+local kShieldDuration = 10 //for testing original value 1.5
 
 // Delay before you can blink again after a blink.
 local kMinEnterEtherealTime = 0.4
@@ -98,7 +98,7 @@ local networkVars =
     
     landedAfterBlink = "private compensated boolean",  
     
-    timeMetabolize = "private compensated time",
+    timeVoidShield = "private compensated time",
     
     timeOfLastPhase = "time",
     hasEtherealGate = "boolean",
@@ -218,11 +218,11 @@ function Fade:MovementModifierChanged(newMovementModifierState, input)
 
     if newMovementModifierState and self:GetActiveWeapon() ~= nil then
         local weaponMapName = self:GetActiveWeapon():GetMapName()
-        local metabweapon = self:GetWeapon(Metabolize.kMapName)
-        if metabweapon and not metabweapon:GetHasAttackDelay() and self:GetEnergy() >= metabweapon:GetEnergyCost() then
-            self:SetActiveWeapon(Metabolize.kMapName)
+        local vshieldweapon = self:GetWeapon(VoidShield.kMapName)
+        if vshieldweapon and not vshieldweapon:GetHasAttackDelay() and self:GetEnergy() >= vshieldweapon:GetEnergyCost() then
+            self:SetActiveWeapon(VoidShield.kMapName)
             self:PrimaryAttack()
-            if weaponMapName ~= Metabolize.kMapName then
+            if weaponMapName ~= VoidShield.kMapName then
                 self.previousweapon = weaponMapName
 
             end
@@ -298,11 +298,11 @@ function Fade:GetGroundFriction()
 end  
 
 function Fade:GetAirControl()
-    return 20 //40
+    return 28 //40
 end   
 
 function Fade:GetAirFriction()
-    return (self:GetIsBlinking() or self:GetRecentlyShadowStepped()) and 0 or (0.2  - GetCelerityLevel(self) * 0.01)
+    return (self:GetIsBlinking() or self:GetRecentlyShadowStepped()) and 0 or (0.2 - GetCelerityLevel(self) * 0.01)
 end 
 
 function Fade:ModifyVelocity(input, velocity, deltaTime)
@@ -391,7 +391,7 @@ function Fade:GetRecentlyShadowStepped()
 end
 
 function Fade:GetMovementSpecialTechId()
-	return kTechId.MetabolizeHealth
+	return kTechId.VoidShield
 	//return kTechId.ShadowStep
 end
 
@@ -400,7 +400,7 @@ function Fade:GetHasMovementSpecial()
 end
 
 function Fade:GetMovementSpecialEnergyCost()
-	return kMetabolizeEnergyCost
+	return kVoidShieldEnergyCost
     //return kFadeShadowStepCost
 end
 
@@ -459,8 +459,8 @@ function Fade:TriggerShadowStep(direction)
     
 end
 
-function Fade:GetHasMetabolizeAnimationDelay()
-    return self.timeMetabolize + kMetabolizeAnimationDelay > Shared.GetTime()
+function Fade:GetHasVoidShieldAnimationDelay()
+    return self.timeVoidShield + kVoidShieldAnimationDelay > Shared.GetTime()
 end
 
 function Fade:GetCanMetabolizeHealth()
@@ -494,6 +494,10 @@ function Fade:OnProcessMove(input)
 
     end
     
+	if not self:GetHasVoidShieldAnimationDelay() and self.previousweapon ~= nil then
+        self:SetActiveWeapon(self.previousweapon)
+        self.previousweapon = nil
+    end
         
 end
 
@@ -552,7 +556,7 @@ end
 
 function Fade:OnUpdateAnimationInput(modelMixin)
 
-    if not self:GetHasMetabolizeAnimationDelay() then
+    if not self:GetHasVoidShieldAnimationDelay() then
         Alien.OnUpdateAnimationInput(self, modelMixin)
 
         if self.timeOfLastPhase + 0.5 > Shared.GetTime() then
@@ -560,7 +564,7 @@ function Fade:OnUpdateAnimationInput(modelMixin)
         end
     else
         local weapon = self:GetActiveWeapon()
-        if weapon ~= nil and weapon.OnUpdateAnimationInput and weapon:GetMapName() == Metabolize.kMapName then
+        if weapon ~= nil and weapon.OnUpdateAnimationInput and weapon:GetMapName() == VoidShield.kMapName then
             weapon:OnUpdateAnimationInput(modelMixin)
         end
     end
@@ -625,15 +629,19 @@ end
 
 function Fade:GetMovementSpecialCooldown()
     local cooldown = 0
-    local timeLeft = (Shared.GetTime() - self.timeMetabolize)
+    local timeLeft = (Shared.GetTime() - self.timeVoidShield)
     
-    local metabolizeWeapon = self:GetWeapon(Metabolize.kMapName)
-    local metaDelay = metabolizeWeapon and metabolizeWeapon:GetAttackDelay() or 0
-    if timeLeft < metaDelay then
-        return Clamp(timeLeft / metaDelay, 0, 1)
+    local voidshieldWeapon = self:GetWeapon(VoidShield.kMapName)
+    local shieldDelay = voidshieldWeapon and voidshieldWeapon:GetAttackDelay() or 0
+    if timeLeft < shieldDelay then
+        return Clamp(timeLeft / shieldDelay, 0, 1)
     end
     
     return cooldown
+end
+
+function Fade:GetShieldAmount()
+	return self.shieldAmount
 end
 
 function Fade:SetShield(amount)
@@ -643,20 +651,22 @@ function Fade:SetShield(amount)
 end
 
 function Fade:ModifyDamageTaken(damageTable, attacker, doer, damageType, hitPoint)
-	local shieldHP = self.shieldAmount
-    if shieldHP > 0 then
-		local damageBlocked = math.min(shieldHP, damageTable.damage)
+	local prevShieldHP = self.shieldAmount
+    if prevShieldHP > 0 then
+		local damageBlocked = math.max(0, math.min(prevShieldHP, damageTable.damage))
 		self.shieldAmount = self.shieldAmount - damageBlocked
-		damageTable.damage = damageTable.damage - math.max(0, damageBlocked)
+		damageTable.damage = damageTable.damage - damageBlocked
 		
 		self:TriggerEffects("boneshield_blocked", {effecthostcoords = Coords.GetTranslation(hitPoint)} )
+		
 	end
 end
 
 function Fade:ShieldExpire()
-	if Shared.GetTime() >= self.timeMetabolize + kShieldDuration then
-		self:SetShield(0)
-	end
+	--if Shared.GetTime() >= self.timeVoidShield + kShieldDuration or (self.shieldAmount <= 0) then
+	self.shieldAmount = 0
+	//if Client then Print("Shield Gone") end
+	--end
 end
 
 Shared.LinkClassToMap("Fade", Fade.kMapName, networkVars, true)

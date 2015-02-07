@@ -170,7 +170,7 @@ kTechId = createTechIdEnum({
     'LerkBite', 'Cling', 'Spikes', 'Umbra', 'Spores',
 
     // fade abilities   
-    'Swipe', 'Blink', 'ShadowStep', 'Vortex', 'Stab', 'MetabolizeEnergy', 'MetabolizeHealth',
+    'Swipe', 'Blink', 'ShadowStep', 'Vortex', 'Stab', 'MetabolizeEnergy', 'MetabolizeHealth', 'VoidShield',
     
     // onos abilities
     'Gore', 'Smash', 'Charge', 'BoneShield', 'Stomp', 'Shockwave', 
