@@ -58,14 +58,14 @@ Onos.kGroundFrictionForce = 3
 
 // used for animations and sound effects
 Onos.kMaxSpeed = 5.6
-Onos.kChargeSpeed = 9
+Onos.kChargeSpeed = 11
 
 Onos.kHealth = kOnosHealth
 Onos.kArmor = kOnosArmor
 Onos.kChargeEnergyCost = kChargeEnergyCost
 
 Onos.kChargeUpDuration = 2
-Onos.kChargeDelay = 1.5
+Onos.kChargeDelay = 2
 
 // mouse sensitivity scalar during charging
 Onos.kChargingSensScalar = 0

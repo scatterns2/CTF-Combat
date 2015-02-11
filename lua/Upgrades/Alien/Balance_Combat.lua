@@ -34,13 +34,13 @@ kCommandStationHealSpeed = .75
 kHiveHealSpeed = .75
 
 // Bots do reduced damage
-kBotDamageScalar = 0.75
+kBotDamageScalar = 0.6
 
 //adds .5 m/s per level
 kCelerityAddSpeed = .5
 
 // Range for evolving to Onos/Exo from the Hive/CommandStation
-kTechRange = 25.0
+kTechRange = 30.0
 
 // Range for buying weapons near armories 
 kCombatArmoryRange = 7.0
@@ -91,9 +91,9 @@ kCamouflageTime = 2
 kCamouflageUncloakFactor = 2 / 3
 
 -- CTF Mode Specific
-kPickUpFlagScore = 50
-kReturnFlagScore = 100
-kCaptureFlagScore = 500
+kPickUpFlagScore = 10
+kReturnFlagScore = 20
+kCaptureFlagScore = 50
 
 kCaptureWinTotal = 5
 
@@ -117,14 +117,14 @@ kClogHealth = 500  kClogArmor = 0 kClogPointValue = 5
 kWebHealth = 50
 
 // ALIEN DAMAGE VALUES
-kBiteDamage = 70
+kBiteDamage = 75
 kBiteDamageType = kDamageType.Normal
 kBiteEnergyCost = 3
 
-kBileBombDamage = 50 // per second
+kBileBombDamage = 40 // per second
 kBileBombDamageType = kDamageType.Structural
-kBileBombEnergyCost = 26
-kBileBombDuration = 1.5
+kBileBombEnergyCost = 30
+kBileBombDuration = 2
 kBileBombSplashRadius = 4.8
 
 kXenocideDamage = 100
@@ -164,24 +164,24 @@ kBabblerDamage = 15
 
 //Fade Swipe and Stab
 kSwipeDamageType = kDamageType.Normal
-kSwipeDamage = 80
-kSwipeEnergyCost = 5
+kSwipeDamage = 75
+kSwipeEnergyCost = 3
 
 kStabDamage = 200
 kStabDamageType = kDamageType.Normal
 kStabEnergyCost = 20
 
-kStartBlinkEnergyCost = 14
+kStartBlinkEnergyCost = 16
 kBlinkEnergyCost = 38
 
 
 // Acid Rocket
 kAcidRocketVelocity = 40
 kAcidRocketEnergyCost = 30
-kAcidRocketFireDelay = 0
+kAcidRocketFireDelay = 0.05
 kAcidRocketBombDamageType = kDamageType.Normal
 kAcidRocketBombDuration = 1
-kAcidRocketBombDamage = 70
+kAcidRocketBombDamage = 80
 kAcidRocketBombRadius = 0.2
 kAcidRocketBombSplashRadius = 4
 kAcidRocketBombDotIntervall = 0.4
@@ -200,7 +200,7 @@ kDisruptMarineTime = 1
 kDisruptMarineTimeout = 4
 
 // Hydras
-kHydraJetpackFuelDamage = 0.1 // from 0 to 1
+kHydraJetpackFuelDamage = 0.17 // from 0 to 1
 kHydraFireRate = 0.25
 kHydraHealth = 600 // Original value 350
 kHydraArmor = 0 // Original value 10
@@ -211,17 +211,14 @@ kLmgDamageType = kDamageType.Normal
 kLmgClipSize = 40
 
 // MARINE DAMAGE VALUES
-kRifleDamage = 15 //11
+kRifleDamage = 25 //11
 kRifleDamageType = kDamageType.Normal
-kRifleClipSize = 40
+kRifleClipSize = 50
 kRifleMeleeDamage = 40
 
 // 10 bullets per second
 kPistolRateOfFire = 0.1
-kPistolMinDamage = 15
-kPistolMaxDamage = 25
-kPistolMinDamageRange = 40
-kPistolMaxDamageRange = 15
+kPistolDamage = 20
 kPistolDamageType = kDamageType.Normal
 kPistolClipSize = 10
 // not used yet
@@ -265,7 +262,7 @@ kNerveGasDamagePerSecond = 15
 kNerveGasDamageType = kDamageType.Gas
 
 kGrenadeLauncherGrenadeDamage = 100
-kGrenadeLauncherGrenadeDamageType = kDamageType.Heavy
+kGrenadeLauncherGrenadeDamageType = kDamageType.Structural
 kGrenadeLauncherClipSize = 4
 kGrenadeLauncherGrenadeDamageRadius = 4
 kGrenadeLifetime = 2

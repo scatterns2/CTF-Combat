@@ -9,10 +9,11 @@
 SpikesMixin = CreateMixin( SpikesMixin )
 SpikesMixin.type = "Spikes"
 
-local kSpread = Math.Radians(2)
+local kSpread = Math.Radians(3)
 local kSpikeSize = 0.03
-local kSpikesAttackDelay = 1.0
-kSpikesPerShot = 4
+kSpikesAttackDelay = 0.18
+kSnipeSpikesPerShot = 4
+kSnipeAttackDelay = 0.9
 
 // GetHasSecondary and GetSecondaryEnergyCost should completely override any existing
 // same named function defined in the object.
@@ -32,8 +33,17 @@ SpikesMixin.networkVars =
     shootingSpikes = "boolean",
     // need to use a network variable for silence upgrade here, since the marines do not know the alien tech tree
     silenced = "boolean",
-	timeLastSpiked = "time"
+	timeLastSpiked = "time",
+	sniping = "boolean"
 }
+
+function SpikesMixin:__initmixin()
+	self.sniping = false
+end
+
+function SpikesMixin:SetSnipeMode(canSnipe)
+	self.sniping = canSnipe
+end
 
 local function FireSpikes(self)
 
@@ -46,14 +56,15 @@ local function FireSpikes(self)
     local filter = EntityFilterOneAndIsa(player, "Babbler")
     local range = kSpikesRange
     
-    local numSpikes = kSpikesPerShot
+    local numSpikes = ConditionalValue(self.sniping, kSnipeSpikesPerShot, kSpikesPerShot)
     local startPoint = player:GetEyePos()
     
     local viewCoords = player:GetViewCoords()
     
     self.spiked = true
     self.silenced = GetHasSilenceUpgrade(player)
-    
+    self.timeLastSpiked = Shared.GetTime()
+	
     for spike = 1, numSpikes do
 
         // Calculate spread for each shot, in case they differ    
@@ -82,7 +93,7 @@ local function FireSpikes(self)
         
     end
 	
-	self.timeLastSpiked = Shared.GetTime()    
+	    
 end
 
 function SpikesMixin:GetTracerEffectName()
@@ -90,7 +101,7 @@ function SpikesMixin:GetTracerEffectName()
 end
 
 function SpikesMixin:GetMinFireDelay()
-    return kSpikesAttackDelay
+    return ConditionalValue(self.sniping, kSnipeAttackDelay, kSpikesAttackDelay)
 end
 
 function SpikesMixin:GetTracerResidueEffectName()
@@ -136,7 +147,7 @@ function SpikesMixin:GetHasSecondary(player)
 end
 
 function SpikesMixin:GetSecondaryEnergyCost(player)
-	local energyMultiplier = 1
+	local energyMultiplier = ConditionalValue(self.sniping, 4, 1)
 	if HasMixin(player, "Focus") then
 		energyMultiplier = player:GetFocusEnergyMultiplier()
 	end
