@@ -229,6 +229,9 @@ kTechId = createTechIdEnum({
 	"SporeMineAbility",
     "SporeMine",
 	"AcidRocket",
+	"VoidShield",
+	"Snipe",
+	"Mechanic",
 	
 	//Capture Point Alerts
 	"AliensCappedPointA",
@@ -252,7 +255,7 @@ kTechId = createTechIdEnum({
 	"Engineer",
 	"Flag",
 	"HealGun",
-	
+
 
     // Maximum index
     'Max'
