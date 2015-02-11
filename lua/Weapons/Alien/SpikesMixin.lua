@@ -34,15 +34,15 @@ SpikesMixin.networkVars =
     // need to use a network variable for silence upgrade here, since the marines do not know the alien tech tree
     silenced = "boolean",
 	timeLastSpiked = "time",
-	sniping = "boolean"
+	canSnipe = "boolean"
 }
 
 function SpikesMixin:__initmixin()
-	self.sniping = false
+	self.canSnipe = false
 end
 
-function SpikesMixin:SetSnipeMode(canSnipe)
-	self.sniping = canSnipe
+function SpikesMixin:SetSnipeMode(newVal)
+	self.canSnipe = newVal
 end
 
 local function FireSpikes(self)
@@ -56,7 +56,7 @@ local function FireSpikes(self)
     local filter = EntityFilterOneAndIsa(player, "Babbler")
     local range = kSpikesRange
     
-    local numSpikes = ConditionalValue(self.sniping, kSnipeSpikesPerShot, kSpikesPerShot)
+    local numSpikes = ConditionalValue(self.canSnipe, kSnipeSpikesPerShot, kSpikesPerShot)
     local startPoint = player:GetEyePos()
     
     local viewCoords = player:GetViewCoords()
@@ -101,7 +101,7 @@ function SpikesMixin:GetTracerEffectName()
 end
 
 function SpikesMixin:GetMinFireDelay()
-    return ConditionalValue(self.sniping, kSnipeAttackDelay, kSpikesAttackDelay)
+    return ConditionalValue(self.canSnipe, kSnipeAttackDelay, kSpikesAttackDelay)
 end
 
 function SpikesMixin:GetTracerResidueEffectName()
@@ -147,9 +147,9 @@ function SpikesMixin:GetHasSecondary(player)
 end
 
 function SpikesMixin:GetSecondaryEnergyCost(player)
-	local energyMultiplier = ConditionalValue(self.sniping, 4, 1)
+	local energyMultiplier = ConditionalValue(self.canSnipe, 4, 1)
 	if HasMixin(player, "Focus") then
-		energyMultiplier = player:GetFocusEnergyMultiplier()
+		energyMultiplier = energyMultiplier * player:GetFocusEnergyMultiplier()
 	end
     return kSpikeEnergyCost * energyMultiplier
 end
@@ -232,3 +232,5 @@ end
 function SpikesMixin:GetDamageType()
     return kSpikeDamageType
 end
+
+
