@@ -10,7 +10,7 @@
 						
 class 'WelderUpgrade' (CombatWeaponUpgrade)
 
-WelderUpgrade.cost	 		= { 1 }                           				// cost of the upgrade in points
+WelderUpgrade.cost	 		= { 0 }                           				// cost of the upgrade in points
 WelderUpgrade.upgradeName 	= "welder"                       				// Text code of the upgrade if using it via console
 WelderUpgrade.upgradeTitle 	= "WELDER"               						// Title of the upgrade, e.g. Submachine Gun
 WelderUpgrade.upgradeDesc 	= "WELDER_TOOLTIP"	// Description of the upgrade

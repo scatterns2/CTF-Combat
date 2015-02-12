@@ -24,7 +24,7 @@ local networkVars =
     releaseGas = "boolean"
 }
 
-local kLifeTime = 5
+local kLifeTime = 6
 local kGasReleaseDelay = 0.5
 
 AddMixinNetworkVars(BaseModelMixin, networkVars)
@@ -122,7 +122,7 @@ local gNerveGasDamageTakers = {}
 local kCloudUpdateRate = 0.3
 local kSpreadDelay = 0.6
 local kNerveGasCloudRadius = 5
-local kNerveGasCloudLifetime = 5
+local kNerveGasCloudLifetime = 6
 
 local kCloudMoveSpeed = 2
 

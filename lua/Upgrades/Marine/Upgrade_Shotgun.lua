@@ -16,11 +16,12 @@ ShotgunUpgrade.upgradeTitle 	= "SHOTGUN"       								// Title of the upgrade, 
 ShotgunUpgrade.upgradeDesc  	= "SHOTGUN_TOOLTIP"	// Description of the upgrade
 ShotgunUpgrade.upgradeTechId 	= kTechId.Shotgun 	 		    				// TechId of the upgrade, default is kTechId.Move cause its the first entry
 ShotgunUpgrade.hudSlot	 		= kPrimaryWeaponSlot							// Is this a primary weapon?
-ShotgunUpgrade.minPlayerLevel 	= 4												// Controls whether this upgrade requires the recipient to be a minimum level
+ShotgunUpgrade.minPlayerLevel 	= 2												// Controls whether this upgrade requires the recipient to be a minimum level
 ShotgunUpgrade.rowOrder 		= 0												// Controls the horizontal position on the menu
 ShotgunUpgrade.texture  		= PrecacheAsset("ui/buymenu/Icons/Icon_Shotgun_Active.dds")
 ShotgunUpgrade.vidDesc			= "videos/Marines_Shotgun.webm"
 ShotgunUpgrade.detailImage		= "ui/buymenu/Background/MarineCenters/Marine_BM_Center_Shot.dds"
+ShotgunUpgrade.requirements		= {"scout","marine"}
 
 function ShotgunUpgrade:Initialize()
 
@@ -37,6 +38,7 @@ function ShotgunUpgrade:Initialize()
 	self.texture = ShotgunUpgrade.texture
 	self.vidDesc = ShotgunUpgrade.vidDesc
 	self.detailImage = ShotgunUpgrade.detailImage
+	self.requirements = ShotgunUpgrade.requirements
 	
 end
 

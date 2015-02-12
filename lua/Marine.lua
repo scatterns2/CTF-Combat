@@ -97,13 +97,16 @@ Marine.kWalkMaxSpeed = 4.7                // Four miles an hour = 6,437 meters/h
 Marine.kRunMaxSpeed = 6.2               // 10 miles an hour = 16,093 meters/hour = 4.4 meters/second (increase for FPS tastes)
 Marine.kRunInfestationMaxSpeed = 5.2    // 10 miles an hour = 16,093 meters/hour = 4.4 meters/second (increase for FPS tastes)
 
+// Used to make marine jump vertical speed change less sudden.
+Marine.kJumpHeightFactor = 0.76
+
 // How fast does our armor get repaired by welders
 Marine.kArmorWeldRate = kMarineArmorWeldRate
 Marine.kWeldedEffectsInterval = .5
 
 Marine.kSpitSlowDuration = 3
 
-Marine.kWalkBackwardSpeedScalar = 0.4
+Marine.kWalkBackwardSpeedScalar = 0.6
 
 // start the get up animation after stun before giving back control
 Marine.kGetUpAnimationLength = 0
@@ -113,12 +116,6 @@ Marine.kMarineAlertTimeout = 4
 
 local kDropWeaponTimeLimit = 1
 local kPickupWeaponTimeLimit = 1
-
-Marine.kAcceleration = 100
-Marine.kSprintAcceleration = 120 // 70
-Marine.kSprintInfestationAcceleration = 60
-
-Marine.kGroundFrictionForce = 16
 
 Marine.kAirStrafeWeight = 2
 
@@ -566,6 +563,14 @@ function Marine:ModifyGroundFraction(groundFraction)
     return groundFraction > 0 and 1 or 0
 end
 
+function Marine:GetAcceleration()
+    return 11 * self:GetSlowSpeedModifier()
+end
+
+function Marine:GetGroundFriction()
+    return 9
+end
+
 function Marine:GetMaxSpeed(possible)
 
     if possible then
@@ -577,7 +582,7 @@ function Marine:GetMaxSpeed(possible)
     local maxSpeed = ConditionalValue(self:GetIsSprinting(), maxSprintSpeed, Marine.kWalkMaxSpeed)
     
     // Take into account our weapon inventory and current weapon. Assumes a vanilla marine has a scalar of around .8.
-    local inventorySpeedScalar = self:GetInventorySpeedScalar() + .17    
+    local inventorySpeedScalar = Clamp(self:GetInventorySpeedScalar() + .17, 0, 1)
     local useModifier = self.isUsing and 0.5 or 1
     
     if self.catpackboost then
@@ -878,6 +883,7 @@ function Marine:ModifyJump(input, velocity, jumpVelocity)
     
     jumpVelocity:Scale(self:GetSlowSpeedModifier())
     */
+	jumpVelocity.y = jumpVelocity.y * Marine.kJumpHeightFactor
 end
 
 function Marine:OnJump()
@@ -1016,6 +1022,13 @@ end
 
 function Marine:GetFlagAttachPointName()
     return "JetPack"
+end
+
+function Marine:ModifyGravityForce(gravityTable)
+	// Apply no gravity for the first 0.1 second after a jump. This allows marine to have reduced jumping force while keeping the same jump height!
+	if self:GetIsOnGround() or self:GetRecentlyJumped() then
+		gravityTable.gravity = 0
+	end
 end
 
 Shared.LinkClassToMap("Marine", Marine.kMapName, networkVars, true)

@@ -10,13 +10,13 @@
 						
 class 'LeapUpgrade' (CombatAlienAbilityUpgrade)
 
-LeapUpgrade.cost 			= { 1 }                          				// cost of the upgrade in points
+LeapUpgrade.cost 			= { 0 }                          				// cost of the upgrade in points
 LeapUpgrade.upgradeName	= "leap"	                        				// text code of the upgrade if using it via console
 LeapUpgrade.upgradeTitle = "LEAP"											// Title of the upgrade, e.g. Submachine Gun
 LeapUpgrade.upgradeDesc	= "LEAP_TOOLTIP"			// Description of the upgrade
 LeapUpgrade.upgradeTechId = kTechId.Leap  									// techId of the upgrade, default is kTechId.Move cause its the first 
 LeapUpgrade.requirements  = { "skulk" }										// Upgrades you must get before you can get this one.  These are OR - conditionals ONLY!!
-LeapUpgrade.minPlayerLevel = 3
+LeapUpgrade.minPlayerLevel = 0
 LeapUpgrade.texture 		= PrecacheAsset("ui/buymenu/Icons/Icon_Leap_Active.dds")
 LeapUpgrade.vidDesc 		= ""
 

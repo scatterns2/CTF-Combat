@@ -93,7 +93,7 @@ kCamouflageUncloakFactor = 2 / 3
 -- CTF Mode Specific
 kPickUpFlagScore = 50
 kReturnFlagScore = 100
-kCaptureFlagScore = 500
+kCaptureFlagScore = 300
 
 kCaptureWinTotal = 5
 
@@ -131,7 +131,16 @@ kXenocideDamage = 100
 kXenocideDamageType = kDamageType.Normal
 kXenocideRange = 10
 
-kLerkBiteEnergyCost = 3
+kLerkBiteDamage = 50
+kBitePoisonDamage = 6 // per second
+kPoisonBiteDuration = 6
+kLerkBiteEnergyCost = 5
+kLerkBiteDamageType = kDamageType.Normal
+
+kUmbraEnergyCost = 27
+kUmbraDuration = 5
+kUmbraRadius = 5
+kLerkFlapEnergyCost = 5
 
 kSpikeMaxDamage = 25
 kSpikeMinDamage = 20
@@ -164,16 +173,17 @@ kBabblerDamage = 15
 
 //Fade Swipe and Stab
 kSwipeDamageType = kDamageType.Normal
-kSwipeDamage = 80
+kSwipeDamage = 75
 kSwipeEnergyCost = 5
 
 kStabDamage = 200
 kStabDamageType = kDamageType.Normal
 kStabEnergyCost = 20
 
-kStartBlinkEnergyCost = 14
+kStartBlinkEnergyCost = 16
 kBlinkEnergyCost = 38
 
+kVoidShieldEnergyCost = 15
 
 // Acid Rocket
 kAcidRocketVelocity = 40
@@ -211,17 +221,17 @@ kLmgDamageType = kDamageType.Normal
 kLmgClipSize = 40
 
 // MARINE DAMAGE VALUES
-kRifleDamage = 15 //11
+kRifleDamage = 20 //11
 kRifleDamageType = kDamageType.Normal
-kRifleClipSize = 40
+kRifleClipSize = 30
 kRifleMeleeDamage = 40
 
 // 10 bullets per second
 kPistolRateOfFire = 0.1
 kPistolMinDamage = 15
-kPistolMaxDamage = 25
-kPistolMinDamageRange = 40
-kPistolMaxDamageRange = 15
+kPistolMaxDamage = 20
+kPistolMinDamageRange = 30
+kPistolMaxDamageRange = 10
 kPistolDamageType = kDamageType.Normal
 kPistolClipSize = 10
 // not used yet
@@ -247,21 +257,26 @@ kAxeDamage = 30
 kAxeDamageType = kDamageType.Structural
 SetCachedTechData(kTechId.Axe, kTechDataDamageType, kAxeDamageType)
 
+kKatanaRange = 1.6
+kKatanaDamage = 70
+kKatanaDamageType = kDamageType.Normal
+//SetCachedTechData(kTechId.Katana, kTechDataDamageType, kKatanaDamageType)
+
 kPulseGrenadeDamageRadius = 5
 kPulseGrenadeEnergyDamageRadius = 5
 kPulseGrenadeDamage = 50
-kPulseGrenadeEnergyDamagePercent = .2
+kPulseGrenadeEnergyDamagePercent = 1
 kPulseGrenadeDamageType = kDamageType.Normal
 kElectrifiedAttackSpeed = 0.5
 kElectrifiedDuration = 4
 
 kClusterGrenadeDamageRadius = 6
 kClusterGrenadeDamage = 40
-kClusterFragmentDamageRadius = 4
+kClusterFragmentDamageRadius = 5
 kClusterFragmentDamage = 60
 kClusterGrenadeDamageType = kDamageType.Normal
 
-kNerveGasDamagePerSecond = 15
+kNerveGasDamagePerSecond = 20
 kNerveGasDamageType = kDamageType.Gas
 
 kGrenadeLauncherGrenadeDamage = 100
@@ -270,18 +285,19 @@ kGrenadeLauncherClipSize = 4
 kGrenadeLauncherGrenadeDamageRadius = 4
 kGrenadeLifetime = 2
 
-kShotgunDamage = 10
-kShotgunClipSize = 7
+kShotgunDamage = 8
+kShotgunClipSize = 6
 kShotgunBulletsPerShot = 17
 kShotgunRange = 40
 kShotgunFireRate = 0.8
 
 kNadeLauncherClipSize = 4
 
-kFlamethrowerDamage = 20
+kFlamethrowerDamage = 12
 kFlamethrowerClipSize = 30
-kBurnDamagePerSecond = 10
-kFlamePercentDamage = .02
+kFlamethrowerRange = 8.5
+kBurnDamagePerSecond = 12
+kFlamePercentDamage = 2
 kFlameDotUpgradeMultiplier = 2
 kBurnDamagePerStackPerSecond = 3
 kFlamethrowerMaxStacks = 20
@@ -320,7 +336,7 @@ kJetpackUpgradeModifier = 1.2
 kSentryAttackBaseROF = .2
 kSentryAttackRandROF = 0.0
 kSentryAttackBulletsPerSalvo = 1
-kConfusedSentryBaseROF = 0.8
+kConfusedSentryBaseROF = 1.0
 kSentryDamage = 10
 
 // EMP energy drain

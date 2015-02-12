@@ -64,17 +64,17 @@ local kShadowStepSpeed = 30
 Fade.kShadowStepDuration = 0.25
 
 local kMaxSpeed = 6
-local kBlinkSpeed = 12
+local kBlinkSpeed = 13
 local kBlinkAcceleration = 36
 local kBlinkAddAcceleration = 4
-local kVoidShieldAnimationDelay = 0.35 //0.65
+local kVoidShieldAnimationDelay = 0 //0.65
 local kStabSpeed = 3
 local kShieldDuration = 1
 
 // Delay before you can blink again after a blink.
-local kMinEnterEtherealTime = 0.6
+local kMinEnterEtherealTime = 0.8
 
-local kFadeGravityMod = 0.9
+local kFadeGravityMod = 0.93
 
 if Server then
     Script.Load("lua/Fade_Server.lua")
@@ -183,7 +183,7 @@ end
 
 function Fade:ModifyJump(input, velocity, jumpVelocity)
 		// Fade jumps slightly lower because it has Blink
-		jumpVelocity:Scale(kFadeGravityMod)
+		//jumpVelocity:Scale(kFadeGravityMod)
 
 end
 
@@ -302,7 +302,7 @@ function Fade:GetGroundFriction()
 end  
 
 function Fade:GetAirControl()
-    return 27 //40
+    return 24 //40
 end   
 
 function Fade:GetAirFriction()
@@ -587,11 +587,14 @@ end
 function Fade:PreUpdateMove(input, runningPrediction)
     self.shadowStepping = self.timeShadowStep + Fade.kShadowStepDuration > Shared.GetTime()
 end
-/*
+
 function Fade:ModifyAttackSpeed(attackSpeedTable)
-    attackSpeedTable.attackSpeed = attackSpeedTable.attackSpeed * 1.06
+	local weaponMapName = self:GetActiveWeapon():GetMapName()
+	if weaponMapName == VoidShield.kMapName then
+		attackSpeedTable.attackSpeed = attackSpeedTable.attackSpeed * 3
+	end
 end
-*/
+
 function Fade:GetEngagementPointOverride()
     return self:GetOrigin() + Vector(0, 0.8, 0)
 end

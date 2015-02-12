@@ -18,6 +18,7 @@ ShadowStepUpgrade.requirements  = { "fade" }									// Upgrades you must get be
 ShadowStepUpgrade.minPlayerLevel = 7
 ShadowStepUpgrade.texture 		= PrecacheAsset("ui/buymenu/Icons/Icon_Blink_Active.dds")
 ShadowStepUpgrade.vidDesc 		= ""
+ShadowStepUpgrade.disallowedGameModes = { kCombatGameType.Infection, kCombatGameType.CombatCTF }
 
 function ShadowStepUpgrade:Initialize()
 
@@ -32,6 +33,7 @@ function ShadowStepUpgrade:Initialize()
 	self.minPlayerLevel = ShadowStepUpgrade.minPlayerLevel
 	self.texture = ShadowStepUpgrade.texture
 	self.vidDesc = ShadowStepUpgrade.vidDesc
+	self.disallowedGameModes = ShadowStepUpgrade.disallowedGameModes
 	
 end
 

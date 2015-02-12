@@ -13,7 +13,7 @@ local kSpread = Math.Radians(3)
 local kSpikeSize = 0.03
 kSpikesAttackDelay = 0.18
 kSnipeSpikesPerShot = 4
-kSnipeAttackDelay = 0.9
+kSnipeAttackDelay = 1.0
 
 // GetHasSecondary and GetSecondaryEnergyCost should completely override any existing
 // same named function defined in the object.

@@ -12,7 +12,7 @@
 kTechPointDamageThreshold = 0 -- The hive/cc will only take HP damage if their armor fraction is below this.
 
 // HEALTH AND ARMOR		
-kMarineHealth = 100	kMarineArmor = 30	kMarinePointValue = 5
+kMarineHealth = 160	kMarineArmor = 0	kMarinePointValue = 5
 kScoutHealth = 160
 kMedicHealth = 230
 kEngineerHealth = 180
@@ -31,16 +31,16 @@ kRailgunPointValue = 5
 		
 kSkulkHealth = 150	kSkulkArmor = 0		kSkulkPointValue = 5    kSkulkHealthPerBioMass = 3
 kGorgeHealth = 350	kGorgeArmor = 0	    kGorgePointValue = 7    kGorgeHealthPerBioMass = 2
-kLerkHealth = 225	kLerkArmor = 0	    kLerkPointValue = 15    kLerkHealthPerBioMass = 2
+kLerkHealth = 200	kLerkArmor = 0	    kLerkPointValue = 15    kLerkHealthPerBioMass = 2
 kFadeHealth = 400	kFadeArmor = 0      kFadePointValue = 20    kFadeHealthPerBioMass = 5
-kOnosHealth = 800	kOnosArmor = 400	kOnosPointValue = 30    kOnosHealtPerBioMass = 25
+kOnosHealth = 600	kOnosArmor = 300	kOnosPointValue = 30    kOnosHealtPerBioMass = 25
 
 kMarineWeaponHealth = 400
 		
 kEggHealth = 350	kEggArmor = 0	kEggPointValue = 1
 kMatureEggHealth = 400	kMatureEggArmor = 0
 
-kBabblerHealth = 10	kBabblerArmor = 0	kBabblerPointValue = 0
+kBabblerHealth = 15	kBabblerArmor = 0	kBabblerPointValue = 0
 kBabblerEggHealth = 300	kBabblerEggArmor = 0	kBabblerEggPointValue = 0
 		
 kArmorPerUpgradeLevel = 20
@@ -85,7 +85,7 @@ kSentryBatteryHealth = 600	kSentryBatteryArmor = 200	kSentryBatteryPointValue = 
 		
 kDrifterHealth = 300	kDrifterArmor = 20	kDrifterPointValue = 2
 kMACHealth = 300	kMACArmor = 50	kMACPointValue = 2
-kMineHealth = 40	kMineArmor = 10	kMinePointValue = 0
+kMineHealth = 100	kMineArmor = 0	kMinePointValue = 0
 		
 kExtractorHealth = 2400 kExtractorArmor = 1050 kExtractorPointValue = 15
 kExtractorArmorAddAmount = 700 // not used
@@ -98,31 +98,19 @@ kSentryHealth = 400	kSentryArmor = 150	kSentryPointValue = 30
 kARCHealth = 2000	kARCArmor = 500	kARCPointValue = 5
 kARCDeployedHealth = 2000	kARCDeployedArmor = 0
 		
-kShellHealth = 600 	kShellArmor = 150 	kShellPointValue = 10
-kMatureShellHealth = 700 	kMatureShellArmor = 200 	kShellPointValue = 10
-
 kCragHealth = 600	kCragArmor = 300	kCragPointValue = 100
 kMatureCragHealth = 1000	kMatureCragArmor = 500	kMatureCragPointValue = 100
 		
 kWhipHealth = 1	kWhipArmor = 100	kWhipPointValue = 40
 kMatureWhipHealth = 500	kMatureWhipArmor = 200	kMatureWhipPointValue = 40
-		
-kSpurHealth = 800 	kSpurArmor = 50	 kSpurPointValue = 10
-kMatureSpurHealth = 900  kMatureSpurArmor = 100  kMatureSpurPointValue = 10
-
-kShiftHealth = 600	kShiftArmor = 75	kShiftPointValue = 10
-kMatureShiftHealth = 800	kMatureShiftArmor = 250	kMatureShiftPointValue = 100
-
-kVeilHealth = 900 	kVeilArmor = 0 	kVeilPointValue = 10
-kMatureVeilHealth = 1100 	kMatureVeilArmor = 0 	kVeilPointValue = 10
 
 kShadeHealth = 750	kShadeArmor = 0	kShadePointValue = 100
 kMatureShadeHealth = 1500	kMatureShadeArmor = 0	kMatureShadePointValue = 100
 
-kHydraHealth = 350	kHydraArmor = 10	kHydraPointValue = 20
-kMatureHydraHealth = 300	kMatureHydraArmor = 50	kMatureHydraPointValue = 20
+kHydraHealth = 600	kHydraArmor = 0	kHydraPointValue = 20
+kMatureHydraHealth = 600	kMatureHydraArmor = 0	kMatureHydraPointValue = 20
 
-kClogHealth = 250  kClogArmor = 0 kClogPointValue = 5
+kClogHealth = 300  kClogArmor = 0 kClogPointValue = 5
 kWebHealth = 50
 
 kCystHealth = 70	kCystArmor = 0
