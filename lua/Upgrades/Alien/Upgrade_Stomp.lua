@@ -16,7 +16,7 @@ StompUpgrade.upgradeTitle	= "STOMP"											// Title of the upgrade, e.g. Subm
 StompUpgrade.upgradeDesc	= "STOMP_TOOLTIP"									// Description of the upgrade
 StompUpgrade.upgradeTechId = kTechId.Stomp  									// techId of the upgrade, default is kTechId.Move cause its the first 
 StompUpgrade.requirements  = { "onos" }											// Upgrades you must get before you can get this one.  These are OR - conditionals ONLY!!
-StompUpgrade.minPlayerLevel = 10
+StompUpgrade.minPlayerLevel = 4
 StompUpgrade.texture 		= PrecacheAsset("ui/buymenu/Icons/Icon_Stomp_Active.dds")
 StompUpgrade.vidDesc 		= ""
 

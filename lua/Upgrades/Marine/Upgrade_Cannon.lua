@@ -10,7 +10,7 @@
 						
 class 'CannonUpgrade' (CombatWeaponUpgrade)
 
-CannonUpgrade.cost 	 		= { 1 }                          				// cost of the upgrade in points
+CannonUpgrade.cost 	 		= { 2 }                          				// cost of the upgrade in points
 CannonUpgrade.upgradeName  	= "cannon"	                        			// Text code of the upgrade if using it via console
 CannonUpgrade.upgradeTitle 	= "COMBAT_UPGRADE_CANNON"       								// Title of the upgrade, e.g. Submachine Gun
 CannonUpgrade.upgradeDesc  	= "COMBAT_UPGRADE_CANNON_TOOLTIP"				// Description of the upgrade

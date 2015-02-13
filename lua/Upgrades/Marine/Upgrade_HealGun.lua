@@ -10,7 +10,7 @@
 						
 class 'HealGunUpgrade' (CombatWeaponUpgrade)
 
-HealGunUpgrade.cost	 		= { 1 }                           				// cost of the upgrade in points
+HealGunUpgrade.cost	 		= { 0 }                           				// cost of the upgrade in points
 HealGunUpgrade.upgradeName 	= "healgun"                       				// Text code of the upgrade if using it via console
 HealGunUpgrade.upgradeTitle 	= "HEALGUN"               						// Title of the upgrade, e.g. Submachine Gun
 HealGunUpgrade.upgradeDesc 	= "HEALGUN_TOOLTIP"	// Description of the upgrade

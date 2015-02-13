@@ -57,9 +57,9 @@ local function GetAttackUrgency(bot, mem)
     local urgencies = {
         // Active threats
         [kMinimapBlipType.Marine] =             numOthers >= 4 and 0.6 or 1,
-		[kMinimapBlipType.Medic] =              numOthers >= 4 and 0.9 or 1.1,
+		[kMinimapBlipType.Medic] =              numOthers >= 4 and 0.7 or 1.1,
 		[kMinimapBlipType.Assault] =            numOthers >= 4 and 0.6 or 1,
-		[kMinimapBlipType.Engineer] =           numOthers >= 4 and 0.7 or 1,
+		[kMinimapBlipType.Engineer] =           numOthers >= 4 and 0.6 or 1,
 		[kMinimapBlipType.Scout] =              numOthers >= 4 and 0.6 or 1,
         [kMinimapBlipType.JetpackMarine] =      numOthers >= 4 and 0.7 or 1.1,
         [kMinimapBlipType.Exo] =                numOthers >= 6 and 0.8 or 1,

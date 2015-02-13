@@ -16,7 +16,7 @@ BabblerBombUpgrade.upgradeTitle = "COMBAT_UPGRADE_BABBLER_BOMB"						// Title of
 BabblerBombUpgrade.upgradeDesc	= "COMBAT_UPGRADE_BABBLER_BOMB_TOOLTIP"				// Description of the upgrade
 BabblerBombUpgrade.upgradeTechId = kTechId.BabblerBombAbility  						// techId of the upgrade, default is kTechId.Move cause its the first 
 BabblerBombUpgrade.requirements  = { "gorge" }										// Upgrades you must get before you can get this one.  These are OR - conditionals ONLY!!
-BabblerBombUpgrade.minPlayerLevel = 4
+BabblerBombUpgrade.minPlayerLevel = 2
 BabblerBombUpgrade.texture 		= PrecacheAsset("ui/buymenu/Icons/Icon_Babbler_Active.dds")
 BabblerBombUpgrade.vidDesc 		= ""
 

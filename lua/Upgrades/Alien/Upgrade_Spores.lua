@@ -16,7 +16,7 @@ SporesUpgrade.upgradeTitle 	= "SPORES"										// Title of the upgrade, e.g. Su
 SporesUpgrade.upgradeDesc	= "SPORES_TOOLTIP"			// Description of the upgrade
 SporesUpgrade.upgradeTechId	= kTechId.Spores  								// techId of the upgrade, default is kTechId.Move cause its the first 
 SporesUpgrade.requirements  = { "lerk" }									// Upgrades you must get before you can get this one.  These are OR - conditionals ONLY!!
-SporesUpgrade.minPlayerLevel = 7
+SporesUpgrade.minPlayerLevel = 2
 SporesUpgrade.texture 		= PrecacheAsset("ui/buymenu/Icons/Icon_Spores_Active.dds")
 SporesUpgrade.vidDesc 		= ""
 

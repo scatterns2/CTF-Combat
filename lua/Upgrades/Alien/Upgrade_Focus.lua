@@ -20,6 +20,7 @@ FocusUpgrade.texture 		= PrecacheAsset("ui/buymenu/Icons/Icon_Focus_Active.dds")
 FocusUpgrade.teamType 		= kCombatUpgradeTeamType.AlienTeam
 FocusUpgrade.vidDesc 		= "videos/Aliens_Focus.webm"
 FocusUpgrade.upgradeType 		= kCombatUpgradeTypes.Offense
+FocusUpgrade.disallowedGameModes = { kCombatGameType.CombatCTF }
 
 function FocusUpgrade:Initialize()
 
@@ -36,7 +37,7 @@ function FocusUpgrade:Initialize()
 	self.teamType = FocusUpgrade.teamType
 	self.vidDesc = FocusUpgrade.vidDesc
 	self.upgradeType = FocusUpgrade.upgradeType
-	
+	self.disallowedGameModes = FocusUpgrade.disallowedGameModes
 	
 end
 

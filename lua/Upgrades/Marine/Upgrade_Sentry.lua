@@ -10,13 +10,13 @@
 						
 class 'SentryUpgrade' (CombatBuildableUpgrade)
 
-SentryUpgrade.cost 	 		 = { 1 }                           					// cost of the upgrade in points
+SentryUpgrade.cost 	 		 = { 0 }                           					// cost of the upgrade in points
 SentryUpgrade.upgradeName  	 = "sentry"                       					// Text code of the upgrade if using it via console
 SentryUpgrade.upgradeTitle 	 = "SENTRY_TURRET"               							// Title of the upgrade, e.g. Submachine Gun
 SentryUpgrade.upgradeDesc  	 = "COMBAT_UPGRADE_SENTRY_TOOLTIP"	// Description of the upgrade
 SentryUpgrade.upgradeTechId  = kTechId.Sentry 	    							// TechId of the upgrade, default is kTechId.Move cause its the first item
 SentryUpgrade.teamType 		 = kCombatUpgradeTeamType.MarineTeam				// Team Type
-SentryUpgrade.minPlayerLevel = 4												// Controls whether this upgrade requires the recipient to be a minimum level
+SentryUpgrade.minPlayerLevel = 0												// Controls whether this upgrade requires the recipient to be a minimum level
 SentryUpgrade.hardCapScale	 = 0.25												// Hard Cap scale
 SentryUpgrade.rowOrder 		 = 0												// Controls the horizontal position on the menu
 SentryUpgrade.texture  		 = PrecacheAsset("ui/buymenu/Icons/Icon_Sentry_Active.dds")

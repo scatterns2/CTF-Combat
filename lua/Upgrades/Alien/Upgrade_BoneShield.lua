@@ -15,7 +15,7 @@ BoneShieldUpgrade.upgradeTitle	= "BONESHIELD"										// Title of the upgrade, 
 BoneShieldUpgrade.upgradeDesc	= "BONESHIELD_TOOLTIP"								// Description of the upgrade
 BoneShieldUpgrade.upgradeTechId = kTechId.BoneShield  								// techId of the upgrade, default is kTechId.Move cause its the first 
 BoneShieldUpgrade.requirements  = { "onos" }										// Upgrades you must get before you can get this one.  These are OR - conditionals ONLY!!
-BoneShieldUpgrade.minPlayerLevel = 10
+BoneShieldUpgrade.minPlayerLevel = 0
 BoneShieldUpgrade.texture 		= PrecacheAsset("ui/buymenu/Icons/Icon_Boneshield_Active.dds")
 BoneShieldUpgrade.vidDesc 		= ""
 

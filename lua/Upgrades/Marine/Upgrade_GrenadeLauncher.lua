@@ -11,7 +11,7 @@
 class 'GrenadeLauncherUpgrade' (CombatWeaponUpgrade)
 
 // Define these statically so we can easily access them without instantiating.
-GrenadeLauncherUpgrade.cost		 		= { 2 }                          							 // cost of the upgrade in points
+GrenadeLauncherUpgrade.cost		 		= { 1 }                          							 // cost of the upgrade in points
 GrenadeLauncherUpgrade.upgradeName  	= "gl"	                        							 // text code of the upgrade if using it via console
 GrenadeLauncherUpgrade.upgradeTitle 	= "GRENADE_LAUNCHER"       									 // Title of the upgrade, e.g. Submachine Gun
 GrenadeLauncherUpgrade.upgradeDesc  	= "GRENADE_LAUNCHER_TOOLTIP" // Description of the upgrade
