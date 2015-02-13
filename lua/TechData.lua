@@ -225,15 +225,15 @@ function BuildTechData()
         { [kTechDataId] = kTechId.RoboticsFactoryARCUpgradesMenu,            [kTechDataDisplayName] = "ARC_UPGRADES", [kTechDataHotkey] = Move.P},
         { [kTechDataId] = kTechId.RoboticsFactoryMACUpgradesMenu,            [kTechDataDisplayName] = "MAC_UPGRADES", [kTechDataHotkey] = Move.P},
         
-        { [kTechDataId] = kTechId.TwoCommandStations, [kTechDataDisplayName] = "TWO_COMMAND_STATIONS", [kTechIDShowEnables] = false, [kTechDataTooltipInfo] = "TWO_COMMAND_STATIONS"},               
-        { [kTechDataId] = kTechId.ThreeCommandStations, [kTechDataDisplayName] = "TWO_COMMAND_STATIONS", [kTechIDShowEnables] = false, [kTechDataTooltipInfo] = "THREE_COMMAND_STATIONS"},               
+        //{ [kTechDataId] = kTechId.TwoCommandStations, [kTechDataDisplayName] = "TWO_COMMAND_STATIONS", [kTechIDShowEnables] = false, [kTechDataTooltipInfo] = "TWO_COMMAND_STATIONS"},               
+        //{ [kTechDataId] = kTechId.ThreeCommandStations, [kTechDataDisplayName] = "TWO_COMMAND_STATIONS", [kTechIDShowEnables] = false, [kTechDataTooltipInfo] = "THREE_COMMAND_STATIONS"},               
         { [kTechDataId] = kTechId.TwoHives, [kTechDataDisplayName] = "TWO_HIVES", [kTechIDShowEnables] = false},               
         { [kTechDataId] = kTechId.ThreeHives, [kTechDataDisplayName] = "THREE_HIVES", [kTechIDShowEnables] = false},
         
-        { [kTechDataId] = kTechId.TwoWhips, [kTechDataDisplayName] = "TWO_WHIPS", [kTechIDShowEnables] = false},                
-        { [kTechDataId] = kTechId.TwoCrags, [kTechDataDisplayName] = "TWO_CRAGS", [kTechIDShowEnables] = false},                
-        { [kTechDataId] = kTechId.TwoShifts, [kTechDataDisplayName] = "TWO_SHIFTS", [kTechIDShowEnables] = false},                
-        { [kTechDataId] = kTechId.TwoShades, [kTechDataDisplayName] = "TWO_SHADES", [kTechIDShowEnables] = false},                
+        //{ [kTechDataId] = kTechId.TwoWhips, [kTechDataDisplayName] = "TWO_WHIPS", [kTechIDShowEnables] = false},                
+        //{ [kTechDataId] = kTechId.TwoCrags, [kTechDataDisplayName] = "TWO_CRAGS", [kTechIDShowEnables] = false},                
+        //{ [kTechDataId] = kTechId.TwoShifts, [kTechDataDisplayName] = "TWO_SHIFTS", [kTechIDShowEnables] = false},                
+        //{ [kTechDataId] = kTechId.TwoShades, [kTechDataDisplayName] = "TWO_SHADES", [kTechIDShowEnables] = false},                
 */        
         // Misc.
         { [kTechDataId] = kTechId.PowerPoint,    [kTechDataHint] = "POWERPOINT_HINT",        [kTechDataMapName] = PowerPoint.kMapName,            [kTechDataDisplayName] = "POWER_NODE",  [kTechDataCostKey] = 0,   [kTechDataMaxHealth] = kPowerPointHealth, [kTechDataMaxArmor] = kPowerPointArmor, [kTechDataBuildTime] = kPowerPointBuildTime, [kTechDataPointValue] = kPowerPointPointValue, [kTechDataTooltipInfo] = "POWERPOINT_TOOLTIP"},        
@@ -507,16 +507,16 @@ function BuildTechData()
         { [kTechDataId] = kTechId.Shift, [kTechDataBioMass] = kShiftBiomass, [kTechDataSupply] = kShiftSupply, [kTechDataHint] = "SHIFT_HINT", [kTechDataGhostModelClass] = "ShiftGhostModel",    [kTechDataMapName] = Shift.kMapName,                        [kTechDataDisplayName] = "SHIFT",  [kTechDataRequiresInfestation] = false, [kTechDataCostKey] = kShiftCost,    [kTechDataHotkey] = Move.S,        [kTechDataBuildTime] = kShiftBuildTime, [kTechDataModel] = Shift.kModelName,           [kTechDataMaxHealth] = kShiftHealth,  [kTechDataMaxArmor] = kShiftArmor,  [kTechDataInitialEnergy] = kShiftInitialEnergy,      [kTechDataMaxEnergy] = kShiftMaxEnergy, [kTechDataPointValue] = kShiftPointValue, [kVisualRange] = kEchoRange, [kTechDataTooltipInfo] = "SHIFT_TOOLTIP", [kTechDataGrows] = true },
 
         { [kTechDataId] = kTechId.Veil, [kTechDataBioMass] = kVeilBiomass, [kTechDataHint] = "VEIL_HINT", [kTechDataGhostModelClass] = "AlienGhostModel",     [kTechDataMapName] = Veil.kMapName,                         [kTechDataDisplayName] = "VEIL",  [kTechDataCostKey] = kVeilCost,     [kTechDataRequiresInfestation] = false, [kTechDataHotkey] = Move.C,       [kTechDataBuildTime] = kVeilBuildTime, [kTechDataModel] = Veil.kModelName,           [kTechDataMaxHealth] = kVeilHealth, [kTechDataMaxArmor] = kVeilArmor,  [kTechDataPointValue] = kVeilPointValue, [kTechDataTooltipInfo] = "VEIL_TOOLTIP", [kTechDataGrows] = true, [kTechDataObstacleRadius] = 0.5 },
-        { [kTechDataId] = kTechId.TwoVeils, [kTechDataDisplayName] = "TWO_VEILS", [kTechIDShowEnables] = false, [kTechDataTooltipInfo] = "TWO_VEILS_TOOLTIP"},               
-        { [kTechDataId] = kTechId.ThreeVeils, [kTechDataDisplayName] = "THREE_VEILS", [kTechIDShowEnables] = false, [kTechDataTooltipInfo] = "THREE_VEILS_TOOLTIP"},  
+        //{ [kTechDataId] = kTechId.TwoVeils, [kTechDataDisplayName] = "TWO_VEILS", [kTechIDShowEnables] = false, [kTechDataTooltipInfo] = "TWO_VEILS_TOOLTIP"},               
+        //{ [kTechDataId] = kTechId.ThreeVeils, [kTechDataDisplayName] = "THREE_VEILS", [kTechIDShowEnables] = false, [kTechDataTooltipInfo] = "THREE_VEILS_TOOLTIP"},  
 
         { [kTechDataId] = kTechId.Spur, [kTechDataBioMass] = kSpurBiomass,  [kTechDataHint] = "SPUR_HINT", [kTechDataGhostModelClass] = "AlienGhostModel",     [kTechDataMapName] = Spur.kMapName,                         [kTechDataDisplayName] = "SPUR",  [kTechDataCostKey] = kSpurCost,     [kTechDataRequiresInfestation] = false, [kTechDataHotkey] = Move.C,       [kTechDataBuildTime] = kSpurBuildTime, [kTechDataModel] = Spur.kModelName,           [kTechDataMaxHealth] = kSpurHealth, [kTechDataMaxArmor] = kSpurArmor,  [kTechDataPointValue] = kSpurPointValue, [kTechDataTooltipInfo] = "SPUR_TOOLTIP", [kTechDataGrows] = true, [kTechDataObstacleRadius] = 0.75 },
-        { [kTechDataId] = kTechId.TwoSpurs, [kTechDataDisplayName] = "TWO_SPURS", [kTechIDShowEnables] = false, [kTechDataTooltipInfo] = "TWO_SPURS_TOOLTIP"},               
-        { [kTechDataId] = kTechId.ThreeSpurs, [kTechDataDisplayName] = "THREE_SPURS", [kTechIDShowEnables] = false, [kTechDataTooltipInfo] = "THREE_SPURS_TOOLTIP"},  
+        //{ [kTechDataId] = kTechId.TwoSpurs, [kTechDataDisplayName] = "TWO_SPURS", [kTechIDShowEnables] = false, [kTechDataTooltipInfo] = "TWO_SPURS_TOOLTIP"},               
+        //{ [kTechDataId] = kTechId.ThreeSpurs, [kTechDataDisplayName] = "THREE_SPURS", [kTechIDShowEnables] = false, [kTechDataTooltipInfo] = "THREE_SPURS_TOOLTIP"},  
 
         { [kTechDataId] = kTechId.Shell, [kTechDataBioMass] = kShellBiomass, [kTechDataHint] = "SHELL_HINT",  [kTechDataGhostModelClass] = "AlienGhostModel",     [kTechDataMapName] = Shell.kMapName,                         [kTechDataDisplayName] = "SHELL",  [kTechDataCostKey] = kShellCost,     [kTechDataRequiresInfestation] = false, [kTechDataHotkey] = Move.C,       [kTechDataBuildTime] = kShellBuildTime, [kTechDataModel] = Shell.kModelName,           [kTechDataMaxHealth] = kShellHealth, [kTechDataMaxArmor] = kShellArmor,  [kTechDataPointValue] = kShellPointValue, [kTechDataTooltipInfo] = "SHELL_TOOLTIP", [kTechDataGrows] = true, [kTechDataObstacleRadius] = 0.75 },
-        { [kTechDataId] = kTechId.TwoShells, [kTechDataDisplayName] = "TWO_SHELLS", [kTechIDShowEnables] = false, [kTechDataTooltipInfo] = "TWO_SHELLS_TOOLTIP"},               
-        { [kTechDataId] = kTechId.ThreeShells, [kTechDataDisplayName] = "THREE_SHELLS", [kTechIDShowEnables] = false, [kTechDataTooltipInfo] = "THREE_SHELLS_TOOLTIP"},
+        //{ [kTechDataId] = kTechId.TwoShells, [kTechDataDisplayName] = "TWO_SHELLS", [kTechIDShowEnables] = false, [kTechDataTooltipInfo] = "TWO_SHELLS_TOOLTIP"},               
+        //{ [kTechDataId] = kTechId.ThreeShells, [kTechDataDisplayName] = "THREE_SHELLS", [kTechIDShowEnables] = false, [kTechDataTooltipInfo] = "THREE_SHELLS_TOOLTIP"},
         
         { [kTechDataId] = kTechId.EvolutionChamber, [kTechDataHint] = "EVOCHAMBER", [kTechDataGhostModelClass] = "AlienGhostModel", [kTechDataMapName] = EvolutionChamber.kMapName, [kTechDataDisplayName] = "EVOCHAMBER", [kTechDataCostKey] = 0, [kTechDataBuildTime] = 0, [kTechDataModel] = EvolutionChamber.kModelName, [kTechDataMaxHealth] = 0, [kTechDataMaxArmor] = 0, [kTechDataTooltipInfo] = "EVOCHAMBER" },
         { [kTechDataId] = kTechId.Return, [kTechDataDisplayName] = "RETURN", [kTechDataTooltipInfo] = "RETURN_DESCRIPTION" },
@@ -695,7 +695,8 @@ function BuildTechData()
 		{ [kTechDataId] = kTechId.LayLaserMines,  [kTechDataTooltipInfo] = "LASERMINES_TOOLTIP", [kTechDataPointValue] = kWeaponPointValue,    [kTechDataMapName] = LayLaserMines.kMapName, [kTechDataDisplayName] = "LASERMINES",         [kTechDataModel] = LaserMine.kModelName, [kTechDataDamageType] = kMineDamageType, [kTechDataCostKey] = kMineCost, },
 		{ [kTechDataId] = kTechId.LaserMine,  [kTechDataMapName] = LaserMine.kMapName,             [kTechDataHint] = "MINE_HINT", [kTechDataDisplayName] = "MINE", [kTechDataEngagementDistance] = kMineDetonateRange, [kTechDataMaxHealth] = kMineHealth, [kTechDataTooltipInfo] = "MINE_TOOLTIP",  [kTechDataMaxArmor] = kMineArmor, [kTechDataModel] = LaserMine.kModelName, [kTechDataPointValue] = kMinePointValue, },
 		{ [kTechDataId] = kTechId.WeaponCache, 	[kTechDataHint] = "WEAPON_CACHE_HINT", [kTechDataGhostModelClass] = "MarineGhostModel", [kTechDataRequiresPower] = true,      [kTechDataMapName] = WeaponCache.kMapName,                   [kTechDataDisplayName] = "WEAPON_CACHE",              [kTechDataCostKey] = kArmoryCost,              [kTechDataBuildTime] = kArmoryBuildTime, [kTechDataMaxHealth] = kWeaponCacheHealth, [kTechDataMaxArmor] = kWeaponCacheArmor, [kTechDataEngagementDistance] = kArmoryEngagementDistance, [kTechDataModel] = WeaponCache.kModelName, [kTechDataPointValue] = kWeaponCachePointValue, [kTechDataInitialEnergy] = kArmoryInitialEnergy,   [kTechDataMaxEnergy] = kArmoryMaxEnergy, [kTechDataNotOnInfestation] = true, [kTechDataTooltipInfo] = "ARMORY_TOOLTIP", [kTechDataAllowConsumeDrop] = true, [kTechDataMaxAmount] = kNumArmoriesPerPlayer },
-		{ [kTechDataId] = kTechId.Katana,  	[kTechDataTooltipInfo] = "KATANA_TOOLTIP", [kTechDataMapName] = Katana.kMapName, [kTechDataDisplayName] = "KATANA",         [kTechDataModel] = Knife.kModelName, [kTechDataDamageType] = kKatanaDamageType, [kTechDataCostKey] = kKnifeCost, },
+
+		//{ [kTechDataId] = kTechId.Katana,  	[kTechDataTooltipInfo] = "KATANA_TOOLTIP", [kTechDataMapName] = Katana.kMapName, [kTechDataDisplayName] = "KATANA",         [kTechDataModel] = Knife.kModelName, [kTechDataDamageType] = kKatanaDamageType, [kTechDataCostKey] = kKnifeCost, },
     }
 
     return techData
