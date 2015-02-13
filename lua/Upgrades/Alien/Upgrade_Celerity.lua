@@ -9,7 +9,7 @@
 						
 class 'CelerityUpgrade' (CombatAlienUpgrade)
 
-CelerityUpgrade.cost 			= { 1, 1, 1 }					// cost of the upgrade in upgrade points
+CelerityUpgrade.cost 			= { 1 }					// cost of the upgrade in upgrade points
 CelerityUpgrade.upgradeName		= "celerity"					// text code of the upgrade if using it via console
 CelerityUpgrade.upgradeTitle 	= "CELERITY"					// Title of the upgrade, e.g. Submachine Gun
 CelerityUpgrade.upgradeDesc 	= "CELERITY_TOOLTIP"	// Description of the upgrade

@@ -24,9 +24,6 @@ local networkVars =
 local kVoidShieldDelay = 4.0  //7.5
 local kVoidShieldHealthRegain = 120 //15
 local kVoidShieldShieldAmount = 100
-kVoidShieldEnergyCost = 30
-
-kVoidShieldUpgradeEnergyCost = 20
 
 local kAnimationGraph = PrecacheAsset("models/alien/fade/fade_view.animation_graph")
 
@@ -109,7 +106,7 @@ function VoidShield:OnTag(tagName)
         if player then
             player:DeductAbilityEnergy(kVoidShieldEnergyCost)
 			player:TriggerEffects("metabolize")
-            //player:SetOpacity(0.5, "hallucination") //"vortexDissolve")     // player:TriggerEffects("metabolize")
+            player:SetOpacity(0.4, "hallucination") //"vortexDissolve")     // player:TriggerEffects("metabolize")
 			
 			/*local viewModelEnt = player:GetViewModelEntity()       
 			if viewModelEnt then

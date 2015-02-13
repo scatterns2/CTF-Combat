@@ -64,15 +64,15 @@ local kShadowStepSpeed = 30
 Fade.kShadowStepDuration = 0.25
 
 local kMaxSpeed = 6
-local kBlinkSpeed = 13
+local kBlinkSpeed = 12
 local kBlinkAcceleration = 36
-local kBlinkAddAcceleration = 4
-local kVoidShieldAnimationDelay = 0 //0.65
+local kBlinkAddAcceleration = 3
+local kVoidShieldAnimationDelay = 0.65
 local kStabSpeed = 3
-local kShieldDuration = 1
+local kShieldDuration = 1.25
 
 // Delay before you can blink again after a blink.
-local kMinEnterEtherealTime = 0.8
+local kMinEnterEtherealTime = 0.5
 
 local kFadeGravityMod = 0.93
 
@@ -295,14 +295,11 @@ function Fade:GetAcceleration()
 end
 
 function Fade:GetGroundFriction()
-	if self:GetRecentlyBlinked() then
-		return 2
-	end
-    return self:GetIsShadowStepping() and 0 or 9
+    return self:GetIsShadowStepping() and 0 or 8
 end  
 
 function Fade:GetAirControl()
-    return 24 //40
+    return 30 //40
 end   
 
 function Fade:GetAirFriction()
@@ -588,12 +585,14 @@ function Fade:PreUpdateMove(input, runningPrediction)
     self.shadowStepping = self.timeShadowStep + Fade.kShadowStepDuration > Shared.GetTime()
 end
 
+/*
 function Fade:ModifyAttackSpeed(attackSpeedTable)
 	local weaponMapName = self:GetActiveWeapon():GetMapName()
 	if weaponMapName == VoidShield.kMapName then
 		attackSpeedTable.attackSpeed = attackSpeedTable.attackSpeed * 3
 	end
 end
+*/
 
 function Fade:GetEngagementPointOverride()
     return self:GetOrigin() + Vector(0, 0.8, 0)

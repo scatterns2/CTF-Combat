@@ -22,6 +22,7 @@ LightMachineGunUpgrade.menuPositionY	= 0
 LightMachineGunUpgrade.texture 			= PrecacheAsset("ui/buymenu/Icons/Icon_LMG_Active.dds")
 LightMachineGunUpgrade.vidDesc			= "videos/Marines_ReloadSpeed.webm"
 LightMachineGunUpgrade.detailImage		= "ui/buymenu/Background/MarineCenters/Marine_BM_Center_LMG.dds"
+LightMachineGunUpgrade.requirements		= {"scout","marine"}
 
 
 function LightMachineGunUpgrade:Initialize()
@@ -40,6 +41,7 @@ function LightMachineGunUpgrade:Initialize()
 	self.texture = LightMachineGunUpgrade.texture
 	self.vidDesc = LightMachineGunUpgrade.vidDesc
 	self.detailImage = LightMachineGunUpgrade.detailImage
+	self.requirements = LightMachineGunUpgrade.requirements	
 	
 end
 

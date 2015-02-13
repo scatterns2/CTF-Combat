@@ -89,6 +89,7 @@ kAlienVisionEnergyRegenMod = 1
 kCamouflageVelocity = 4
 kCamouflageTime = 2
 kCamouflageUncloakFactor = 2 / 3
+kAdrenalineAbilityMaxEnergy = 110
 
 -- CTF Mode Specific
 kPickUpFlagScore = 50
@@ -119,7 +120,9 @@ kWebHealth = 50
 // ALIEN DAMAGE VALUES
 kBiteDamage = 70
 kBiteDamageType = kDamageType.Normal
-kBiteEnergyCost = 3
+kBiteEnergyCost = 4
+
+kLeapEnergyCost = 33
 
 kBileBombDamage = 50 // per second
 kBileBombDamageType = kDamageType.Structural
@@ -132,8 +135,8 @@ kXenocideDamageType = kDamageType.Normal
 kXenocideRange = 10
 
 kLerkBiteDamage = 50
-kBitePoisonDamage = 6 // per second
-kPoisonBiteDuration = 6
+kBitePoisonDamage = 10 // per second
+kPoisonBiteDuration = 5
 kLerkBiteEnergyCost = 5
 kLerkBiteDamageType = kDamageType.Normal
 
@@ -142,20 +145,20 @@ kUmbraDuration = 5
 kUmbraRadius = 5
 kLerkFlapEnergyCost = 5
 
-kSpikeMaxDamage = 25
-kSpikeMinDamage = 20
+kSpikeMaxDamage = 16
+kSpikeMinDamage = 13
 kSpikeDamageType = kDamageType.Normal
-kSpikeEnergyCost = 6
+kSpikeEnergyCost = 4
 kSpikeMinDamageRange = 20
 kSpikeMaxDamageRange = 5
 kSpikesRange = 100
 kSpikesPerShot = 1
 
 //Ranged Spores
-kSporesDustDamagePerSecond = 60
+kSporesDustDamagePerSecond = 50
 kSporesDustFireDelay = 1.5			// increased from 0.36.
 kSporesDustEnergyCost = 30			// increased from 8.
-kSporesDustCloudRadius = 5			// increased from 2.5.
+kSporesDustCloudRadius = 4			// increased from 2.5.
 kSporesDustCloudLifetime = 3		// decreased from 8.
 kSporesMaxCloudRange = 20			// added ranged spores.
 kSporesTravelSpeed = 30				// ranged spores cloud speed.
@@ -181,7 +184,7 @@ kStabDamageType = kDamageType.Normal
 kStabEnergyCost = 20
 
 kStartBlinkEnergyCost = 16
-kBlinkEnergyCost = 38
+kBlinkEnergyCost = 32
 
 kVoidShieldEnergyCost = 15
 
@@ -221,9 +224,9 @@ kLmgDamageType = kDamageType.Normal
 kLmgClipSize = 40
 
 // MARINE DAMAGE VALUES
-kRifleDamage = 20 //11
+kRifleDamage = 30 //11
 kRifleDamageType = kDamageType.Normal
-kRifleClipSize = 30
+kRifleClipSize = 21
 kRifleMeleeDamage = 40
 
 // 10 bullets per second
@@ -285,7 +288,7 @@ kGrenadeLauncherClipSize = 4
 kGrenadeLauncherGrenadeDamageRadius = 4
 kGrenadeLifetime = 2
 
-kShotgunDamage = 8
+kShotgunDamage = 9
 kShotgunClipSize = 6
 kShotgunBulletsPerShot = 17
 kShotgunRange = 40

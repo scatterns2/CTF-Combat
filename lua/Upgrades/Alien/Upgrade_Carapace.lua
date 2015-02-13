@@ -9,7 +9,7 @@
 class 'CarapaceUpgrade' (CombatUpgrade)
 
 // Define these statically so we can easily access them without instantiating too.
-CarapaceUpgrade.cost 			= { 1, 1, 1, 1, 1 }										// cost of the upgrade in points
+CarapaceUpgrade.cost 			= { 1 }										// cost of the upgrade in points
 CarapaceUpgrade.upgradeType 	= kCombatUpgradeTypes.Defense        					// the type of the upgrade
 CarapaceUpgrade.upgradeName 	= "carapace"                     							// Text code of the upgrade if using it via console
 CarapaceUpgrade.upgradeTitle 	= "CARAPACE"               								// Title of the upgrade, e.g. Submachine Gun
@@ -54,8 +54,8 @@ end
 
 function CarapaceUpgrade:GetLevelString(level, player)
 	if player then
-		local newHp = math.round((player:GetOriginalMaxHealth() + level * (CarapaceMixin.hpPercentPerLevel * player:GetOriginalMaxHealth() + CarapaceMixin.hpScalarPerLevel))/5)*5
-		local newArmor = math.round((player:GetOriginalMaxArmor() + level * (CarapaceMixin.armorPercentPerLevel * player:GetOriginalMaxArmor() + CarapaceMixin.armorScalarPerLevel))/5)*5
+		local newHp = math.round((player:GetOriginalMaxHealth() + level * (CarapaceMixin.hpPercentPerLevel * player:GetOriginalMaxHealth() + CarapaceMixin.hpScalarPerLevel)))
+		local newArmor = math.round((player:GetOriginalMaxArmor() + level * (CarapaceMixin.armorPercentPerLevel * player:GetOriginalMaxArmor() + CarapaceMixin.armorScalarPerLevel)))
 		return GetTranslationString("COMBAT_UPGRADE_CARAPACE_LEVEL", { newHp = newHp, newArmor = newArmor })
 	else
 		return GetTranslationString("COMBAT_UPGRADE_CARAPACE_MAX", {})

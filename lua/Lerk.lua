@@ -55,6 +55,7 @@ local networkVars =
     wallGripAllowed = "private compensated boolean",
     flapPressed = "private compensated boolean",
     timeOfLastPhase = "private time",
+	canSnipe = "boolean"
 }
 
 AddMixinNetworkVars(BaseMoveMixin, networkVars)
@@ -132,7 +133,8 @@ function Lerk:OnCreate()
     self.lastTimeFlapped = 0
     
     self.wallGripTime = 0
-    
+    self.canSnipe = false
+	
     if Client then   
     
         self.flySound = CreateLoopingSoundForEntity(self, flying2DSound, nil)
@@ -634,6 +636,10 @@ function Lerk:OnUpdateAnimationInput(modelMixin)
     local flappedRecently = (Shared.GetTime() - self.lastTimeFlapped) <= 0.5
     modelMixin:SetAnimationInput("flapping", flappedRecently)
     
+end
+
+function Lerk:SetSnipeMode(newVal)
+	self.canSnipe = newVal
 end
 
 Shared.LinkClassToMap("Lerk", Lerk.kMapName, networkVars, true)

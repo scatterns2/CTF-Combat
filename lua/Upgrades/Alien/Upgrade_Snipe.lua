@@ -45,14 +45,16 @@ function SnipeUpgrade:CanApplyUpgrade(player)
 end
 
 function SnipeUpgrade:OnAdd(player, isReapply)
-	local weapons = player:GetWeapons()
+	/*local weapons = player:GetWeapons()
     for i = 1, #weapons do
     
         if HasMixin(weapons[i], "Spikes") then
             weapons[i]:SetSnipeMode(true)
         end
         
-    end
+    end*/
+	
+	player:SetSnipeMode(true)
 	
 end
 

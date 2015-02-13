@@ -11,9 +11,9 @@ SpikesMixin.type = "Spikes"
 
 local kSpread = Math.Radians(3)
 local kSpikeSize = 0.03
-kSpikesAttackDelay = 0.18
-kSnipeSpikesPerShot = 4
-kSnipeAttackDelay = 1.0
+kSpikesAttackDelay = 0.15
+kSnipeSpikesPerShot = 6
+kSnipeAttackDelay = 0.9
 
 // GetHasSecondary and GetSecondaryEnergyCost should completely override any existing
 // same named function defined in the object.
@@ -34,15 +34,18 @@ SpikesMixin.networkVars =
     // need to use a network variable for silence upgrade here, since the marines do not know the alien tech tree
     silenced = "boolean",
 	timeLastSpiked = "time",
-	canSnipe = "boolean"
 }
 
 function SpikesMixin:__initmixin()
-	self.canSnipe = false
+	
 end
 
-function SpikesMixin:SetSnipeMode(newVal)
-	self.canSnipe = newVal
+function SpikesMixin:GetCanSnipe()
+	local player = self:GetParent()
+    
+    if player then
+		return player.canSnipe
+	end
 end
 
 local function FireSpikes(self)
@@ -56,7 +59,7 @@ local function FireSpikes(self)
     local filter = EntityFilterOneAndIsa(player, "Babbler")
     local range = kSpikesRange
     
-    local numSpikes = ConditionalValue(self.canSnipe, kSnipeSpikesPerShot, kSpikesPerShot)
+    local numSpikes = ConditionalValue(self:GetCanSnipe(), kSnipeSpikesPerShot, kSpikesPerShot)
     local startPoint = player:GetEyePos()
     
     local viewCoords = player:GetViewCoords()
@@ -101,7 +104,7 @@ function SpikesMixin:GetTracerEffectName()
 end
 
 function SpikesMixin:GetMinFireDelay()
-    return ConditionalValue(self.canSnipe, kSnipeAttackDelay, kSpikesAttackDelay)
+    return ConditionalValue(self:GetCanSnipe(), kSnipeAttackDelay, kSpikesAttackDelay)
 end
 
 function SpikesMixin:GetTracerResidueEffectName()
@@ -147,7 +150,7 @@ function SpikesMixin:GetHasSecondary(player)
 end
 
 function SpikesMixin:GetSecondaryEnergyCost(player)
-	local energyMultiplier = ConditionalValue(self.canSnipe, 4, 1)
+	local energyMultiplier = ConditionalValue(self:GetCanSnipe(), 6, 1)
 	if HasMixin(player, "Focus") then
 		energyMultiplier = energyMultiplier * player:GetFocusEnergyMultiplier()
 	end
