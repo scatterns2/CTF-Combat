@@ -88,12 +88,12 @@ function Scout:ModifyJump(input, velocity, jumpVelocity)
     
         local strafeJumpDirection = GetNormalizedVector(self:GetViewCoords():TransformVector(input.move))
         jumpVelocity:Add(strafeJumpDirection * kStrafeJumpForce)
-        jumpVelocity.y = jumpVelocity.y * 0.7
+        jumpVelocity.y = jumpVelocity.y * 0.36
         self.strafeJumped = true
         
     else
 		// Scout can jump a lot higher when sprinting
-		local bonusJumpScaler = 0.22 * (velocity:GetLength() - Scout.kWalkMaxSpeed) / (Scout.kRunMaxSpeed - Scout.kWalkMaxSpeed)
+		local bonusJumpScaler = 0.44 * (velocity:GetLength() - Scout.kWalkMaxSpeed) / (Scout.kRunMaxSpeed - Scout.kWalkMaxSpeed)
 		jumpVelocity.y = jumpVelocity.y * (1 + Clamp(bonusJumpScaler, 0, 1))
         self.strafeJumped = false
     end
