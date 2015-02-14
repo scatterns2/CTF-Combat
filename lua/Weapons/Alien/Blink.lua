@@ -20,9 +20,9 @@ Blink.kMapName = "blink"
 local kVortexTeleport = PrecacheAsset("cinematics/alien/fade/vortex_end_1p.cinematic")
 
 // initial force added when starting blink
-local kEtherealForce = 10 //13.5
+local kEtherealForce = 13 //13.5
 // always add a little above top speed
-local kBlinkAddForce = 1
+local kBlinkAddForce = 0
 local kEtherealVerticalForce = 2
 
 local networkVars =

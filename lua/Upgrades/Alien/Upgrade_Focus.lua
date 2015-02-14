@@ -19,7 +19,7 @@ FocusUpgrade.rowOrder 		= 1													// Controls the horizontal position on t
 FocusUpgrade.texture 		= PrecacheAsset("ui/buymenu/Icons/Icon_Focus_Active.dds")
 FocusUpgrade.teamType 		= kCombatUpgradeTeamType.AlienTeam
 FocusUpgrade.vidDesc 		= "videos/Aliens_Focus.webm"
-FocusUpgrade.upgradeType 	= kCombatUpgradeTypes.Offense
+FocusUpgrade.upgradeType 		= kCombatUpgradeTypes.Offense
 FocusUpgrade.disallowedGameModes = { kCombatGameType.CombatCTF }
 
 function FocusUpgrade:Initialize()

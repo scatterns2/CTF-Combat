@@ -10,12 +10,12 @@
 						
 class 'AuraUpgrade' (CombatAlienUpgrade)
 
-AuraUpgrade.cost 				= { 1 }                     // cost of the upgrade in upgrade points
+AuraUpgrade.cost 				= { 2 }                     // cost of the upgrade in upgrade points
 AuraUpgrade.upgradeName		= "aura"	            // text code of the upgrade if using it via console
 AuraUpgrade.upgradeTitle 		= "AURA"       		// Title of the upgrade, e.g. Submachine Gun
 AuraUpgrade.upgradeDesc 		= "AURA_TOOLTIP" 	// Description of the upgrade
 AuraUpgrade.upgradeTechId 	= kTechId.Aura  		// techId of the upgrade, default is kTechId.Move cause its the first 
-AuraUpgrade.minPlayerLevel 	= 1
+AuraUpgrade.minPlayerLevel 	= 4
 AuraUpgrade.texture 			= PrecacheAsset("ui/buymenu/Icons/Icon_Aura_Active.dds")
 AuraUpgrade.vidDesc 			= "videos/Aliens_Aura.webm"
 AuraUpgrade.upgradeType 		= kCombatUpgradeTypes.Offense

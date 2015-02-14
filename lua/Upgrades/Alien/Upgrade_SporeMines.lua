@@ -16,6 +16,7 @@ SporeMineUpgrade.upgradeDesc	= "COMBAT_UPGRADE_SPORE_MINE_TOOLTIP"				// Descrip
 SporeMineUpgrade.upgradeTechId = kTechId.SporeMineAbility  								// techId of the upgrade, default is kTechId.Move cause its the first 
 SporeMineUpgrade.requirements  = { "gorge" }										// Upgrades you must get before you can get this one.  These are OR - conditionals ONLY!!
 SporeMineUpgrade.minPlayerLevel = 4
+SporeMineUpgrade.uniqueSlot 	= kUpgradeUniqueSlot.Weapon2
 SporeMineUpgrade.texture 		= PrecacheAsset("ui/buymenu/Icons/Icon_Sporemine_Active.dds")
 SporeMineUpgrade.vidDesc 		= ""
 
@@ -30,6 +31,7 @@ function SporeMineUpgrade:Initialize()
 	self.upgradeTechId = SporeMineUpgrade.upgradeTechId
 	self.requirements = SporeMineUpgrade.requirements
 	self.minPlayerLevel = SporeMineUpgrade.minPlayerLevel
+	self.uniqueSlot = SporeMineUpgrade.uniqueSlot
 	self.texture = SporeMineUpgrade.texture
 	self.vidDesc = SporeMineUpgrade.vidDesc
 	

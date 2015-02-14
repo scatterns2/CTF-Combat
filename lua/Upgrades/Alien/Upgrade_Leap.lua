@@ -10,7 +10,7 @@
 						
 class 'LeapUpgrade' (CombatAlienAbilityUpgrade)
 
-LeapUpgrade.cost 			= { 0 }                          				// cost of the upgrade in points
+LeapUpgrade.cost 			= { 1 }                          				// cost of the upgrade in points
 LeapUpgrade.upgradeName	= "leap"	                        				// text code of the upgrade if using it via console
 LeapUpgrade.upgradeTitle = "LEAP"											// Title of the upgrade, e.g. Submachine Gun
 LeapUpgrade.upgradeDesc	= "LEAP_TOOLTIP"			// Description of the upgrade

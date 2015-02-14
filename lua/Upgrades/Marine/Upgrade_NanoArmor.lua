@@ -27,7 +27,6 @@ NanoArmorUpgrade.vidDesc			= "videos/Marines_NanoArmor.webm"
 NanoArmorUpgrade.compatibleWithExo 	= true
 NanoArmorUpgrade.upgradeType 	= kCombatUpgradeTypes.Defense        			// the type of the upgrade
 NanoArmorUpgrade.requirements	= {}
-NanoArmorUpgrade.disallowedGameModes = { kCombatGameType.CombatCTF }
 
 function NanoArmorUpgrade:Initialize()
 
@@ -47,7 +46,7 @@ function NanoArmorUpgrade:Initialize()
 	self.compatibleWithExo = NanoArmorUpgrade.compatibleWithExo
 	self.upgradeType = NanoArmorUpgrade.upgradeType
 	self.requirements = NanoArmorUpgrade.requirements
-	self.disallowedGameModes  = NanoArmorUpgrade.disallowedGameModes 
+	
 end
 
 function NanoArmorUpgrade:GetClassName()

@@ -30,7 +30,6 @@ kSpitSprayHUDSlot = 1
 kBileBombHUDSlot = 2
 kBabblerBombHUDSlot = 3
 kDropStructuresHUDSlot = 5
-kVoidShieldHUDSlot = 5
 
 // Buy menu
 kUpgradeIconHeight = 256

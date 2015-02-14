@@ -9,7 +9,7 @@
 class 'ReloadSpeedUpgrade' (CombatUpgrade)
 
 // Define these statically so we can easily access them without instantiating too.
-ReloadSpeedUpgrade.cost 			= { 1 }										// Cost of the upgrade in upgrade points
+ReloadSpeedUpgrade.cost 			= { 2 }										// Cost of the upgrade in upgrade points
 ReloadSpeedUpgrade.upgradeName 		= "reloadspeed"                     				 	// Text code of the upgrade if using it via console
 ReloadSpeedUpgrade.upgradeTitle 	= "COMBAT_UPGRADE_RELOAD_SPEED"               					// Title of the upgrade, e.g. Submachine Gun
 ReloadSpeedUpgrade.upgradeDesc 		= "COMBAT_UPGRADE_RELOAD_SPEED_TOOLTIP"								// Description of the upgrade
@@ -17,7 +17,7 @@ ReloadSpeedUpgrade.upgradeTechId 	= kTechId.Speed1										// TechId of the upg
 ReloadSpeedUpgrade.teamType 		= kCombatUpgradeTeamType.MarineTeam						// Team Type
 ReloadSpeedUpgrade.uniqueSlot 		= kUpgradeUniqueSlot.LessReloads						// Unique slot
 ReloadSpeedUpgrade.mutuallyExclusive = false												// Cannot buy another upgrade in this slot when you have this one.
-ReloadSpeedUpgrade.minPlayerLevel 	= 4														// Controls whether this upgrade requires the recipient to be a minimum level
+ReloadSpeedUpgrade.minPlayerLevel 	= 5														// Controls whether this upgrade requires the recipient to be a minimum level
 ReloadSpeedUpgrade.rowOrder			= 0														// Controls the horizontal position on the menu
 ReloadSpeedUpgrade.texture  		= PrecacheAsset("ui/buymenu/Icons/Icon_Reload_Active.dds")
 ReloadSpeedUpgrade.vidDesc			= "videos/Marines_ReloadSpeed.webm"
