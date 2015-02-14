@@ -19,7 +19,7 @@ Rifle.kMapName = "rifle"
 
 Rifle.kModelName = PrecacheAsset("models/marine/rifle/rifle.model")
 Rifle.kBulletsPerBurst = 3
-Rifle.kCooldown = 0.45 //seconds
+Rifle.kCooldown = 0.4 //seconds
 
 local kViewModels = GenerateMarineViewModelPaths("rifle")
 local kAnimationGraph = PrecacheAsset("models/marine/rifle/rifle_view.animation_graph")

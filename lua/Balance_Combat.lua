@@ -224,9 +224,9 @@ kLmgDamageType = kDamageType.Normal
 kLmgClipSize = 40
 
 // MARINE DAMAGE VALUES
-kRifleDamage = 30 //11
+kRifleDamage = 24 //11
 kRifleDamageType = kDamageType.Normal
-kRifleClipSize = 21
+kRifleClipSize = 24
 kRifleMeleeDamage = 40
 
 // 10 bullets per second
@@ -404,3 +404,5 @@ kInkTimer = 30
 kCommandStationPointValue = 250
 kArmoryPointValue = 150
 kHivePointValue = 400
+
+kAlienRegenerationCombatModifier = 0
