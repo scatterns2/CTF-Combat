@@ -24,6 +24,7 @@ kWelderHUDSlot = 3
 kMinesHUDSlot = 4
 kGrenadesHUDSlot = 4
 kBuilderHUDSlot = 5
+kVoidShieldHUDSlot = 5
 
 // Alien HUD Slots
 kSpitSprayHUDSlot = 1

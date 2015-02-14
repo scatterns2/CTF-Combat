@@ -252,6 +252,7 @@ Script.Load("lua/Weapons/Marine/LayLaserMines.lua")
 Script.Load("lua/Weapons/Marine/MarineStructureAbility.lua")
 Script.Load("lua/Weapons/Marine/HealGun.lua")
 Script.Load("lua/Jetpack.lua")
+Script.Load("lua/Weapons/Marine/Katana.lua")
 
 Script.Load("lua/Seasonal/Seasonal.lua")
 

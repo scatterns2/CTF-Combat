@@ -10,7 +10,7 @@
 						
 class 'XenocideUpgrade' (CombatAlienAbilityUpgrade)
 
-XenocideUpgrade.cost 			= { 20 }                          					// cost of the upgrade in points
+XenocideUpgrade.cost 			= { 2 }                          					// cost of the upgrade in points
 XenocideUpgrade.upgradeName	= "xenocide"	                        				// text code of the upgrade if using it via console
 XenocideUpgrade.upgradeTitle = "XENOCIDE"											// Title of the upgrade, e.g. Submachine Gun
 XenocideUpgrade.upgradeDesc	= "XENOCIDE_TOOLTIP"		// Description of the upgrade
