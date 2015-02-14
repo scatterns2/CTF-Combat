@@ -224,9 +224,9 @@ kLmgDamageType = kDamageType.Normal
 kLmgClipSize = 40
 
 // MARINE DAMAGE VALUES
-kRifleDamage = 24 //11
+kRifleDamage = 30 //11
 kRifleDamageType = kDamageType.Normal
-kRifleClipSize = 24
+kRifleClipSize = 21
 kRifleMeleeDamage = 40
 
 // 10 bullets per second
@@ -268,7 +268,7 @@ kKatanaDamageType = kDamageType.Normal
 kPulseGrenadeDamageRadius = 5
 kPulseGrenadeEnergyDamageRadius = 5
 kPulseGrenadeDamage = 50
-kPulseGrenadeEnergyDamagePercent = 0.5
+kPulseGrenadeEnergyDamagePercent = 1
 kPulseGrenadeDamageType = kDamageType.Normal
 kElectrifiedAttackSpeed = 0.5
 kElectrifiedDuration = 4
@@ -310,6 +310,7 @@ kFlameRadius = 1.8
 kFlameDamageStackWeight = 0.5
 
 kMinigunDamage = 20
+kCannonDamage = 40
 
 kClawDamage = 30
 kClawDamageType = kDamageType.Structural
@@ -336,10 +337,10 @@ kMaxHandGrenades = 1
 kJetpackUpgradeModifier = 1.2
 
 // Sentries
-kSentryAttackBaseROF = .2
+kSentryAttackBaseROF = .15
 kSentryAttackRandROF = 0.0
 kSentryAttackBulletsPerSalvo = 1
-kConfusedSentryBaseROF = 1.0
+kConfusedSentryBaseROF = 0.6
 kSentryDamage = 10
 
 // EMP energy drain
@@ -404,5 +405,3 @@ kInkTimer = 30
 kCommandStationPointValue = 250
 kArmoryPointValue = 150
 kHivePointValue = 400
-
-kAlienRegenerationCombatModifier = 0

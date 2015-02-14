@@ -33,7 +33,7 @@ kSkulkHealth = 150	kSkulkArmor = 0		kSkulkPointValue = 5    kSkulkHealthPerBioMa
 kGorgeHealth = 310	kGorgeArmor = 0	    kGorgePointValue = 7    kGorgeHealthPerBioMass = 2
 kLerkHealth = 200	kLerkArmor = 0	    kLerkPointValue = 15    kLerkHealthPerBioMass = 2
 kFadeHealth = 360	kFadeArmor = 0      kFadePointValue = 20    kFadeHealthPerBioMass = 5
-kOnosHealth = 600	kOnosArmor = 300	kOnosPointValue = 30    kOnosHealtPerBioMass = 25
+kOnosHealth = 400	kOnosArmor = 400	kOnosPointValue = 30    kOnosHealtPerBioMass = 25
 
 kMarineWeaponHealth = 400
 		

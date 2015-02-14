@@ -46,7 +46,7 @@ local kDashSound = PrecacheAsset("sound/NS2.fev/alien/skulk/full_speed")
 
 local kLeapVerticalForce = 10.8
 local kLeapTime = 0.2
-local kLeapForce = 7 //7.6
+local kLeapForce = 7.6
 
 local kMaxSpeed = 7.25
 

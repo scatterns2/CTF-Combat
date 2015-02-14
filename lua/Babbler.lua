@@ -35,7 +35,7 @@ Babbler.kRestitution = .3 //.65
 Babbler.kAttackRange = 1
 
 local kTargetSearchRange = 17.5
-local kAttackRate = 0.33
+local kAttackRate = 0.4
 local kLifeTime = kBabblerLifetime
 
 local kUpdateMoveInterval = 0.4

@@ -63,9 +63,9 @@ local kShadowStepForce = 30 //21
 local kShadowStepSpeed = 30
 Fade.kShadowStepDuration = 0.25
 
-local kMaxSpeed = 6
+local kMaxSpeed = 6.2
 local kBlinkSpeed = 12
-local kBlinkAcceleration = 36
+local kBlinkAcceleration = 40
 local kBlinkAddAcceleration = 3
 local kVoidShieldAnimationDelay = 0.65
 local kStabSpeed = 3
