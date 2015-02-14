@@ -16,7 +16,7 @@ DevourUpgrade.upgradeTitle	= "COMBAT_UPGRADE_DEVOUR"											// Title of the u
 DevourUpgrade.upgradeDesc	= "COMBAT_UPGRADE_DEVOUR_TOOLTIP"	// Description of the upgrade
 DevourUpgrade.upgradeTechId = kTechId.Devour  									// techId of the upgrade, default is kTechId.Move cause its the first 
 DevourUpgrade.requirements  = { "onos" }										// Upgrades you must get before you can get this one.  These are OR - conditionals ONLY!!
-DevourUpgrade.minPlayerLevel = 4
+DevourUpgrade.minPlayerLevel = 10
 DevourUpgrade.texture 		= PrecacheAsset("ui/buymenu/Icons/Icon_Devour_Active.dds")
 DevourUpgrade.vidDesc 		= ""
 

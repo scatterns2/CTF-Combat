@@ -16,7 +16,7 @@ VortexUpgrade.upgradeTitle 	= "VORTEX"									// Title of the upgrade, e.g. Sub
 VortexUpgrade.upgradeDesc	= "COMBAT_UPGRADE_VORTEX"					// Description of the upgrade
 VortexUpgrade.upgradeTechId	= kTechId.Vortex							// techId of the upgrade, default is kTechId.Move cause its the first 
 VortexUpgrade.requirements  = { "fade" }								// Upgrades you must get before you can get this one.  These are OR - conditionals ONLY!!
-VortexUpgrade.minPlayerLevel = 4
+VortexUpgrade.minPlayerLevel = 10
 VortexUpgrade.texture 		= PrecacheAsset("ui/buymenu/Icons/Icon_Vortex_Active.dds")
 VortexUpgrade.vidDesc 		= ""
 

@@ -16,7 +16,7 @@ UmbraUpgrade.upgradeTitle 	= "UMBRA"										// Title of the upgrade, e.g. Subm
 UmbraUpgrade.upgradeDesc	= "UMBRA_TOOLTIP"				// Description of the upgrade
 UmbraUpgrade.upgradeTechId	= kTechId.Umbra  								// techId of the upgrade, default is kTechId.Move cause its the first 
 UmbraUpgrade.requirements  	= { "lerk" }										// Upgrades you must get before you can get this one.  These are OR - conditionals ONLY!!
-UmbraUpgrade.minPlayerLevel = 2
+UmbraUpgrade.minPlayerLevel = 4
 UmbraUpgrade.texture 		= PrecacheAsset("ui/buymenu/Icons/Icon_Umbra_Active.dds")
 UmbraUpgrade.vidDesc 		= ""
 
