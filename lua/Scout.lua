@@ -24,7 +24,7 @@ Scout.kWalkBackwardSpeedScalar = 0.6
 
 local networkVars =
 {      
-        
+    canDoubleJump = "boolean"   
 }
 
 function Scout:OnCreate()
@@ -36,6 +36,7 @@ end
 function Scout:OnInitialized()
 
     Marine.OnInitialized(self)
+	self.canDoubleJump = true
    
 end
 
@@ -50,7 +51,7 @@ function Scout:GetMaxSpeed(possible)
     local maxSpeed = ConditionalValue(self:GetIsSprinting(), maxSprintSpeed, Scout.kWalkMaxSpeed)
     
     // Take into account our weapon inventory and current weapon. Assumes a vanilla marine has a scalar of around .8.
-    local inventorySpeedScalar = Clamp(self:GetInventorySpeedScalar() + .17, 0, 1)
+    local inventorySpeedScalar = self:GetInventorySpeedScalar() + .17 //Clamp(self:GetInventorySpeedScalar() + .17, 0, 1)
     local useModifier = self.isUsing and 0.5 or 1
     
     if self.catpackboost then
@@ -62,7 +63,7 @@ function Scout:GetMaxSpeed(possible)
 end
 
 function Scout:GetAcceleration()
-    return 13 * self:GetSlowSpeedModifier()
+    return 12 * self:GetSlowSpeedModifier()
 end
 
 function Scout:GetGroundFriction()
@@ -70,7 +71,7 @@ function Scout:GetGroundFriction()
 end
 
 function Scout:GetAirAcceleration()
-    return 7 * self:GetSlowSpeedModifier()
+    return 8 * self:GetSlowSpeedModifier()
 end
 
 // Scouts can move backwards faster than most marines
@@ -78,8 +79,27 @@ function Scout:GetMaxBackwardSpeedScalar()
     return Scout.kWalkBackwardSpeedScalar
 end
 
-local kStrafeJumpForce = 1
+function Scout:OnGroundChanged(onGround, impactForce, normal, velocity)
+	Marine.OnGroundChanged(self, onGround, impactForce, normal, velocity)
+	if onGround then
+		self.canDoubleJump = true
+	end
+end
+
+function Scout:GetCanJump()
+	if self:GetIsOnGround() then
+		return true
+	elseif self.canDoubleJump and self:GetVelocity().y >=0 then
+		self.canDoubleJump = false
+		return true
+	end
+	
+	return false
+end
+
+local kStrafeJumpForce = 7
 local kStrafeJumpDelay = 0.7
+local kStrafeJumpBonus = 1
 function Scout:ModifyJump(input, velocity, jumpVelocity)
     
 	Marine.ModifyJump(self, input, velocity, jumpVelocity)
@@ -87,14 +107,12 @@ function Scout:ModifyJump(input, velocity, jumpVelocity)
     if isStrafeJump and self:GetTimeGroundTouched() + kStrafeJumpDelay < Shared.GetTime() then
     
         local strafeJumpDirection = GetNormalizedVector(self:GetViewCoords():TransformVector(input.move))
-        jumpVelocity:Add(strafeJumpDirection * kStrafeJumpForce)
-        jumpVelocity.y = jumpVelocity.y * 0.36
+		local strafeJumpScalar = Clamp((self:GetMaxSpeed() + kStrafeJumpBonus - velocity:GetLengthXZ()) / kStrafeJumpForce, 0, 1)
+        jumpVelocity:Add(strafeJumpDirection * kStrafeJumpForce * strafeJumpScalar)
+        jumpVelocity.y = jumpVelocity.y * 0.8
         self.strafeJumped = true
         
     else
-		// Scout can jump a lot higher when sprinting
-		local bonusJumpScaler = 0.44 * (velocity:GetLength() - Scout.kWalkMaxSpeed) / (Scout.kRunMaxSpeed - Scout.kWalkMaxSpeed)
-		jumpVelocity.y = jumpVelocity.y * (1 + Clamp(bonusJumpScaler, 0, 1))
         self.strafeJumped = false
     end
     
