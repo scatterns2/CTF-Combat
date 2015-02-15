@@ -93,7 +93,7 @@ Marine.kMaxSprintFov = 95
 // Player phase delay - players can only teleport this often
 Marine.kPlayerPhaseDelay = 2
 
-Marine.kWalkMaxSpeed = 4.7                // Four miles an hour = 6,437 meters/hour = 1.8 meters/second (increase for FPS tastes)
+Marine.kWalkMaxSpeed = 5                // Four miles an hour = 6,437 meters/hour = 1.8 meters/second (increase for FPS tastes)
 Marine.kRunMaxSpeed = 6.2               // 10 miles an hour = 16,093 meters/hour = 4.4 meters/second (increase for FPS tastes)
 Marine.kRunInfestationMaxSpeed = 5.2    // 10 miles an hour = 16,093 meters/hour = 4.4 meters/second (increase for FPS tastes)
 
@@ -106,7 +106,7 @@ Marine.kWeldedEffectsInterval = .5
 
 Marine.kSpitSlowDuration = 3
 
-Marine.kWalkBackwardSpeedScalar = 0.6
+Marine.kWalkBackwardSpeedScalar = 0.5
 
 // start the get up animation after stun before giving back control
 Marine.kGetUpAnimationLength = 0
