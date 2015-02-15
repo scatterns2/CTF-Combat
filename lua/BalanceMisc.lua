@@ -257,7 +257,7 @@ kAbilityMaxEnergy = 100
 kAdrenalineAbilityMaxEnergy = 140
 
 kPistolWeight = 0.0
-kRifleWeight = 0.22 ==0.13
+kRifleWeight = 0.22 //0.13
 kHeavyRifleWeight = 0.25
 kGrenadeLauncherWeight = 0.30
 kFlamethrowerWeight = 0.14
